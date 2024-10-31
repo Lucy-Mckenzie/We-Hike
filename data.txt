@@ -1,2 +1,0 @@
-// data for details of tracks - curl -X GET "https://api.doc.govt.nz/v1/tracks/undefined/detail" -H "accept: application/json" -H "x-api-key: R3TUKGkK5G65HwBaCAPhn5vRdVMliG6GaXYZREjb"
-// data for tracks - GET https://api.doc.govt.nz/v1/tracks -H "accept: application/json" -H "x-api-key: R3TUKGkK5G65HwBaCAPhn5vRdVMliG6GaXYZREjb"
