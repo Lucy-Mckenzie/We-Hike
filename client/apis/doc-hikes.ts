@@ -1,16 +1,14 @@
-import request from 'superagent'
+// import request from 'superagent'
 import { Tracks } from '../../models/tracks'
-
-const API_URL = 'https://api.doc.govt.nz/v1/tracks'
-const apiKey = process.env.REACT_APP_DOC_API_KEY
 
 export async function getHikes(): Promise<Tracks[] | undefined> {
   try {
-    const response = await request
-    .get(API_URL)
-    .set('Authorization', `Bearer ${apiKey}`)
+    const response = await fetch('/api/hikes') // Calls the backend API
 
-    return response.body
+    if (!response.ok) {
+      throw new Error('Failed to fetch hikes')
+    }
+    return await response.json()
   } catch (error) {
     console.error('The tracks data could not be accessed at this time', error)
   }
