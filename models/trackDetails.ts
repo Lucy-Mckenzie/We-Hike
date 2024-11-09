@@ -20,3 +20,12 @@ export interface TrackDetails {
   y:                     number;
   line:                  Array<Array<number[]>>;
 }
+
+export interface TracksByRegion {
+  assetId: string;
+  name:    string;
+  region:  string[];
+  x:       number;
+  y:       number;
+  line:    Array<Array<number[]>>;
+}

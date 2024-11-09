@@ -1,4 +1,4 @@
-export interface Tracks {
+export interface AllTracks {
   assetId: string;
   name:    string;
   region:  string[];

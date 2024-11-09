@@ -1,17 +1,26 @@
 import request from 'superagent'
-import { Tracks } from '../../models/tracks'
+import { TracksByRegion } from '../../models/trackDetails'
+import { Huts } from '../../models/huts'
 
-const API_URL = 'https://api.doc.govt.nz/v1/tracks'
-const apiKey = process.env.REACT_APP_DOC_API_KEY
+export async function getHikes(region: string): Promise<TracksByRegion[]> {
 
-export async function getHikes(): Promise<Tracks[] | undefined> {
-  try {
-    const response = await request
-    .get(API_URL)
-    .set('Authorization', `Bearer ${apiKey}`)
+  const response = await request.get(`/api/v1/tracks/region/${region}`) 
 
-    return response.body
-  } catch (error) {
-    console.error('The tracks data could not be accessed at this time', error)
+  if (!response) {
+  console.error('The tracks data could not be accessed at this time')
   }
+  return await response.body
 }
+
+export async function loadHuts(): Promise<Huts[]> {
+  const response = await fetch('../data/data.json')
+
+  if (!response) {
+    throw new Error('Failed to load huts data')
+  }
+  const hutsData = await response.text()
+  const data = JSON.parse(hutsData)
+  console.log(data.huts)
+  return data.huts
+}
+

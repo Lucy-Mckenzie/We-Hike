@@ -1,13 +1,15 @@
 import express from 'express'
 import * as Path from 'node:path'
+import cors, { CorsOptions } from 'cors'
 
-import fruitRoutes from './routes/fruits.ts'
+import tracksServer from './routes/tracksServer'
 
 const server = express()
 
 server.use(express.json())
+server.use(cors('*' as CorsOptions))
 
-server.use('/api/v1/fruits', fruitRoutes)
+server.use('/api/v1/tracks', tracksServer)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))
