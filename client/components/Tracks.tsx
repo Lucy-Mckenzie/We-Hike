@@ -23,7 +23,7 @@ export default function DisplayTracks() {
       <ul>
         {tracks.map((track) => (
           <li key={track.assetId}>
-            <Link to={`/tracks/region/${region}/${track.name}`}>
+            <Link to={`/tracks/region/${region}/${track.assetId}/detail`}>
               {track.name}
             </Link>
           </li>

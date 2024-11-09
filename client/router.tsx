@@ -13,7 +13,7 @@ const router = createBrowserRouter(
   <Route path="/" element={<Layout />} >
     <Route index element={<AllRegions />} />
    <Route path="/tracks/region/:region" element={<Tracks />} />
-   <Route path="/tracks/:id/detail" element={<TrackDetails />} />
+   <Route path="/tracks/region/:region/:assetId/detail" element={<TrackDetails />} />
    <Route path="/huts" element={<DisplayRegion />} />
    <Route path="/huts/:region" element={<HutsInRegion />} />
    <Route path="/huts/:region/:hut" element={<HutDetail />} />

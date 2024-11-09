@@ -6,6 +6,9 @@ export default function TracksByName() {
 
 const { assetId, region } = useParams()
 
+console.log('Region:', region)
+console.log('Asset ID:', assetId)
+
 const { data: tracks, error, isPending } = useQuery({
   queryKey: ['trackDetails', assetId, region],
   queryFn: () => {
@@ -16,11 +19,15 @@ const { data: tracks, error, isPending } = useQuery({
   },
 })
 
+console.log('Region:', region);
+console.log('Asset ID:', assetId);
+
 if (!assetId || !region ) {
   return undefined
 }
 
 if (error) {
+  console.error('Error fetching data:', error)
   return <p>Sorry couldnt find this hike</p>
 }
 
@@ -34,12 +41,11 @@ return (
       {tracks.map((track) => (
         <li key={track.name}>
            <p>
-              <Link to={`/tracks/region/${region}/${assetId}/details`}>{track.name}</Link> 
+              <Link to={`/tracks/region/${region}/${track.assetId}/details`}>{track.name}</Link> 
             </p>
           <p>Name: {track.name}</p>
           <p>Introduction: {track.introduction}</p>
           <p>Distance: {track.distance}</p>
-          <p>Wheelchairs and Buggies Access: {track.wheelchairsAndBuggies}</p>
           <p>Dogs Allowed: {track.dogsAllowed}</p>
         </li>
       ))}

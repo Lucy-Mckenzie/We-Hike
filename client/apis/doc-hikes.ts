@@ -24,12 +24,13 @@ export async function loadHuts(): Promise<Huts[]> {
   return data.huts
 }
 
-export async function getHikesByName(region: string, name: string): Promise<TrackDetails[]> {
+export async function getHikesByName(region: string, assetId: string): Promise<TrackDetails[]> {
 
-  const response = await request.get(`/api/v1/tracks/region/${region}/${name}/detail`) 
+  const response = await request.get(`/api/v1/tracks/region/${region}/${assetId}/detail`) 
 
   if (!response) {
   console.error('The tracks data could not be accessed at this time')
   }
-  return await response.body
+  console.log('API response:', response.body);
+  return response.body
 }
