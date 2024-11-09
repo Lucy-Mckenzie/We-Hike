@@ -1,9 +1,10 @@
-import { getHikes } from '../apis/doc-hikes.ts'
+// import { getHikes } from '../apis/doc-hikes.ts'
 import { useQuery } from '@tanstack/react-query'
 // import { useParams } from 'react-router'
+import { loadHuts } from '../apis/doc-hikes.ts'
 
 export default function DisplayTracks() {
-  const {data, error, isPending } = useQuery({queryKey: ['tracks'], queryFn: () => getHikes()})
+  const {data, error, isPending } = useQuery({queryKey: ['huts'], queryFn: loadHuts})
   // const { regions } = useParams()
   console.log('Query Data:', data)
 
@@ -23,9 +24,9 @@ export default function DisplayTracks() {
     <div>
       <h1>Hiking Tracks</h1>
       <ul>
-        {data.map((hike) => (
-          <li key={hike.assetId}>
-            {hike.name} - {hike.region}
+        {data.map((hut) => (
+          <li key={hut.assetId}>
+            {hut.name} - {hut.region}
           </li>
         ))}
       </ul>
