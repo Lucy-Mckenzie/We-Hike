@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { TracksByRegion } from '../../models/trackDetails'
+import { TracksByRegion, TrackDetails } from '../../models/trackDetails'
 import { Huts } from '../../models/huts'
 
 export async function getHikes(region: string): Promise<TracksByRegion[]> {
@@ -24,3 +24,12 @@ export async function loadHuts(): Promise<Huts[]> {
   return data.huts
 }
 
+export async function getHikesByName(region: string, name: string): Promise<TrackDetails[]> {
+
+  const response = await request.get(`/api/v1/tracks/region/${region}/${name}/detail`) 
+
+  if (!response) {
+  console.error('The tracks data could not be accessed at this time')
+  }
+  return await response.body
+}

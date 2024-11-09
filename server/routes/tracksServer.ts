@@ -33,5 +33,26 @@ router.get('/region/:region', async (req, res) => {
   }
 })
 
+router.get('/tracks/:id/detail', async (req, res) => {
+  const id = req.params.id
+
+  try {
+    const response = await request
+      .get(`${DOC_API_URL}/tracks/${id}/detail`)
+      .set('accept', 'application/json')
+      .set('x-api-key', apiKey)
+
+      console.log(response.body)
+
+      if (response.body) {
+        res.json(response.body)
+      } else {
+        res.status(404).json({ error: 'Track detail not found' });
+      }
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch hikes from DOC API' })
+  }
+})
+
 export default router
 

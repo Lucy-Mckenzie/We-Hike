@@ -2,6 +2,7 @@ import { useParams } from 'react-router'
 import { Link } from "react-router-dom"
 import data from '../data/data.json'
 
+
 export default function HutsInRegion() {
 
   const { region } = useParams()
