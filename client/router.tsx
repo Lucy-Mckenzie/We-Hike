@@ -1,15 +1,17 @@
 /* eslint-disable react/jsx-key */
 import { createBrowserRouter, createRoutesFromElements, Route, } from 'react-router-dom'
-// import App from './components/App'
+
+import Huts from './components/Huts'
 import Layout from './components/Layout'
-import  Tracks  from './components/Tracks'
+// import  Tracks  from './components/Tracks'
 // import  TrackDetails  from './components/TrackDetails'
 
 const router = createBrowserRouter(
  createRoutesFromElements(
   <Route path="/" element={<Layout />} >
-   <Route path="/tracks" element={<Tracks />} />
+   {/* <Route path="/tracks" element={<Tracks />} /> */}
    {/* <Route path="/hikes/:region" element={<TrackDetails />} /> */}
+   <Route path="/huts" element={<Huts />} />
 </Route>
 )
 )

@@ -1,6 +1,6 @@
 import request from 'superagent'
 import { AllTracks } from '../../models/tracks'
-
+import { Huts } from '../../models/huts'
 
 export async function getHikes(): Promise<AllTracks[]> {
 
@@ -12,13 +12,14 @@ export async function getHikes(): Promise<AllTracks[]> {
   return await response.body
 }
 
-export async function loadHuts() {
+export async function loadHuts(): Promise<Huts[]> {
   const response = await fetch('../data/data.json')
 
   if (!response) {
     throw new Error('Failed to load huts data')
   }
-  const data = await response.json()
+  const hutsData = await response.text()
+  const data = JSON.parse(hutsData)
   console.log(data.huts)
   return data.huts
 }
