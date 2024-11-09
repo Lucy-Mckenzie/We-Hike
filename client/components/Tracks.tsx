@@ -1,32 +1,30 @@
 import { getHikes } from '../apis/doc-hikes.ts'
-import { useQuery } from '@tanstack/react-query'
-// import { useParams } from 'react-router'
-
+// import { useQuery } from '@tanstack/react-query'
+import { useParams } from 'react-router'
+import { useEffect, useState } from 'react'
+import { TracksByRegion } from '../../models/trackDetails.ts'
 
 export default function DisplayTracks() {
-  const {data, error, isPending } = useQuery({queryKey: ['tracks'], queryFn: getHikes})
-  // const { regions } = useParams()
-  console.log('Query Data:', data)
+  const { region } = useParams()
+  const [tracks, setTracks] = useState<TracksByRegion[]>([])
 
-  if (error) {
-    return <p>Something went wrong: {error.message}</p>
-  }
-
-  if (isPending) {
-    return <>Loading...</>
-  }
-
-  if (!data) {
-    return 
-  }
+  useEffect(() => {
+    async function fetchTracks() {
+      if (region) {
+        const data = await getHikes(region)
+        setTracks(data)
+      }
+    }
+    fetchTracks()
+  }, [region])
  
   return (
     <div>
-      <h1>Hiking Tracks</h1>
+      <h1>Tracks in {region}</h1>
       <ul>
-        {data.map((tracks) => (
+        {tracks.map((tracks) => (
           <li key={tracks.assetId}>
-            {tracks.name} - {tracks.region}
+            {tracks.name} 
           </li>
         ))}
       </ul>
@@ -34,4 +32,20 @@ export default function DisplayTracks() {
   )
 }
 
+
+
+ // const {data, error, isPending } = useQuery({queryKey: ['tracks'], queryFn: getHikes})
+  // console.log('Query Data:', data)
+
+  // if (error) {
+  //   return <p>Something went wrong: {error.message}</p>
+  // }
+
+  // if (isPending) {
+  //   return <>Loading...</>
+  // }
+
+  // if (!data) {
+  //   return 
+  // }
 

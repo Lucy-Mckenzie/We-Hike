@@ -1,9 +1,5 @@
-// import { useQuery } from '@tanstack/react-query'
 import { useParams } from 'react-router'
-// import { loadHuts } from '../apis/doc-hikes.ts'
-// const {data, error, isPending } = useQuery({queryKey: ['huts'], queryFn: loadHuts})
 import { Link } from "react-router-dom"
-
 import data from '../data/data.json'
 
 export default function HutsInRegion() {

@@ -1,10 +1,10 @@
 import request from 'superagent'
-import { AllTracks } from '../../models/tracks'
+import { TracksByRegion } from '../../models/trackDetails'
 import { Huts } from '../../models/huts'
 
-export async function getHikes(): Promise<AllTracks[]> {
+export async function getHikes(region: string): Promise<TracksByRegion[]> {
 
-  const response = await request.get('/api/v1/tracks') 
+  const response = await request.get(`/api/v1/tracks/region/${region}`) 
 
   if (!response) {
   console.error('The tracks data could not be accessed at this time')
