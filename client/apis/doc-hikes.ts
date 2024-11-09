@@ -1,15 +1,12 @@
-// import request from 'superagent'
-import { Tracks } from '../../models/tracks'
+import request from 'superagent'
+import { AllTracks } from '../../models/tracks'
 
-export async function getHikes(): Promise<Tracks[] | undefined> {
-  try {
-    const response = await fetch('/api/hikes') // Calls the backend API
+export async function getHikes(): Promise<AllTracks[]> {
 
-    if (!response.ok) {
-      throw new Error('Failed to fetch hikes')
-    }
-    return await response.json()
-  } catch (error) {
-    console.error('The tracks data could not be accessed at this time', error)
+  const response = await request.get('/api/v1/tracks') 
+
+  if (!response) {
+  console.error('The tracks data could not be accessed at this time')
   }
+  return await response.body
 }

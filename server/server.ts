@@ -1,7 +1,7 @@
 import express from 'express'
 import * as Path from 'node:path'
 
-import tracksServer from '../server/db/tracksServer'
+import tracksServer from './routes/tracksServer'
 
 const server = express()
 
