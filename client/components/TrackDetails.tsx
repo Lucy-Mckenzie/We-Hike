@@ -6,23 +6,19 @@ export default function TracksByName() {
 
 const { assetId, region } = useParams()
 
-console.log('Region:', region)
 console.log('Asset ID:', assetId)
 
 const { data: tracks, error, isPending } = useQuery({
   queryKey: ['trackDetails', assetId, region],
   queryFn: () => {
-    if (region && assetId) {
-      return getHikesByName(region, assetId)
+    if (assetId && region) {
+      return getHikesByName(assetId, region)
     }
     return [] 
   },
 })
 
-console.log('Region:', region);
-console.log('Asset ID:', assetId);
-
-if (!assetId || !region ) {
+if (!assetId) {
   return undefined
 }
 
@@ -41,7 +37,7 @@ return (
       {tracks.map((track) => (
         <li key={track.name}>
            <p>
-              <Link to={`/tracks/region/${region}/${track.assetId}/details`}>{track.name}</Link> 
+              <Link to={`/tracks/${track.assetId}/details`}>{track.name}</Link> 
             </p>
           <p>Name: {track.name}</p>
           <p>Introduction: {track.introduction}</p>

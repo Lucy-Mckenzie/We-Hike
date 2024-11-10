@@ -26,19 +26,19 @@ router.get('/region/:region', async (req, res) => {
       if (response.body) {
         res.json(response.body)
       } else {
-        res.status(404).json({ error: 'Track detail not found' });
+        res.status(404).json({ error: 'Region not found' });
       }
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch hikes from DOC API' })
   }
 })
 
-router.get('/tracks/:id/detail', async (req, res) => {
-  const id = req.params.id
+router.get('/:assetId/detail', async (req, res) => {
+  const assetId = req.params
 
   try {
     const response = await request
-      .get(`${DOC_API_URL}/tracks/${id}/detail`)
+      .get(`${DOC_API_URL}/${assetId}/detail`)
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
 
@@ -54,12 +54,12 @@ router.get('/tracks/:id/detail', async (req, res) => {
   }
 })
 
-router.get('api/v1/tracks/region/:region/:assetId/detail', async (req, res) => {
+router.get('/region/:region/:assetId/detail', async (req, res) => {
   const { region, assetId } = req.params
 
   try {
     const response = await request
-      .get(`${DOC_API_URL}/tracks/${assetId}/detail`)
+      .get(`${DOC_API_URL}/${assetId}/detail`)
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
 
