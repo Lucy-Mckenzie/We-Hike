@@ -41,19 +41,15 @@ export async function loadHuts(): Promise<Huts[]> {
 }
 
 // function to get hikes by region and assetId, returns an array of track details
-export async function getHikesByName(region: string, assetId: string): Promise<TrackDetails[]> {
-  try {
+export async function getHikesByName( assetId: string): Promise<TrackDetails> {
+
   // a get request to get a specific hike within a region, containing the assetId to reach a specifc hike
-  const response = await request.get(`/api/v1/tracks/region/${region}/${assetId}/detail`) 
+  const response = await request.get(`/api/v1/tracks/${assetId}/detail`) 
 
   if (!response) {
   console.error('The tracks data could not be accessed at this time')
   }
   console.log('API response:', response.body)
   return response.body
-} catch (error) {
-  console.error("track details could not be assesed")
-  return []
-}
 }
 

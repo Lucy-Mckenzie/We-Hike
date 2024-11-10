@@ -36,7 +36,7 @@ if (isPending) {
       <ul>
         {tracks.map((track) => (
           <li key={track.assetId}>
-            <Link to={`/tracks/region/${track.region}/${track.assetId}/detail`}>
+            <Link to={`/tracks/region/${region}/${track.assetId}/detail`}>
               {track.name}
             </Link>
           </li>

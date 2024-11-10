@@ -8,19 +8,17 @@ export default function TracksByName() {
 
 const { region, assetId } = useParams()
 
+console.log("region:", region)
+console.log("assetId:", assetId)
+
 const { data: tracks, error, isPending } = useQuery({
-  queryKey: ['trackDetails', region, assetId],
-  queryFn: () => {
-    if (assetId && region) {
-      return getHikesByName(region, assetId)
-    }
-    return [] 
-  },
+  queryKey: ['trackDetails', assetId],
+  queryFn: () => getHikesByName(assetId as string)
 })
 
 console.log('tracks:', tracks)
 
-if (!assetId || !region) {
+if (!assetId ) {
   <p>Hike or region is undefined</p>
   return null
 }
@@ -34,22 +32,22 @@ if (isPending) {
   return <p>Loading...</p>
 }
 
-const data = tracks.find((track) => track.assetId === assetId)
+// const data = tracks.find((track) => track.assetId === assetId)
 
 
-if (!data) {
-  return <p>Track not found</p>
-}
+// if (!data) {
+//   return <p>Track not found</p>
+// }
 
 return (
   <div>
     <h1>Track details</h1>
     <ul>
-      <li key={data.assetId}>
-        <p>Name: {data.name}</p>
-        <p>Introduction: {data.introduction}</p>
-        <p>Distance: {data.distance}</p>
-        <p>Dogs Allowed: {data.dogsAllowed}</p>
+      <li>
+        <p>Name: {tracks.name}</p>
+        <p>Introduction: {tracks.introduction}</p>
+        <p>Distance: {tracks.distance}</p>
+        <p>Dogs Allowed: {tracks.dogsAllowed}</p>
       </li>
     </ul>
   </div>

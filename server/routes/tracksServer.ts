@@ -54,26 +54,29 @@ router.get('/:assetId/detail', async (req, res) => {
   }
 })
 
-router.get('/region/:region/:assetId/detail', async (req, res) => {
-  const { region, assetId } = req.params
+// router.get('/region/:region/:assetId/detail', async (req, res) => {
+//   const { region, assetId } = req.params
+//   console.log("assetId:", assetId)
+//   console.log("region:", region)
 
-  try {
-    const response = await request
-      .get(`${DOC_API_URL}/region/${region}/${assetId}/detail`)
-      .set('accept', 'application/json')
-      .set('x-api-key', apiKey)
+//   try {
+//     const response = await request
+//       .get(`${DOC_API_URL}/region/${region}/${assetId}/detail`)
+//       .set('accept', 'application/json')
+//       .set('x-api-key', apiKey)
 
-    console.log(response.body)
+//     console.log(response.body)
       
-    if (response.body) {
-      res.json(response.body)
-    } else {
-      res.status(400).json({ error: `Track not found in region ${region}` })
-    }
-   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch track details from DOC API' })
-  }
-})
+//     if (response.body) {
+//       res.json(response.body)
+//     } else {
+//       res.status(400).json({ error: `Track not found in region ${region}` })
+//     }
+//    } catch (error) {
+//     console.error("sorry couldnt fetch", error.message)
+//     res.status(500).json({ error: 'Failed to fetch track details from DOC API' })
+//   }
+// })
 
 export default router
 
