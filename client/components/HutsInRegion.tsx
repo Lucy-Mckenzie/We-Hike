@@ -2,7 +2,9 @@ import { useParams } from 'react-router'
 import { Link } from "react-router-dom"
 import data from '../data/data.json'
 
-
+// todo
+// link to huts in region
+// page to display more region data
 export default function HutsInRegion() {
 
   const { region } = useParams()
@@ -23,7 +25,7 @@ export default function HutsInRegion() {
       <ul>
         {hutsInRegion.map((hut) => (
           <li key={hut.assetId}>
-            <Link to={`/huts/${region}/${hut.name}`}>{hut.name}</Link>
+            <Link to={`/huts/${region}`}>{hut.name}</Link>
           </li>
         ))}
       </ul>

@@ -1,8 +1,8 @@
 import data from '../data/data.json'
 import { Link } from "react-router-dom"
 
+// maps through the data base and displays regions with links
 export default function DisplayRegions() {
-
 
   return (
     <div>

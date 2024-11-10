@@ -1,9 +1,8 @@
 /* eslint-disable react/jsx-key */
 import { createBrowserRouter, createRoutesFromElements, Route, } from 'react-router-dom'
-import DisplayRegion from './components/DisplayRegion'
+import DisplayRegion from './components/HutsByRegion'
 import HutsInRegion from './components/HutsInRegion'
 import Layout from './components/Layout'
-import HutDetail from './components/HutDetail'
 import  Tracks  from './components/Tracks'
 import  TrackDetails  from './components/TrackDetails'
 import AllRegions from './components/AllRegions'
@@ -16,7 +15,7 @@ const router = createBrowserRouter(
    <Route path="/tracks/region/:region/:assetId/detail" element={<TrackDetails />} />
    <Route path="/huts" element={<DisplayRegion />} />
    <Route path="/huts/:region" element={<HutsInRegion />} />
-   <Route path="/huts/:region/:hut" element={<HutDetail />} />
+   {/* <Route path="/huts/:region/:hut" element={<HutDetail />} /> */}
 </Route>
 )
 )
