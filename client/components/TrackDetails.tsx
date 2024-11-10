@@ -4,22 +4,21 @@ import { useQuery } from '@tanstack/react-query'
 
 export default function TracksByName() {
 
-const { assetId, region } = useParams()
-
-console.log('Asset ID:', assetId)
+const { region, assetId } = useParams()
 
 const { data: tracks, error, isPending } = useQuery({
-  queryKey: ['trackDetails', assetId, region],
+  queryKey: ['trackDetails', region, assetId],
   queryFn: () => {
     if (assetId && region) {
-      return getHikesByName(assetId, region)
+      return getHikesByName(region, assetId)
     }
     return [] 
   },
 })
 
-if (!assetId) {
-  return undefined
+if (!assetId || !region) {
+  <p>Hike or region is undefined</p>
+  return null
 }
 
 if (error) {
@@ -30,11 +29,14 @@ if (error) {
 if (isPending) {
   return <p>Loading...</p>
 }
+
+const data = tracks.filter((code) => code.assetId === assetId)
+
 return (
   <div>
     <h1>Track details</h1>
     <ul>
-      {tracks.map((track) => (
+      {data.map((track) => (
         <li key={track.name}>
            <p>
               <Link to={`/tracks/${track.assetId}/details`}>{track.name}</Link> 

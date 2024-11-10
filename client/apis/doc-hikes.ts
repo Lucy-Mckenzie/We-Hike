@@ -49,3 +49,4 @@ export async function getHikesByName(region: string, assetId: string): Promise<T
   return []
 }
 }
+

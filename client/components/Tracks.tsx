@@ -1,21 +1,32 @@
 import { getHikes } from '../apis/doc-hikes.ts'
 import { useParams, Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { TracksByRegion } from '../../models/trackDetails.ts'
+import { useQuery } from '@tanstack/react-query'
 
 export default function DisplayTracks() {
   const { region } = useParams()
-  const [tracks, setTracks] = useState<TracksByRegion[]>([])
 
-  useEffect(() => {
-    async function fetchTracks() {
-      if (region) {
-        const data = await getHikes(region)
-        setTracks(data)
-      }
+const {data: tracks, error, isPending } = useQuery({
+  queryKey: ['tracks', region],
+  queryFn: () => {
+    if (region) {
+      return getHikes(region)
     }
-    fetchTracks()
-  }, [region])
+    return []
+  } 
+})
+
+if (!region) {
+  return undefined
+}
+
+if (error) {
+  console.error('Error fetching data:', error)
+  return <p>Sorry couldnt find this hike</p>
+}
+
+if (isPending) {
+  return <p>Loading...</p>
+}
  
   return (
     <div>
@@ -23,7 +34,7 @@ export default function DisplayTracks() {
       <ul>
         {tracks.map((track) => (
           <li key={track.assetId}>
-            <Link to={`/tracks/region/${region}/${track.assetId}/detail`}>
+            <Link to={`/tracks/region/${track.region}/${track.assetId}/detail`}>
               {track.name}
             </Link>
           </li>
