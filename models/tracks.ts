@@ -6,3 +6,11 @@ export interface AllTracks {
   y:       number;
   line:    Array<Array<number[]>>;
 }
+
+export interface GreatWalk {
+  name: string;
+  location: number[]; 
+  region: string;
+  distance: number;
+  description: string;
+}

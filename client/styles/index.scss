@@ -60,6 +60,8 @@ nav a:not(:first-child) {
   font-weight: bold;
   font-size: 2rem;
   text-align: left;
+  margin-bottom: 20px;
+
 }
 
 .subtitle {
@@ -84,6 +86,22 @@ nav a:not(:first-child) {
   object-fit: cover;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+// map
+
+.map {
+  height: 400px;
+  border-radius: 10px;
+  width: 800px; 
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 800px; 
 }
 
 // footer 
@@ -114,4 +132,5 @@ nav a:not(:first-child) {
   flex-direction: column;
   min-height: 100vh; 
 }
+
 

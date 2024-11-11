@@ -1,22 +1,15 @@
 import home from '../public/home.jpg'
+import Map from '../components/Map'
 
 export default function Home() {
+
  return (
   <div className="home-container">
-    <h1 className="title">The great walks of New Zealand</h1>
-    <p className="subtitle">11/11/2024, Lucy Mckenzie</p>
-    <img src={home} alt="Lake Waikaremoana" className="home-img"></img>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet ligula eros. Quisque quis auctor nulla, vitae mollis dolor. Ut quis facilisis velit. Sed condimentum est a lacus maximus ornare. Integer finibus sit amet ex in suscipit. Morbi a lobortis tortor. Sed placerat, urna sit amet pharetra iaculis, arcu dui viverra augue, non tincidunt nulla elit ac diam. Etiam non aliquam dolor, ut pretium metus. Donec posuere lorem sed ex eleifend consequat. In hac habitasse platea dictumst. Cras posuere ullamcorper risus, quis ultricies ligula feugiat id. Nam sagittis vehicula commodo. Mauris sagittis vel velit ac dictum. Nulla ac varius velit, maximus finibus mi. Proin cursus feugiat enim porta ultricies. Nunc quis purus felis. Sed ullamcorper laoreet turpis. Morbi scelerisque, est ac dictum pharetra, velit urna facilisis ex, scelerisque pretium diam ligula et ipsum. In nec erat finibus, tempor mi ornare, tristique velit. Cras luctus varius orci. Phasellus hendrerit nibh at nisi vehicula volutpat. In gravida lacinia lorem sit amet consequat.
+ <Map />
 
-Aenean a libero sollicitudin, lobortis risus ut, imperdiet est. Ut dapibus sem id nisi ullamcorper, at hendrerit ex dictum. Suspendisse vitae suscipit ipsum. Phasellus lacus enim, elementum nec diam sed, euismod ullamcorper lectus. Maecenas maximus bibendum mauris quis efficitur. Morbi ut facilisis leo, ut euismod massa. Ut elit nisl, egestas sit amet suscipit vel, ultrices quis enim. Fusce sed lectus at dui aliquet pulvinar. Aenean nec dignissim diam, eu interdum ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi auctor lacus a mauris pellentesque, eget pulvinar metus condimentum. Donec vitae mauris in ex elementum sollicitudin.
-
-Cras sagittis nulla lacus, vel tincidunt risus blandit quis. Phasellus sodales pellentesque quam, quis accumsan dui euismod sagittis. Nam volutpat a erat ut aliquam. Aenean auctor volutpat justo, et congue urna. Nulla et massa ligula. Cras imperdiet venenatis turpis, vitae pretium sapien congue in. Nulla eu velit ut arcu varius ultrices. Phasellus egestas nibh nec lorem auctor, egestas cursus magna eleifend.
-
-Etiam id nunc tortor. Nulla dictum, justo ac pharetra laoreet, felis dolor consequat enim, eget malesuada nibh velit a nibh. Donec sit amet mollis nisi, vel vestibulum ipsum. Donec eget ultrices urna, vitae ultricies ipsum. Ut mattis tincidunt turpis non eleifend. Mauris sodales pulvinar maximus. In et elit sollicitudin, auctor orci nec, sagittis lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean hendrerit accumsan tellus in dapibus. Ut consectetur sem a dictum tincidunt. Vivamus lacinia dui eget mi maximus, sed bibendum ex finibus. Vestibulum efficitur, nisi quis venenatis tincidunt, urna mauris viverra metus, sed elementum urna nisi sed metus. Aenean pulvinar maximus eros, a mattis nibh porta vitae. Sed sagittis sit amet leo non pellentesque. Mauris bibendum aliquam risus, sed congue orci finibus vel.
-
-Nunc egestas elit neque, vitae efficitur massa faucibus sed. Proin lobortis vel neque id imperdiet. Mauris ultricies libero eget dignissim tincidunt. Pellentesque et rhoncus massa. Nullam tempus lobortis risus ut facilisis. Aenean dapibus semper tortor, vel consectetur erat posuere nec. Vestibulum sit amet enim egestas, facilisis lacus sed, ultrices enim. Curabitur ante nulla, varius eget nisl in, mollis finibus augue.
-
-Quisque at tincidunt sem. Fusce rhoncus velit ac justo vehicula lacinia. Phasellus accumsan vehicula nisi. Quisque convallis turpis metus, nec ultricies est maximus eget. Nunc quis sodales sem, a viverra turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut laoreet dapibus lectus, id porttitor enim varius sed. Sed feugiat iaculis diam sit amet varius. Vestibulum pretium dapibus velit ut fringilla. Vestibulum viverra sollicitudin nunc, sit amet aliquam risus accumsan congue. Praesent sollicitudin sodales lectus in vulputate. Suspendisse sit amet dui at velit bibendum cursus at ut eros. Mauris in ante eget ligula posuere pulvinar vitae eu tortor. Ut eget nibh egestas, bibendum orci non, egestas quam. Sed iaculis vestibulum finibus. Suspendisse urna arcu, viverra ut ex quis, tincidunt consequat sapien.
+  <img src={home} alt="Lake Waikaremoana" className="home-img"></img>
+  <p>
+    New Zealand is renowned for its stunning landscapes, and its network of Great Walks offers some of the best hiking experiences in the world. From the golden beaches of Abel Tasman National Park to the rugged mountain terrains of Fiordland, these hikes provide diverse natural beauty. Whether youre looking for coastal paths, alpine adventures, or lush rainforests, New Zealands hikes cater to all levels of experience. With well-maintained trails, rich cultural history, and breathtaking views, hiking in New Zealand is an unforgettable journey through some of the planet’s most iconic landscapes.
   </p>
   </div>
  )
