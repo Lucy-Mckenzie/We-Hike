@@ -1,7 +1,9 @@
 export default function Footer() {
   return (
-    <footer>
-      <a href="https://api.doc.govt.nz/">Api from Doc NZ</a>
+    <div className="container">
+    <footer className="footer">
+      <a href="https://api.doc.govt.nz/" className="footer-link">Api from Doc NZ</a>
     </footer>
+    </div>
   )
 }

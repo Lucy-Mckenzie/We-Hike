@@ -8,8 +8,8 @@ export default function Nav() {
       </NavLink>
       <div className="nav-links">
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/huts">Huts by region</NavLink>
-      <NavLink to="/tracks">find by region</NavLink>
+      <NavLink to="/huts">Huts</NavLink>
+      <NavLink to="/tracks/region">Hikes</NavLink>
       <NavLink to="/about">About</NavLink>
       </div>
     </nav>
