@@ -15,11 +15,17 @@ body {
   flex-direction: column;
 }
 
+.borderLine {
+  color: #FFD700;
+  height: 10px;
+  
+}
+
 nav {
-  background-color: white;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  background-color: #004F23;
+  box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.4);
   display: flex;
-  padding: 10px 20px;
+  padding: 7px 20px;
   align-items: center;
   justify-content: space-between; 
   z-index: 10;
@@ -30,11 +36,11 @@ nav a {
   text-decoration: none;
   display: flex;
   align-items: center;
-  color: #729343;
+  color: white;
 }
 
 nav a:hover {
-  background-color: #f0f0f0;
+  color: #898686;
 }
 
 nav li:first-child {
@@ -43,8 +49,7 @@ nav li:first-child {
 
 .logo {
   height: 40px;
-  margin-right: auto;
-  padding: 0px 0px 0px 40px;
+  padding-left: 90px;
 }
 
 nav a:not(:first-child) {
@@ -54,13 +59,18 @@ nav a:not(:first-child) {
 .nav-links {
   display: flex;
   margin-left: auto; 
+  margin-right: 60px;
 }
 
+// nav finished
 .title {
   font-weight: bold;
   font-size: 2rem;
   text-align: left;
   margin-bottom: 20px;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 
 }
 

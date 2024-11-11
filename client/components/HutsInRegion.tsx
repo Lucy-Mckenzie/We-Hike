@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import data from '../data/data.json'
 
 // todo
-// link to huts in region
+// link to huts in region -- need to add nelson/tasman
 // page to display more region data
 export default function HutsInRegion() {
 
