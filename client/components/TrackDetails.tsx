@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 
 // displays all info about the tracks, based on region and assetId, useQuery retrieves all data
-// maps through the data and displays info of the track that matches the assetId
+// displays info of the track that matches the assetId
 export default function TracksByName() {
 
 const { region, assetId } = useParams()
@@ -32,12 +32,6 @@ if (isPending) {
   return <p>Loading...</p>
 }
 
-// const data = tracks.find((track) => track.assetId === assetId)
-
-
-// if (!data) {
-//   return <p>Track not found</p>
-// }
 
 return (
   <div>
