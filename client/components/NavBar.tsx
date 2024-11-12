@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import wehike from '../public/wehike.jpeg'
+import wehike from '../public/images/wehike.jpeg'
 
 export default function Nav() {
   return (

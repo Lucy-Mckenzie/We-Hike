@@ -1,4 +1,4 @@
-import home from '../public/home.jpg'
+import home from '../public/images/Regions/home.jpg'
 import Map from '../components/Map'
 
 export default function Home() {
