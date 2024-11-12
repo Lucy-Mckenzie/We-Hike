@@ -28,7 +28,7 @@ export default function DisplayAllRegions() {
           <li key={region.id} className="mb-4">
             <Link to={`/tracks/region/${region.id}`}>
               <h2 className="allRegionsName">{region.name}</h2>
-              <img src={`/images/${region.image}`} 
+              <img src={`/images/regions/${region.image}`} 
                 alt={`${region.name} hiking trail`}
                 className="allregionsPhoto"
               />

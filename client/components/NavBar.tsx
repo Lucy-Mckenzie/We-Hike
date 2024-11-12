@@ -1,12 +1,11 @@
 import { NavLink } from 'react-router-dom'
-import wehike from '../public/images/wehike.jpeg'
 
 export default function Nav() {
   return (
     <nav>
       <div className="borderLine"></div>
       <NavLink to="/">
-      <img src={wehike} alt="Logo" className="logo" />
+      <img src="/images/wehike.jpeg" alt="Logo" className="logo" />
       </NavLink>
       <div className="nav-links">
       <NavLink to="/">Home</NavLink>
