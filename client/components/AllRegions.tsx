@@ -1,11 +1,13 @@
 import region from '../data/region'
 import { Link } from 'react-router-dom'
+import Map from '../components/Map'
 
 // Looks through the regions data and uses the region id as a key, with a link to all hikes in that region
 export default function DisplayAllRegions() {
   return (
     <>
       <h1 className="text-2xl font-bold mb-4">Select a region</h1>
+      <Map />
       <ul>
         {region.map((region) => (
           <li key={region.id}>

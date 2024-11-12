@@ -4,7 +4,7 @@
     "assetId": 100064317,
     "name": "Wainui Hut",
     "status": "OPEN",
-    "region": "Nelson/Tasman",
+    "region": "Nelson",
     "y": 5470738,
     "x": 1593295
   },
@@ -12,7 +12,7 @@
     "assetId": 100064371,
     "name": "Awapoto Hut",
     "status": "OPEN",
-    "region": "Nelson/Tasman",
+    "region": "Nelson",
     "y": 5476469,
     "x": 1594845
   },
@@ -20,7 +20,7 @@
     "assetId": 100060112,
     "name": "Castle Rock Hut",
     "status": "OPEN",
-    "region": "Nelson/Tasman",
+    "region": "Nelson",
     "y": 5465484,
     "x": 1596102
   },

@@ -27,7 +27,6 @@ export default function Map() {
 
  return (
   <div className="map-container">
-  <h1 className="title">The great walks of New Zealand, mapped</h1>
   <div id="map" className="map" aria-label="Map displaying the Great Walks of New Zealand"></div>
   </div>
  )
