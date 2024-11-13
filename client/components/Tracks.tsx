@@ -1,4 +1,4 @@
-import { getHikes } from '../apis/doc-hikes.ts'
+import { getTracksByRegion } from '../apis/doc-hikes.ts'
 import { useParams, Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 
@@ -9,12 +9,7 @@ export default function DisplayTracks() {
 
 const {data: tracks, error, isPending } = useQuery({
   queryKey: ['tracks', region],
-  queryFn: () => {
-    if (region) {
-      return getHikes(region)
-    }
-    return []
-  } 
+  queryFn: () =>  getTracksByRegion(region as string) 
 })
 
 if (!region) {
@@ -31,8 +26,9 @@ if (isPending) {
 }
  
   return (
-    <div>
-      <h1>Tracks in {region}</h1>
+    <div className="tracksRegionDisplayContainer">
+      <h1 className="tracksRegion">Tracks in {region}</h1>
+      <div className="tracksRegionDisplay">
       <ul>
         {tracks.map((track) => (
           <li key={track.assetId}>
@@ -42,8 +38,10 @@ if (isPending) {
           </li>
         ))}
       </ul>
+      </div>
     </div>
   )
 }
 
-
+// https://api.doc.govt.nz/v1/tracks/region/NZ-HKB
+// https://api.doc.govt.nz/v1/tracks/region/DOC-CNI

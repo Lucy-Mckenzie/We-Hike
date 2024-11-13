@@ -3,6 +3,6 @@ export interface Review {
   assetId: string; 
   hikeName: string;
   rating: number;
-  comment?: string | null;
-  author?: string | null;
+  comment?: string;
+  author?: string;
 }

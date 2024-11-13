@@ -2,25 +2,22 @@ import { useState, FormEvent, ChangeEvent } from 'react';
 import { Review } from '../../models/review'
 import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query'
 import { fetchAllReviews, addReview } from '../apis/reviews';
-interface Props {
-  submitLabel: string
-  onSubmit: (FormData: Review) => void
-}
 
 const hikes = [
   'Routeburn',
   'Lake Waikaremoana',
   'Te mata peak'
 ]
-export default function ReviewForm({submitLabel, onSubmit}: Props) {
-
+export default function ReviewForm() {
 
   // formState holds current values of form inputs
   const [formState, setFormState] = useState<Review>({ 
   id: 0,
   assetId: '',
   hikeName: '',
-  rating: 0
+  rating: 0,
+  comment: '',
+  author: ''
   })
 
   const { data: review, isPending, isError } = useQuery({ 
@@ -62,25 +59,17 @@ export default function ReviewForm({submitLabel, onSubmit}: Props) {
     assetId: formState.assetId,
     hikeName: formState.hikeName,
     rating: formState.rating,
-    comment: null,
-    author: null,
+    comment: formState.comment,
+    author: formState.author,
     })
-    onSubmit(formState)
-    setFormState({  id: 0, assetId: '', hikeName: '', rating: 0})
+    setFormState({  id: 0, assetId: '', hikeName: '', rating: 0, comment: '', author: ''})
   } 
 
     return (
-      <div className="formContainer">
+      <div className="ReviewFormContainer">
       <h1>Leave a review</h1>
-      <ul>
-        {review.map((data) => (
-          <li key={data.id}>
-            {data.hikeName} - {data.comment} - {data.author}
-          </li>
-        ))}
-      </ul>
       <form onSubmit={handleSubmit}>
-        <div className="hikeName">
+        <div className="formContainer">
           <label htmlFor="hikeName">Choose a Hike:</label>
           <select
             name="hikeName"
@@ -97,17 +86,39 @@ export default function ReviewForm({submitLabel, onSubmit}: Props) {
           </select>
         </div>
         <div className="comment">
-            
-        </div>
-            <button type="submit">{submitLabel}</button>
+        <label htmlFor="comment">Your Comment:</label>
+        <input
+          type="text"
+          name="comment"
+          className="text"
+          value={formState.comment}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      
+      <div className="author">
+        <label htmlFor="author">Your Name:</label>
+        <input
+          type="text"
+          name="author"
+          className="text1"
+          value={formState.author}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      
+            <button type="submit">Submit review</button>
           </form>
+          <ul>
+        {review.map((data) => (
+          <li key={data.id}>
+            {data.hikeName} - {data.comment} - {data.author}
+          </li>
+        ))}
+      </ul>
+      <button type="submit">Update review</button>
         </div>
     )
   }
-
-// todo 
-// add comment input
-// add author input 
-// pass component and props to parent home/hikes details
-// style reviews part 
-// test!

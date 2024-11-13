@@ -7,14 +7,14 @@ import  Tracks  from './components/Tracks'
 import  TrackDetails  from './components/TrackDetails'
 import AllRegions from './components/AllRegions'
 import Home from './components/Home'
-// import ReviewForm from './components/ReviewForm'
+import ReviewForm from './components/ReviewForm'
 import AllHikes from './components/AllHikes'
 
 const router = createBrowserRouter(
  createRoutesFromElements(
   <Route path="/" element={<Layout />} >
    <Route index element={<Home />} />
-   {/* <Route path="/reviews" element={<ReviewForm />} /> */}
+   <Route path="/reviews" element={<ReviewForm />} />
    <Route path="/tracks/region" element={<AllRegions />} />
    <Route path="/tracks" element={<AllHikes />} />
    <Route path="/tracks/region/:region" element={<Tracks />} />
