@@ -18,9 +18,8 @@ const { data: tracks, error, isPending } = useQuery({
 
 console.log('tracks:', tracks)
 
-if (!assetId ) {
-  <p>Hike or region is undefined</p>
-  return null
+if (!assetId) {
+  return <p>Hike or region is undefined</p>
 }
 
 if (error) {

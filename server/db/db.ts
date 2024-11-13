@@ -1,32 +1,14 @@
 import connection from './connection.js'
-import { AllTracks } from '../../models/tracks.js'
 import { Review } from '../../models/review.js'
 
 
 // Read all
-export async function getAllTracks(): Promise<AllTracks[]>  {
-  const tracks = await connection('allTracks')
-  return tracks as AllTracks[]
-}
-
 export async function getAllReviews(): Promise<Review[]>  {
   const review = await connection('reviews')
   return review as Review[]
 }
 
-// Read one
-export async function getTrackById(name: string): Promise<AllTracks[]>  {
-  const tracks = await connection('allTracks')
-  .where('name', name)
-  .select(
-    'assetId',
-    'region',
-    'name'
-  )
-  .first()
-  return tracks 
-}
-
+// Read One
 export async function getReviewById(id: number): Promise<Review[]>  {
   const review = await connection('reviews')
   .where("id", id)

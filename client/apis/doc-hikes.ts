@@ -2,6 +2,23 @@ import request from 'superagent'
 import { TracksByRegion, TrackDetails } from '../../models/trackDetails'
 import { Huts } from '../../models/huts'
 
+// function to get all hikes
+export async function getAllTracks(): Promise<TrackDetails[]> {
+  try {
+    // a get request to the api endpoint to fetch all tracks
+  const response = await request.get(`/api/v1/tracks/`) 
+
+  if (!response) {
+  console.error('The tracks data could not be accessed at this time')
+  }
+  return await response.body 
+} catch (error) {
+  console.error("track details could not be found")
+  return []
+}
+}
+
+
 // function to get hikes based on specifc region
 export async function getHikes(region: string): Promise<TracksByRegion[]> {
   try {

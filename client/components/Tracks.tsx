@@ -1,6 +1,7 @@
 import { getHikes } from '../apis/doc-hikes.ts'
 import { useParams, Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
+import MapHikes from './MapHikes.tsx'
 
 // displays tracks based on the region param, useQuery retrieves all the data, the data is mapped over, displays the track names
 // links to the tracks region and assetId to display more info in track details
@@ -42,6 +43,7 @@ if (isPending) {
           </li>
         ))}
       </ul>
+      <MapHikes />
     </div>
   )
 }

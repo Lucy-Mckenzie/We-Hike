@@ -11,6 +11,23 @@ if (!apiKey) {
   throw new Error('API key is missing. Please set the DOC_API_KEY environment variable.');
 }
 
+router.get('/', async (req, res) => {
+
+  try {
+    const response = await request
+      .get(`${DOC_API_URL}/detail?coordinates=wgs84`)
+      .set('accept', 'application/json')
+      .set('x-api-key', apiKey)
+
+      if (response.body) {
+        res.json(response.body)
+      } else {
+        res.status(404).json({ error: 'Region not found' });
+      }
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch hikes from DOC API' })
+  }
+})
 
 router.get('/region/:region', async (req, res) => {
   const region = req.params.region
@@ -20,8 +37,6 @@ router.get('/region/:region', async (req, res) => {
       .get(`${DOC_API_URL}/region/${region}`)
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
-
-      console.log(response.body)
 
       if (response.body) {
         res.json(response.body)
@@ -38,11 +53,9 @@ router.get('/:assetId/detail', async (req, res) => {
 
   try {
     const response = await request
-      .get(`${DOC_API_URL}/${assetId}/detail`)
+      .get(`${DOC_API_URL}/${assetId}/detail?coordinates=wgs84`)
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
-
-      console.log(response.body)
 
       if (response.body) {
         res.json(response.body)
