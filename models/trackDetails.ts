@@ -16,8 +16,8 @@ export interface TrackDetails {
   locationArray:         string[];
   region:                string[];
   staticLink:            string;
-  lon:                     number;
-  lat:                     number;
+  x:                     number;
+  y:                     number;
   line:                  Array<Array<number[]>>;
 }
 

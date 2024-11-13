@@ -1,6 +1,5 @@
 import region from '../data/region'
 import { Link } from 'react-router-dom'
-import Map from '../components/Map'
 import { useState } from 'react'
 
 
@@ -14,7 +13,7 @@ export default function DisplayAllRegions() {
   return (
     <div className="allRegionsContainer">
       <h1 className="allRegionsTitle">Select a region</h1>
-      <Map />
+  
       <input 
       type="text"
       placeholder="Search region.."

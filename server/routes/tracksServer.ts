@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
   try {
     const response = await request
-      .get(`${DOC_API_URL}/detail?coordinates=wgs84`)
+      .get(`${DOC_API_URL}`)
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
 
@@ -25,7 +25,10 @@ router.get('/', async (req, res) => {
         res.status(404).json({ error: 'Region not found' });
       }
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch hikes from DOC API' })
+    if (error instanceof Error) {
+    console.error("Failed to fetch hikes from DOC API:", error.message)
+    }
+    res.status(500).json({ error: 'Failed to fetch hikes from DOC API'})
   }
 })
 

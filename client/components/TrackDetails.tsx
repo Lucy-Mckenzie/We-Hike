@@ -1,4 +1,4 @@
-import { getHikesByName } from '../apis/doc-hikes.ts'
+import { getTrackById } from '../apis/doc-hikes.ts'
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 
@@ -13,7 +13,7 @@ console.log("assetId:", assetId)
 
 const { data: tracks, error, isPending } = useQuery({
   queryKey: ['trackDetails', assetId],
-  queryFn: () => getHikesByName(assetId as string)
+  queryFn: () => getTrackById(assetId as string)
 })
 
 console.log('tracks:', tracks)

@@ -10,6 +10,7 @@ export default function Nav() {
       <div className="nav-links">
       <NavLink to="/">Home</NavLink>
       <NavLink to="/huts">Huts</NavLink>
+      <NavLink to="/tracks">Map of all hikes</NavLink>
       <NavLink to="/tracks/region">Hikes</NavLink>
       <NavLink to="/about">About</NavLink>
       <NavLink to="/reviews">Reviews</NavLink>
