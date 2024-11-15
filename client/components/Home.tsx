@@ -4,7 +4,7 @@ export default function Home() {
 
  return (
   <div className="home-container">
-  <h1 className="title">The great walks of New Zealand, mapped</h1>
+  <h1  className="title">The great walks of New Zealand, mapped</h1>
   <Map />
   <img src="/images/home.jpg" alt="Lake Waikaremoana" className="home-img"></img>
   <p>

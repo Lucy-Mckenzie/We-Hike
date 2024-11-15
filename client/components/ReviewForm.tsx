@@ -1,7 +1,7 @@
-import { useState, FormEvent, ChangeEvent } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react'
 import { Review } from '../../models/review'
 import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query'
-import { fetchAllReviews, addReview } from '../apis/reviews';
+import { fetchAllReviews, addReview } from '../apis/reviews'
 
 const hikes = [
   'Routeburn',
