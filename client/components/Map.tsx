@@ -6,15 +6,16 @@ import {
   Popup,
   TileLayer,
 } from 'react-leaflet'
+import "leaflet/dist/leaflet.css"
+
 
 export default function Map() {
 
  return (
   <MapContainer
-    className="flex flex-col text-left mx-auto mx-w-[800] h-screen w-full"
+    className="flex flex-col rounded-md overflow-hidden h-[550px] w-full"
     center={[-39.2806, 176.9120]}
     zoom={8}
-    style={{ height: "100vh", width: "100%" }}
     aria-label="Map displaying the Great Walks of New Zealand"
   >
     <TileLayer
