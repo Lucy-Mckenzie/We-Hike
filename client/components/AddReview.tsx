@@ -56,6 +56,7 @@ export default function AddReviewForm({ onAdd, onClose }: Props) {
         <label htmlFor="hikeName" className="block font-bold mb-1 text-[#555]">Hike:</label>
         <select
           name="hikeName"
+          id="hikeName"
           className="w-full p-2 mb-4 border border-grey-300 rounded text-sm"
           value={newReview.hikeName}
           onChange={handleChange}
@@ -73,6 +74,7 @@ export default function AddReviewForm({ onAdd, onClose }: Props) {
         <input
           type="text"
           name="comment"
+          id="comment"
           className="w-full p-2 mb-4 border border-grey-300 rounded text-sm"
           value={newReview.comment}
           onChange={handleChange}
@@ -81,6 +83,7 @@ export default function AddReviewForm({ onAdd, onClose }: Props) {
         <input
           type="text"
           name="author"
+          id="author"
           className="w-full p-2 mb-4 border border-grey-300 rounded text-sm"
           value={newReview.author}
           onChange={handleChange}

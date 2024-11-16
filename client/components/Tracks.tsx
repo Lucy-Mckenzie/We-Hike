@@ -26,12 +26,11 @@ if (isPending) {
 }
  
   return (
-    <div className="tracksRegionDisplayContainer">
-      <h1 className="tracksRegion">Tracks in {region}</h1>
-      <div className="tracksRegionDisplay">
+    <div className="flex flex-col items-center max-w-[900px] m-auto">
+      <h1 className="text-4xl text-left mb-5 font-light font-lato m-5">Tracks in {region}</h1>
       <ul>
         {tracks.map((track) => (
-          <li key={track.assetId}>
+          <li key={track.assetId} className="bg-grey-300 border border-grey transition-transform duration-200 hover:scale-105 px-4 m-1">
             <Link to={`/tracks/region/${region}/${track.assetId}/detail`}>
               {track.name}
             </Link>
@@ -39,7 +38,6 @@ if (isPending) {
         ))}
       </ul>
       </div>
-    </div>
   )
 }
 

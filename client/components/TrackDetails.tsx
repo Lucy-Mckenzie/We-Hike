@@ -30,10 +30,10 @@ if (isPending) {
 
 
 return (
-    <div className="trackDetailsContainer">
-      <h1 className="trackDetailsTitle">Track details for {tracks.name}</h1>
-      <div className="trackDetails">
-    <img src={tracks.introductionThumbnail} alt={`${tracks.name} thumbnail`} />
+    <div className="flex flex-col items-center max-w-[900px] m-auto">
+      <h1 className="text-4xl text-center my-5 font-normal font-lato">{tracks.name}</h1>
+      <div>
+    <img src={tracks.introductionThumbnail} className="flex items-center justify h-auto" alt={`${tracks.name} thumbnail`} />
     <p>Region: {tracks.region.join(", ")}</p>
     <p>Introduction: {tracks.introduction}</p>
 

@@ -26,11 +26,12 @@ export default function ReviewForm() {
   if (!review) return <>Reviews cant be found</>
 
     return (
-      <div className="ReviewFormContainer">
-      <h1>Past Reviews</h1>
+      <div className="flex justify-center items-center bd-grey-100 my-6">
+      <div className="max-w-[500px] px-4 bd-grey-300 border border-grey-100 shadow-md bd-grey pb-2">
+      <h1 className="text-4xl text-center my-2 font-light font-lato">Past Reviews</h1>
           <ul>
         {review.map((data) => (
-          <li key={data.id}>
+          <li key={data.id} className="p-2 border-b-2">
             {data.hikeName} - {data.comment} - {data.author}
             {showBtn && (
               <DeleteReview id={Number(data.id)} /> 
@@ -49,6 +50,7 @@ export default function ReviewForm() {
       {formVisible && (
         <AddReviewForm onAdd={handleAddReview} onClose={() => setFormVisible(false)} />
       )}
+      </div>
       </div>
     )
   }

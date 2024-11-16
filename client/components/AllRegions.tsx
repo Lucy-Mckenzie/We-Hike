@@ -10,7 +10,7 @@ export default function DisplayAllRegions() {
     <div className="max-w-[900px] m-auto text-center">
       <h1 className="text-4xl text-center my-5 font-normal font-lato">Where do you want to go?</h1>
       <div className="flex flex-col items-center">
-    <ul className="list-none p-0">
+    <ul>
       
         {region.map((region) => (
           <li className="bd-grey-100 border border-grey-300 rounded-lg p-4 mb-4 shadow-md text-center transition-transform duration-200 hover:scale-105 max-w-[800px]" 
