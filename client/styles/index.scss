@@ -4,6 +4,8 @@
 html, 
 body {
   font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -11,61 +13,6 @@ body {
   padding: 0;
 }
 
-body {
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.borderLine {
-  color: #FFD700;
-  height: 10px;
-  
-}
-
-nav {
-  background-color: #004F23;
-  box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.4);
-  display: flex;
-  padding: 7px 20px;
-  align-items: center;
-  justify-content: space-between; 
-  z-index: 10;
-}
-
-nav a {
-  padding: 0 20px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  color: white;
-}
-
-nav a:hover {
-  color: #898686;
-}
-
-nav li:first-child {
-  margin-right: auto;
-}
-
-.logo {
-  height: 40px;
-  padding-left: 90px;
-}
-
-nav a:not(:first-child) {
-  padding: 0 20px;
-}
-
-.nav-links {
-  display: flex;
-  margin-left: auto; 
-  margin-right: 60px;
-}
-
-// nav-btn
-
-// nav finished
 .title {
   font-weight: bold;
   font-size: 2rem;
@@ -117,33 +64,11 @@ nav a:not(:first-child) {
   max-width: 800px; 
 }
 
-// footer 
-
-.footer {
-  background-color: white;  
-  color: #729343;
-  text-align: center;
-  padding: 20px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  margin-top: auto;
-}
-
-.footer-link {
-  color: #729343; 
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.footer-link:hover {
-  text-decoration: underline;
-}
 
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  flex-grow: 1;
 }
 
 // allRegions page
@@ -330,41 +255,19 @@ width: 300px;
   color: #333;
 }
 
-// labels for all inputs
-.ReviewFormContainer label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #555;
-}
-
-// spacing for input text and dropdown
-.text, .text1,
-.ReviewFormContainer select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-// submit button
-.ReviewFormContainer button {
-  width: 100%;
-  padding: 10px;
-  background-color: #4caf50;
+.deleteBtn {
+  background-color: #f44336; 
+  display: flex;
+  align-items: center;
   color: white;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
   cursor: pointer;
+  width: auto; 
+  padding: 8px 5px; 
+  font-size: 12px; 
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 4px;
   transition: background-color 0.3s ease;
-}
-
-.ReviewFormContainer button:hover {
-  background-color: #45a049;
 }
 
 // styles for previous reviews
@@ -381,6 +284,4 @@ width: 300px;
   color: #333;
 }
 
-// add review form
-// .newReviewT - title
 // .addReviewFormContainer

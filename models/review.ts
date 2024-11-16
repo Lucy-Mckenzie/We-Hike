@@ -1,5 +1,5 @@
 export interface Review {
-  id?: string,
+  id?: number,
   userId?: string;
   assetId?: string; 
   hikeName: string;

@@ -6,6 +6,7 @@ export function up(knex) {
   return knex.schema
   .createTable('reviews', function(table) {
     table.increments('id').primary()
+    table.string('userId')
     table.string('assetId')
     table.string('hikeName').notNullable()
     table.integer('rating')

@@ -10,8 +10,8 @@ export default function DisplayRegions() {
       <h1>Hiking Huts</h1>
       <MapHuts />
       <ul className="hutRegion">
-        {data.huts.map((hut, index) => (
-          <li key={index}>
+        {data.huts.map((hut, indes) => (
+          <li key={indes}>
           <Link to={`/huts/${hut.region}`}>{hut.region}</Link>
           </li>
         ))}

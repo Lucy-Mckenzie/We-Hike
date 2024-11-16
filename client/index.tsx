@@ -11,8 +11,8 @@ const queryClient = new QueryClient()
 document.addEventListener('DOMContentLoaded', () => {
   createRoot(document.getElementById('app') as HTMLElement).render(
     <Auth0Provider
-    domain=" dev-yahbj15jebs5tx1v.us.auth0.com"
-    clientId="pUMApsDOc6ZmGdvFp32GhDCWQNLKbCmX"
+    domain="manaia2024-lucy.au.auth0.com"
+    clientId="pgiYPucNSTPpNMGZXqgbaDvs7vLXqOGL"
     authorizationParams={{
       redirect_uri: window.location.origin,
       audience: 'https://tracks/api',

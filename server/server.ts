@@ -1,6 +1,6 @@
 import express from 'express'
 import * as Path from 'node:path'
-import cors, { CorsOptions } from 'cors'
+import cors from 'cors'
 
 import tracksServer from './routes/tracksServer'
 import reviews from './routes/reviews'
@@ -8,7 +8,7 @@ import reviews from './routes/reviews'
 const server = express()
 
 server.use(express.json())
-server.use(cors('*' as CorsOptions))
+server.use(cors())
 // server.use(express.static(Path.join(__dirname, 'public')))
 
 server.use('/api/v1/tracks', tracksServer)

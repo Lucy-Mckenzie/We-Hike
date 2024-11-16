@@ -42,7 +42,7 @@ router.post('/', checkJwt, async (req: JwtRequest, res) => {
     const auth0Id = req.auth?.sub  // Auth0 user ID from the JWT
 
   if (!review) {
-    console.error('Bad Request - no fruit or id')
+    console.error('Bad Request - no review or id')
     return res.status(400).send('Bad request')
   }
 
@@ -66,6 +66,8 @@ router.post('/', checkJwt, async (req: JwtRequest, res) => {
 })
 
 // PATCH api/v1/reviews/:id
+// todo 
+// update to auth0 
 router.patch('/:id', checkJwt, async (req, res) => {
   try {
     const { id } = req.params
@@ -81,11 +83,25 @@ router.patch('/:id', checkJwt, async (req, res) => {
 })
 
 // DELETE api/v1/reviews/:id
-router.delete('/:id', checkJwt, async (req, res) => {
-  try {
-    const { id } = req.params
+router.delete('/:id', checkJwt, async (req: JwtRequest, res) => {
+  try {  
+    const { id } = req.params 
+    const auth0Id = req.auth?.sub 
+  
+    if (!auth0Id) {
+      console.error('No auth0Id')
+      return res.status(401).send('Unauthorized')
+    }
+
+    const review = await db.getReviewById(Number(id))
+
+    if (!review) {
+      return res.status(404).send('Review not found')
+    }
+
     await db.deleteReview(Number(id))
     res.sendStatus(200)
+
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message)

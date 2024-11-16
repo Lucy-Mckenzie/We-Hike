@@ -3,9 +3,11 @@ import { Review } from '../../models/review'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { fetchAllReviews } from '../apis/reviews'
 import AddReviewForm from './AddReview'
+import DeleteReview from '../components/DeleteReview'
 
 export default function ReviewForm() {
   const [formVisible, setFormVisible ] = useState(false)
+  const [showBtn, setShowBtn ] = useState(false)
 
   const { data: review, isPending, isError } = useQuery({ 
     queryKey: ['review'],
@@ -14,28 +16,36 @@ export default function ReviewForm() {
 
   const queryClient = useQueryClient()
   const handleAddReview = (newReview: Review) => {
-    queryClient.invalidateQueries({ queryKey: ['reviews'] })
+    queryClient.invalidateQueries({ queryKey: ['review'] })
     setFormVisible(false)
     console.log(newReview)
   }
 
   if (isPending) return <>Loading...</>
   if (isError) return <>Sorry cannot find reviews..</>
- 
+  if (!review) return <>Reviews cant be found</>
 
     return (
       <div className="ReviewFormContainer">
       <h1>Past Reviews</h1>
           <ul>
         {review.map((data) => (
-          <li key={data.userId}>
+          <li key={data.id}>
             {data.hikeName} - {data.comment} - {data.author}
+            {showBtn && (
+              <DeleteReview id={Number(data.id)} /> 
+            )}
+            
           </li>
         ))}
       </ul>
       
-      <button onClick={() => setFormVisible(true)}>Leave a Review</button>
-
+      <button className="w-full p-2.5 bg-[#4caf50] rounded-md text-black text-lg bold border-2 transition-colors duration-300 ease-in-out hover:bg-[#45a049]" 
+      onClick={() => setFormVisible(true)}>Leave a Review
+      </button>
+      <button className="bg-red-500 rounded-md text-md p-2 text-black my-2 transition-colors duration-300 ease-in-out hover:bg-[#45a049]" 
+      onClick={() => setShowBtn(true)}>Delete a review
+      </button>
       {formVisible && (
         <AddReviewForm onAdd={handleAddReview} onClose={() => setFormVisible(false)} />
       )}
