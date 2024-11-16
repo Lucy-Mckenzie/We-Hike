@@ -7,18 +7,19 @@ import { Link } from 'react-router-dom'
 export default function DisplayAllRegions() {
   
   return (
-    <div className="allRegionsContainer">
-      <h1 className="allRegionsTitle">Where do you want to go?</h1>
-      <div className="allRegionsDisplay">
-    <ul>
+    <div className="max-w-[900px] m-auto text-center">
+      <h1 className="text-4xl text-center my-5 font-normal font-lato">Where do you want to go?</h1>
+      <div className="flex flex-col items-center">
+    <ul className="list-none p-0">
       
         {region.map((region) => (
-          <li key={region.id} className="mb-4">
+          <li className="bd-grey-100 border border-grey-300 rounded-lg p-4 mb-4 shadow-md text-center transition-transform duration-200 hover:scale-105 max-w-[800px]" 
+          key={region.id} >
             <Link to={`/tracks/region/${region.id}`}>
-              <h2 className="allRegionsName">{region.name}</h2>
+              <h2 className="text-2xl text-center mb-5 font-normal font-lato">{region.name}</h2>
               <img src={`/images/regions/${region.image}`} 
                 alt={`${region.name} hiking trail`}
-                className="allregionsPhoto"
+                className="max-w-full h-full rounded-md object-cover"
               />
             </Link>
           </li>

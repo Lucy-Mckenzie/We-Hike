@@ -45,10 +45,10 @@ export default function MapHikes() {
       attribution="&copy; OpenStreetMap contributors"
     />
     {tracks.map((track: TrackDetails) => {
-      const { name, region, x, y } = track;
+      const { name, region, x, y } = track
 
       // Convert NZTM coordinates to WGS84 (latitude, longitude)
-      const [longitude, latitude] = proj4(nztm, wgs84, [x, y]);
+      const [longitude, latitude] = proj4(nztm, wgs84, [x, y])
 
       return (
         <Marker
@@ -57,7 +57,7 @@ export default function MapHikes() {
           title={`marker for ${name}`}
         >
           <Popup>
-            <b>{name}</b><br />
+            <p>{name}</p><br />
             Region: {region}
           </Popup>
         </Marker>
