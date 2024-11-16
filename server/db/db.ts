@@ -25,9 +25,10 @@ export async function getReviewById(id: number): Promise<Review[]>  {
 }
 
 // Create
-export async function addReviewByName( review: Review) {
+export async function addReview(review: Review) {
   const result = await connection('reviews')
   .insert({
+    userId: review.userId,
     id: review.id,
     hikeName: review.hikeName,
     rating: review.rating,
@@ -41,6 +42,7 @@ export async function addReviewByName( review: Review) {
 // Update
 export async function updateReviewById(id: number, review: Review) {
   const result = await connection('reviews')
+  .where('id', id)
   .update({
     hikeName: review.hikeName,
     rating: review.rating,
@@ -55,4 +57,19 @@ export async function updateReviewById(id: number, review: Review) {
 export async function deleteReview(id: number) {
   const result = await connection('reviews').where('id', id).delete()
   return result as number
+}
+
+// user can edit
+export async function userCanEdit(auth0Id: string, id: number) {
+  const review = await connection('reviews')
+    .where('id', id)
+    .first()
+  if (!review) {
+    throw new Error('Review not found')
+  }
+
+  if (review.userId !== auth0Id) {
+    throw new Error('Unauthorized')
+  }
+  return true
 }

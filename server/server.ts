@@ -9,6 +9,7 @@ const server = express()
 
 server.use(express.json())
 server.use(cors('*' as CorsOptions))
+// server.use(express.static(Path.join(__dirname, 'public')))
 
 server.use('/api/v1/tracks', tracksServer)
 server.use('/api/v1/reviews', reviews)
