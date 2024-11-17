@@ -27,7 +27,7 @@ export default function MapHuts() {
   />
   {data.huts.map((hut: Huts) => {
     const { name, status, region, y, x } = hut
-
+   // Performes the conversion of coordinates from one spatial reference system (NZTM in this case) to another (WGS84, which uses latitude and longitude).
   const [longitude, latitude] = proj4(nztm, wgs84, [x, y])
 
   return (
