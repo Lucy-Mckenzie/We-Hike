@@ -8,6 +8,12 @@ import {
   Popup,
 } from 'react-leaflet'
 import "leaflet/dist/leaflet.css"
+import L from 'leaflet'
+
+const markerIcon = new L.Icon({
+  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
+})
 
 export default function MapHuts() {
 
@@ -34,7 +40,9 @@ export default function MapHuts() {
     <Marker 
       key={name}
       position={[latitude, longitude] as [number, number]}
-      title={`marker for ${name}`}>
+      title={`marker for ${name}`}
+      icon={markerIcon}
+      >
       <Popup>
       <p>{name}</p><br />
       <p>{region}</p><br />
