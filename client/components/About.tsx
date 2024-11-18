@@ -7,7 +7,7 @@ export default function About() {
       className="text-4xl text-center mb-5 font-light font-lato">About me
     </h1>
     <p className="italic text-center ">
-      Hiking isn&apos;t just a pastime for me; it&apos;s my way of life and connection with the world around me.
+    Exploring trails gives me purpose, offering the clarity and balance I seek every day.
     </p>
       <img 
         src="/images/about.jpg" alt="Hiking the routeburn" className="rounded-[10px] my-5">
