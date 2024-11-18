@@ -13,7 +13,7 @@ const {data: tracks, error, isPending } = useQuery({
 })
 
 if (!region) {
-  return undefined
+  return <p>Region not found</p>
 }
 
 if (error) {
@@ -31,7 +31,7 @@ if (isPending) {
       <ul>
         {tracks.map((track) => (
           <li key={track.assetId} className="bg-grey-300 border border-grey transition-transform duration-200 hover:scale-105 px-4 m-1">
-            <Link to={`/tracks/region/${region}/${track.assetId}/detail`}>
+            <Link to={`/tracks/region/${track.region}/${track.assetId}/detail`}>
               {track.name}
             </Link>
           </li>

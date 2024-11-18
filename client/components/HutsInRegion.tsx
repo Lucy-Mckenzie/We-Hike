@@ -1,5 +1,4 @@
 import { useParams } from 'react-router'
-import { Link } from "react-router-dom"
 import data from '../data/data.json'
 
 // todo
@@ -8,10 +7,10 @@ import data from '../data/data.json'
 export default function HutsInRegion() {
 
   const { region } = useParams()
-
+ console.log(region)
   const hutsInRegion = data.huts.filter((huts) => huts.region === region) 
 
-  if (!region || region === undefined) {
+  if (!region) {
     return 'Sorry region does not exist'
   }
 
@@ -20,12 +19,12 @@ export default function HutsInRegion() {
   }
 
   return (
-    <div>
-      <h1>Huts in the {region} Region</h1>
+    <div className="flex flex-col items-start px-5 py-10 text-left mx-auto max-w-[900px]">
+      <h1 className="text-4xl text-left mb-5 font-light">Huts in the {region} Region</h1>
       <ul>
         {hutsInRegion.map((hut) => (
           <li key={hut.assetId}>
-            <Link to={`/huts/${region}`}>{hut.name}</Link>
+            {hut.name} - {hut.status}
           </li>
         ))}
       </ul>

@@ -1,16 +1,14 @@
 import { Outlet } from 'react-router-dom'
 
-import Header from './Header.tsx'
 import Footer from './Footer.tsx'
 import Nav from './NavBar.tsx'
 
 export default function Layout() {
   return (
     <>
-      <div id="page-container">
+      <div>
         <Nav />
-        <div id="content-wrap">
-          <Header />
+        <div>
           <Outlet />
         </div>
         <Footer />
