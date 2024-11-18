@@ -40,6 +40,3 @@ if (isPending) {
       </div>
   )
 }
-
-// https://api.doc.govt.nz/v1/tracks/region/NZ-HKB
-// https://api.doc.govt.nz/v1/tracks/region/DOC-CNI
