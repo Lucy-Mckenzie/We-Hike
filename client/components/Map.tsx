@@ -8,7 +8,12 @@ import {
   LayersControl
 } from 'react-leaflet'
 import "leaflet/dist/leaflet.css"
+import L from 'leaflet'
 
+const markerIcon = new L.Icon({
+  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
+})
 
 export default function Map() {
 
@@ -25,7 +30,7 @@ export default function Map() {
     />
     <LayersControl position="topright">
     {greatWalks.map((walk: GreatWalk) => (
-      <Marker key={walk.name} position={walk.location as [number, number]} title={`marker for ${walk.name}`}>
+      <Marker key={walk.name} position={walk.location as [number, number]} title={`marker for ${walk.name}`} icon={markerIcon}>
         <Popup>
           <b>{walk.name}</b><br />
           Region: {walk.region}<br />
