@@ -11,7 +11,7 @@ import ReviewForm from './components/ReviewForm'
 import AllHikes from './components/AllHikes'
 import About from './components/About'
 
-const router = createBrowserRouter(
+export const router = createBrowserRouter(
  createRoutesFromElements(
   <Route path="/" element={<Layout />} >
    <Route index element={<Home />} />
@@ -27,4 +27,3 @@ const router = createBrowserRouter(
 )
 )
 
-export default router
