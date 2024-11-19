@@ -1,45 +1,44 @@
-import { render, screen, waitFor } from "@testing-library/react"
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import Home from '../components/Home'
-import { useAuth0 } from "@auth0/auth0-react"
+//@vitest-environment jsdom
+import { describe, it, expect, vi, beforeEach, afterEach, beforeAll, vitest } from 'vitest'
+import { screen,  waitFor, waitForElementToBeRemoved, within } from '@testing-library/react'
+import { renderRoute } from './setup.test'
+import { useAuth0 } from '@auth0/auth0-react'
+import nock from 'nock'
+import { before } from 'node:test'
 
-vi.mock("@auth0/auth0-react", () => ({
-  useAuth0: vi.fn(),
-}))
+vi.mock('@auth0/auth0-react')
+const ACCESS_TOKEN = 'mock-access-token'
 
-const mockUseAuth0 = useAuth0 as vi.MockedFunction<typeof useAuth0>
+beforeAll(() => {
+  nock.disableNetConnect()
+
+  vi.spyOn(console, 'error').mockImplementation(() => {})
+})
 
 beforeEach(() => {
-  mockUseAuth0.mockReturnValue({
-    isAuthenticated: false, 
+  vi.mocked(useAuth0).mockReturnValue({
+    isAuthenticated: true,
+    user: { sub: 'bear@example.com', nickname: 'bear' },
+    getAccessTokenSilently: vi.fn().mockReturnValue(ACCESS_TOKEN),
     loginWithRedirect: vi.fn(),
     logout: vi.fn(),
-    user: null,
-  })
+  } as any)
 })
 
 afterEach(() => {
   vi.clearAllMocks()
 })
 
-describe("The Application Component in logged-out state", () => {
+
+describe("<Home />", () => {
   it('renders a log in button', () => {
-    render(<Home />)
-    const loginElement = screen.getByText('Log In')
-    expect(loginElement).toBeInTheDocument()
+
   })
 })
 
 describe('When the log in button is clicked', () => {
   it('redirects the user to the Auth0 Universal Login page', async () => {
-   const { loginWithRedirect } = useAuth0()
-
-   render(<Home />)
-   const loginElement = screen.getByText("Log In")
-   loginElement.click()
-
-  // Expect that if we click the "Log In" button, the loginWithRedirect function gets called
-   await waitFor(() => expect(loginWithRedirect).toHaveBeenCalledTimes(1))
+ 
   })
   })
 

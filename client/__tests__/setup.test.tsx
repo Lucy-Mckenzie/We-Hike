@@ -9,9 +9,10 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 beforeEach(cleanup)
 expect.extend(matchers)
+const routes = router.routes
 
 export function renderRoute(location: string) {
-  const router = createMemoryRouter(router, {
+  const testRouter = createMemoryRouter(routes, {
     initialEntries: [location],
   })
 
@@ -26,7 +27,7 @@ export function renderRoute(location: string) {
   const user = userEvent.setup()
   const screen = render(
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <RouterProvider router={testRouter} />
     </QueryClientProvider>,
   )
   return { user, ...screen }
