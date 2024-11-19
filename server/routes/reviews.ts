@@ -70,9 +70,9 @@ router.post('/', checkJwt, async (req: JwtRequest, res) => {
 // update to auth0 
 router.patch('/:id', checkJwt, async (req, res) => {
   try {
-    const { id } = req.params
-    const updatedReview = req.body as Review
-    await db.updateReviewById(Number(id), updatedReview) 
+    const id = Number(req.params.id)
+    const { comment } = req.body as Review
+    await db.updateReviewById(id, comment) 
     res.sendStatus(200)
   } catch (error) {
     if (error instanceof Error) {
