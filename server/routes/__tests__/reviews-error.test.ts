@@ -5,7 +5,13 @@ import server from '../../server.ts'
 import * as db from '../../db/db.ts'
 import request from 'supertest'
 
-vi.mock('../../db/db.ts')
+vi.mock('../../db/db.ts', () => ({
+  getAllReviews: vi.fn(),
+  getReviewById: vi.fn(),
+  addReview: vi.fn(),
+  deleteReview: vi.fn(),
+}));
+
 
 describe('getting all the reviews', () => {
   it('shows errors when the database fails', async () => {
@@ -48,7 +54,7 @@ describe('adding a review', () => {
   })
 })
 
-describe('deleting a movie', () => {
+describe('deleting a review', () => {
   it('shows errors when the database fails', async () => {
     vi.mocked(db.deleteReview).mockImplementation(async () => {
       throw new Error('Database error')

@@ -66,14 +66,26 @@ router.post('/', checkJwt, async (req: JwtRequest, res) => {
 })
 
 // PATCH api/v1/reviews/:id
-// todo 
-// update to auth0 
-router.patch('/:id', checkJwt, async (req, res) => {
-  try {
+router.patch('/:id', checkJwt, async (req: JwtRequest, res) => {
+  
     const id = Number(req.params.id)
+    const auth0Id = req.auth?.sub
     const { comment } = req.body as Review
-    await db.updateReviewById(id, comment) 
-    res.sendStatus(200)
+
+    if (!comment) {
+      console.error('Bad Request - no review or id')
+      return res.status(400).send('Bad request')
+    }
+  
+    if (!auth0Id) {
+      console.error('No auth0Id')
+      return res.status(401).send('Unauthorized')
+    }
+
+   try {   
+    await db.userCanEdit(auth0Id, id)
+    const updatedReview = await db.updateReviewById(id, comment) 
+    res.status(200).json({ review: updatedReview })
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message)
