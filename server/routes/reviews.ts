@@ -85,7 +85,7 @@ router.patch('/:id', checkJwt, async (req: JwtRequest, res) => {
    try {   
     await db.userCanEdit(auth0Id, id)
     const updatedReview = await db.updateReviewById(id, comment) 
-    res.status(200).json({ review: updatedReview })
+    res.status(200).json(updatedReview)
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message)

@@ -1,16 +1,33 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect, afterAll, vi, beforeAll } from 'vitest'
 import { StatusCodes } from 'http-status-codes'
-
+import checkJwt, { JwtRequest } from '../../auth0.ts'
 import server from '../../server.ts'
 import * as db from '../../db/db.ts'
 import request from 'supertest'
+import { Response, NextFunction } from 'express'
 
-vi.mock('../../db/db.ts', () => ({
-  getAllReviews: vi.fn(),
-  getReviewById: vi.fn(),
-  addReview: vi.fn(),
-  deleteReview: vi.fn(),
-}));
+vi.mock('../../db/db')
+vi.mock('../../auth0.ts')
+
+const mockUser = {
+  id: 'auth0|123',
+ }
+
+ beforeAll(() => {
+  vi.mocked(checkJwt).mockImplementation(
+    async (req: JwtRequest, res: Response, next: NextFunction) => {
+      console.log(req.body)
+      req.auth = {
+        sub: mockUser.id,
+      }
+      next()
+    },
+  )
+})
+
+afterAll(() => {
+  vi.restoreAllMocks()
+})
 
 
 describe('getting all the reviews', () => {

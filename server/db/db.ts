@@ -43,10 +43,10 @@ export async function addReview(review: Review) {
 export async function updateReviewById(id: number, comment: string) {
   const result = await connection('reviews')
   .where('id', id)
-  .update({
-   comment
-  })
+  .update({ comment })
+  .first()
  
+  console.log(result)
   return result 
 }
 
