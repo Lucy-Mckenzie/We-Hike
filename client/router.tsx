@@ -11,8 +11,7 @@ import ReviewForm from './components/ReviewForm'
 import AllHikes from './components/AllHikes'
 import About from './components/About'
 
-export const router = createBrowserRouter(
- createRoutesFromElements(
+export const routes = createRoutesFromElements(
   <Route path="/" element={<Layout />} >
    <Route index element={<Home />} />
    <Route path="/about" element={<About />} />
@@ -25,5 +24,8 @@ export const router = createBrowserRouter(
    <Route path="/huts/:region" element={<HutsInRegion />} />
   </Route>
 )
+export const router = createBrowserRouter(
+ routes
 )
+
 

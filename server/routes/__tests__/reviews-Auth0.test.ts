@@ -77,16 +77,16 @@ describe('gets review by id', () => {
     `)
   })
 
-  // it('PATCH updates data by id', async () => {
-  //   vi.mocked(db.updateReviewById).mockResolvedValue(reviews[0])
-  //   const patchRes = await request(server)
-  //   .patch('/api/v1/reviews/2')
-  //   .send({ comment: "Well-maintained track, be careful of the slippery track when it rains. A bit crowded on weekends." })
+  it('PATCH updates data by id', async () => {
+    vi.mocked(db.updateReviewById).mockResolvedValue(reviews[0])
+    const patchRes = await request(server)
+    .patch('/api/v1/reviews/2')
+    .send({ comment: "Well-maintained track, be careful of the slippery track when it rains. A bit crowded on weekends." })
 
   
-  //   const getRes = await request(server).get('/api/v1/reviews/2')
-  //   expect(patchRes.statusCode).toBe(StatusCodes.OK)
+    const getRes = await request(server).get('/api/v1/reviews/2')
+    expect(patchRes.statusCode).toBe(StatusCodes.OK)
 
-  //   expect(getRes.body).toStrictEqual()
-  // })
+    expect(getRes.body).toStrictEqual()
+  })
 })
