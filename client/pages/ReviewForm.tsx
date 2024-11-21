@@ -2,14 +2,14 @@ import { useState } from 'react'
 import { Review } from '../../models/review'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { fetchAllReviews } from '../apis/reviews'
-import AddReviewForm from './AddReview'
+import AddReviewForm from '../components/AddReview'
 import DeleteReview from '../components/DeleteReview'
 
 export default function ReviewForm() {
   const [formVisible, setFormVisible ] = useState(false)
   const [showBtn, setShowBtn ] = useState(false)
 
-  const { data: review, isPending, isError } = useQuery({ 
+  const { data: review, isPending, isError, error } = useQuery({ 
     queryKey: ['review'],
     queryFn: () => fetchAllReviews(),
   })
@@ -22,7 +22,7 @@ export default function ReviewForm() {
   }
 
   if (isPending) return <>Loading...</>
-  if (isError) return <>Sorry cannot find reviews..</>
+  if (isError) return <>Sorry cannot find reviews.. {error.message}</>
   if (!review) return <>Reviews cant be found</>
 
     return (

@@ -1,5 +1,5 @@
-import Map from './Map'
-import Greatwalks from './GreatWalks'
+import Map from '../components/Map'
+import Greatwalks from '../components/GreatWalks'
 
 export default function Home() {
   return (

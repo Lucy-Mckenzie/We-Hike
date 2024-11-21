@@ -1,6 +1,7 @@
 import express from 'express'
 import * as db from '../db/db'
 import checkJwt, { JwtRequest } from '../auth0'
+import { StatusCodes } from 'http-status-codes'
 
 import { Review } from '../../models/review'
 
@@ -85,7 +86,7 @@ router.patch('/:id', checkJwt, async (req: JwtRequest, res) => {
    try {   
     await db.userCanEdit(auth0Id, id)
     const updatedReview = await db.updateReviewById(id, comment) 
-    res.status(200).json({ review: updatedReview })
+    res.status(200).json(updatedReview)
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message)
@@ -105,14 +106,8 @@ router.delete('/:id', checkJwt, async (req: JwtRequest, res) => {
       return res.status(401).send('Unauthorized')
     }
 
-    const review = await db.getReviewById(Number(id))
-
-    if (!review) {
-      return res.status(404).send('Review not found')
-    }
-
     await db.deleteReview(Number(id))
-    res.sendStatus(200)
+    res.sendStatus(StatusCodes.NO_CONTENT)
 
   } catch (error) {
     if (error instanceof Error) {

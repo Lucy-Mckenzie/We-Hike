@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
-import { IfAuthenticated, IfNotAuthenticated } from './Authenticated.tsx'
+import { IfAuthenticated, IfNotAuthenticated } from '../Authenticated'
 export default function Nav() {
 
   const { logout, loginWithRedirect, user } = useAuth0()
@@ -18,7 +18,6 @@ export default function Nav() {
       <div className="px-9 text-white flex items-center no-underline">
       <NavLink className="ml-auto mr-11 flex" to="/">Home</NavLink>
       <NavLink className="ml-auto mr-11 flex" to="/huts">Huts</NavLink>
-      <NavLink className="ml-auto mr-11 flex" to="/tracks">Map of all hikes</NavLink>
       <NavLink className="ml-auto mr-11 flex" to="/tracks/region">Hikes</NavLink>
       <NavLink className="ml-auto mr-11 flex" to="/about">About</NavLink>
       <NavLink className="ml-auto mr-11 flex" to="/reviews">Reviews</NavLink>
@@ -29,7 +28,7 @@ export default function Nav() {
           </div>
           </IfAuthenticated>
           <IfNotAuthenticated>
-            <button  className=" text-white border-lg rounded-full bg-[#4d6c40] text-sm" onClick={handleSignIn}>Sign in</button>
+            <button  className=" text-white border-lg rounded-full bg-[#4d6c40] text-sm px-1" onClick={handleSignIn}>Sign in</button>
           </IfNotAuthenticated>
       </div>
       </div>

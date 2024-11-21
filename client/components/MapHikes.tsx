@@ -64,8 +64,8 @@ export default function MapHikes() {
           icon={markerIcon}
         >
           <Popup>
-            <p>{name}</p><br />
-            Region: {region}
+           <p>{name}</p><br />
+           <p>Region: {region}</p>
           </Popup>
         </Marker>
       )

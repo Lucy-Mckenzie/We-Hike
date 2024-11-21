@@ -1,6 +1,6 @@
 //@vitest-environment jsdom
 import { describe, it, expect, vi, beforeEach, afterEach, beforeAll } from 'vitest'
-import { screen,  waitFor, within } from '@testing-library/react'
+import { screen,  waitFor } from '@testing-library/react'
 import { renderRoute } from './setup.test'
 import { useAuth0 } from '@auth0/auth0-react'
 import nock from 'nock'
@@ -52,7 +52,7 @@ afterEach(() => {
 describe("<ReviewForm />", () => {
   it('should render a loading indicator', async () => {
     const scope = nock('http://localhost')
-    .get('/api/v1/reviews')
+    .get('/api/v1/reviews/')
     .reply(200)
 
   renderRoute('/reviews')
@@ -65,10 +65,10 @@ describe("<ReviewForm />", () => {
 
   it('Should render some reviews', async () => {
     const scope = nock('http://localhost')
-    .get('/api/v1/reviews')
+    .get('/api/v1/reviews/')
     .reply(200, reviews)
 
-    renderRoute('<ReviewForm />')
+    renderRoute('/reviews')
 
     const button = await screen.findByText('Leave a Review')
     expect(button).toBeInTheDocument()

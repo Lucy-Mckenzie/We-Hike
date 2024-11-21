@@ -4,12 +4,12 @@ import userEvent from '@testing-library/user-event'
 import * as matchers from '@testing-library/jest-dom/matchers'
 import '@testing-library/jest-dom/vitest'
 import { RouterProvider, createMemoryRouter } from 'react-router-dom'
-import  { router } from '../router'
+import  { routes } from '../../../router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 beforeEach(cleanup)
 expect.extend(matchers)
-const routes = router.routes
+
 
 export function renderRoute(location: string) {
   const testRouter = createMemoryRouter(routes, {

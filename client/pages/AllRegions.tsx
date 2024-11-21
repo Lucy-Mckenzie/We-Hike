@@ -1,13 +1,14 @@
 import region from '../data/region'
 import { Link } from 'react-router-dom'
+import  MapHikes  from '../components/MapHikes'
 
-
-
-// Looks through the regions data and uses the region id as a key, with a link to all hikes in that region
 export default function DisplayAllRegions() {
-  
   return (
     <div className="max-w-[900px] m-auto text-center">
+      <div className="flex flex-col items-start px-5 py-10 text-left mx-auto max-w-[900px]">
+        <h1 className="text-4xl text-left mb-5 font-light">All Doc tracks in New Zealand</h1>
+      <MapHikes />
+    </div>
       <h1 className="text-4xl text-center my-5 font-normal font-lato">Where do you want to go?</h1>
       <div className="flex flex-col items-center">
     <ul>
