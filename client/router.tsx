@@ -12,7 +12,6 @@ import TrackDetails from './pages/TrackDetails'
 import AllRegions from './pages/AllRegions'
 import Home from './pages/Home'
 import ReviewForm from './pages/ReviewForm'
-import AllHikes from './pages/AllHikes'
 import About from './pages/About'
 
 export const routes = createRoutesFromElements(
@@ -21,7 +20,6 @@ export const routes = createRoutesFromElements(
     <Route path="/about" element={<About />} />
     <Route path="/reviews" element={<ReviewForm />} />
     <Route path="/tracks/region" element={<AllRegions />} />
-    <Route path="/tracks" element={<AllHikes />} />
     <Route path="/tracks/region/:region" element={<Tracks />} />
     <Route
       path="/tracks/region/:region/:assetId/detail"

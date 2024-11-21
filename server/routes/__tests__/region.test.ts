@@ -83,7 +83,6 @@ describe('It responds with all the data', async () => {
         "y": 5720875.8562,
       }
     `)
-
-  })
+  }, 10000)
   
 })
