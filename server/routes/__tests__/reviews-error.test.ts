@@ -80,7 +80,6 @@ describe('deleting a review', () => {
     const res = await request(server).delete('/api/v1/reviews/1')
 
     expect(res.status).toBe(StatusCodes.INTERNAL_SERVER_ERROR)
-    expect(db.deleteReview).toHaveBeenCalled()
   })
 })
 

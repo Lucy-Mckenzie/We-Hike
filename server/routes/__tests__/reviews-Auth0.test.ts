@@ -127,4 +127,8 @@ describe('gets review by id', () => {
     expect(patchRes.body).toEqual(updatedReview)
     
   })
+   
+  it.todo('POST leaves a review')
+  it.todo('DELETE deletes a review')
+ 
 })

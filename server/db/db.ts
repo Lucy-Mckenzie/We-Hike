@@ -52,8 +52,7 @@ export async function updateReviewById(id: number, comment: string) {
 
 // Delete 
 export async function deleteReview(id: number) {
-  const result = await connection('reviews').where('id', id).delete()
-  return result as number
+ await connection('reviews').where('id', id).delete()
 }
 
 // user can edit

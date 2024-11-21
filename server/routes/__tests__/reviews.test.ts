@@ -18,7 +18,7 @@ afterAll(async () => {
 
 // GET all reviews
 describe('gets all the reviews', () => {
-  it('responds with all the data', async () => {
+  it('responds with all the reviews data', async () => {
     const res = await request(server)
       .get('/api/v1/reviews')
       .query({ withReviews: 'true' })
@@ -45,6 +45,7 @@ describe('gets all the reviews', () => {
       "author": "Tom"
     })
   })
+  it.todo('Responds with review by id')
 })
 
 
