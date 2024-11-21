@@ -6,9 +6,6 @@ export default function Greatwalks() {
  return (
   <div className="flex flex-col items-start px-5 py-10 text-left mx-auto max-w-[900px]">
   <p className="pb-2 text-lg">Find out more about New Zealand&apos;s Great Walks below</p>
-  {/* <p>
-    New Zealand is renowned for its stunning landscapes, and its network of Great Walks offers some of the best hiking experiences in the world. From the golden beaches of Abel Tasman National Park to the rugged mountain terrains of Fiordland, these hikes provide diverse natural beauty. Whether youre looking for coastal paths, alpine adventures, or lush rainforests, New Zealands hikes cater to all levels of experience. With well-maintained trails, rich cultural history, and breathtaking views, hiking in New Zealand is an unforgettable journey through some of the planet’s most iconic landscapes.
-  </p> */}
   <table className="table-auto border-collapse border border-slate-500 w-full text-left">
     <thead className="bg-slate-200">
     <tr>

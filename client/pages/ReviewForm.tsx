@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Review } from '../../models/review'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { fetchAllReviews } from '../apis/reviews'
-import AddReviewForm from './AddReview'
+import AddReviewForm from '../components/AddReview'
 import DeleteReview from '../components/DeleteReview'
 
 export default function ReviewForm() {

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
-import { IfAuthenticated, IfNotAuthenticated } from './Authenticated.tsx'
+import { IfAuthenticated, IfNotAuthenticated } from '../Authenticated'
 export default function Nav() {
 
   const { logout, loginWithRedirect, user } = useAuth0()

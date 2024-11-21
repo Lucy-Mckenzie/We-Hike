@@ -1,4 +1,4 @@
-import MapHikes from "./MapHikes"
+import MapHikes from "../components/MapHikes"
 
 export default function AllHikes() {
 
