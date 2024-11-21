@@ -28,7 +28,7 @@ export default function Nav() {
           </div>
           </IfAuthenticated>
           <IfNotAuthenticated>
-            <button  className=" text-white border-lg rounded-full bg-[#4d6c40] text-sm" onClick={handleSignIn}>Sign in</button>
+            <button  className=" text-white border-lg rounded-full bg-[#4d6c40] text-sm px-1" onClick={handleSignIn}>Sign in</button>
           </IfNotAuthenticated>
       </div>
       </div>
