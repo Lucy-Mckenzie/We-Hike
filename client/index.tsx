@@ -5,14 +5,13 @@ import { RouterProvider } from 'react-router-dom'
 import { Auth0Provider } from '@auth0/auth0-react'
 
 import { router } from './router.tsx'
-const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID
 const queryClient = new QueryClient()
 
 document.addEventListener('DOMContentLoaded', () => {
   createRoot(document.getElementById('app') as HTMLElement).render(
     <Auth0Provider
     domain="manaia2024-lucy.au.auth0.com"
-    clientId={clientId}
+    clientId='pgiYPucNSTPpNMGZXqgbaDvs7vLXqOGL'
     authorizationParams={{
       redirect_uri: window.location.origin,
       audience: 'https://tracks/api',
