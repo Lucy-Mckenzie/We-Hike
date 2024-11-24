@@ -3,12 +3,7 @@ import { useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
 import { addReview } from '../apis/reviews'
 import { useAuth0 } from '@auth0/auth0-react'
-
-const hikes = [
-  'Routeburn',
-  'Lake Waikaremoana',
-  'Te mata peak'
-]
+import useAllHikes from '../hooks/use-allHikes'
 
 const emptyReview: Review = {
   hikeName: '',
@@ -23,16 +18,17 @@ interface Props {
 
 export default function AddReviewForm({ onAdd, onClose }: Props) {
   const [newReview, setNewReview] = useState<Review>(emptyReview)
-  const { getAccessTokenSilently } = useAuth0() 
+
+  const { getAccessTokenSilently, isAuthenticated } = useAuth0() 
 
   const { mutate, isSuccess } = useMutation({
     mutationFn: async (review: Review) => {
-      const token = await getAccessTokenSilently() // Get the token
-      return addReview(review, token) // Passes token to addReview function
+      const token = await getAccessTokenSilently() 
+      return addReview(review, token)
     },
     onSuccess: (data) => {
-      onAdd(data)  // Pass the added review back to the parent
-      setNewReview(emptyReview)  // Reset the form
+      onAdd(data) 
+      setNewReview(emptyReview)  
     }
   })
 
@@ -46,7 +42,12 @@ export default function AddReviewForm({ onAdd, onClose }: Props) {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    mutate(newReview)  // Passes the form data to the parent component
+
+    if (!isAuthenticated) {
+      alert("You must be logged in to submit a review!")
+      return
+    }
+    mutate(newReview)  
   }
 
   return (
@@ -54,22 +55,14 @@ export default function AddReviewForm({ onAdd, onClose }: Props) {
       <h2 className="text-center text-[30px] mt-4">Add new review</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="hikeName" className="block font-bold mb-1 text-[#555]">Hike:</label>
-        <select
-          name="hikeName"
+        <input 
+         name="hikeName"
           id="hikeName"
           className="w-full p-2 mb-4 border border-grey-300 rounded text-sm"
-          value={newReview.hikeName}
-          onChange={handleChange}
           required
-        >
-        <option>Select a hike</option>
-        {hikes.map((hike, index) => (
-          <option key={index} value={hike}>
-            {hike}
-          </option>
-        ))}
-      </select>
-
+          placeholder="Pick a hike"
+          onChange={handleChange}
+        />
         <label htmlFor="comment"  className="block font-bold mb-1 text-[#555]">Add a comment:</label>
         <input
           type="text"
