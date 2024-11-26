@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
 import { addReview } from '../apis/reviews'
 import { useAuth0 } from '@auth0/auth0-react'
-import useAllHikes from '../hooks/use-allHikes'
 
 const emptyReview: Review = {
   hikeName: '',

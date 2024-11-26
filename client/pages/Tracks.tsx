@@ -2,8 +2,6 @@ import { getTracksByRegion } from '../apis/doc-hikes.ts'
 import { useParams, Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 
-// displays tracks based on the region param, useQuery retrieves all the data, the data is mapped over, displays the track names
-// links to the tracks region and assetId to display more info in track details
 export default function DisplayTracks() {
   const { region } = useParams()
 
