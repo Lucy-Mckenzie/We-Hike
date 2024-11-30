@@ -8,8 +8,8 @@ import reviews from './routes/reviews'
 const server = express()
 
 server.use(express.json())
-server.use(cors())
-// server.use(express.static(Path.join(__dirname, 'public')))
+server.use(cors({ origin: 'https://wehikenewzealand.com/' }));
+server.use(express.static(Path.join(__dirname, 'public')))
 
 server.use('/api/v1/tracks', tracksServer)
 server.use('/api/v1/reviews', reviews)

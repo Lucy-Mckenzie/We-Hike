@@ -17,10 +17,7 @@ const markerIcon = new L.Icon({
 
 export default function MapHikes() {
 
-  // const { data: tracks, error, isPending } = useQuery({
-  //   queryKey: ['tracks'],
-  //   queryFn: () => getTracks()
-  // })
+
   const { data: tracks, error, isPending } = useAllHikes()
 
   const nztm = '+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +datum=WGS84 +units=m +no_defs' // NZTM definition
