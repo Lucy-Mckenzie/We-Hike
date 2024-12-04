@@ -1,13 +1,10 @@
 import { useParams } from 'react-router'
 import data from '../data/data.json'
 
-// todo
-// link to huts in region -- need to add nelson/tasman
-// page to display more region data
 export default function HutsInRegion() {
 
   const { region } = useParams()
- console.log(region)
+
   const hutsInRegion = data.huts.filter((huts) => huts.region === region) 
 
   if (!region) {
