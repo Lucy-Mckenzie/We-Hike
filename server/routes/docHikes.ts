@@ -71,5 +71,8 @@ router.get('/:assetId/detail', async (req, res) => {
 })
 
 
+
+
+
 export default router
 

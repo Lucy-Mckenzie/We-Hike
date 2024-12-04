@@ -2,8 +2,6 @@ import { getTrackById } from '../apis/doc-hikes.ts'
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 
-// displays all info about the tracks, based on region and assetId, useQuery retrieves all data
-// displays info of the track that matches the assetId
 export default function TracksByName() {
 
 const { assetId } = useParams()

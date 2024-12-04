@@ -10,21 +10,11 @@ const {data: tracks, error, isPending } = useQuery({
   queryFn: () =>  getTracksByRegion(region as string) 
 })
 
-if (!region) {
-  return <p>Region not found</p>
-}
-
-if (error) {
-  console.error('Error fetching data:', error)
-  return <p>Sorry couldnt find this hike</p>
-}
-
-if (isPending) {
-  return <p>Loading...</p>
-}
+if (error) return <p>Sorry couldnt find this hike</p>
+if (isPending) return <p>The hikes are loading!...</p>
  
   return (
-    <div className="flex flex-col items-center max-w-[900px] m-auto">
+    <div className="flex flex-col items-center max-w-[900px] m-auto pb-6">
       <h1 className="text-4xl text-left mb-5 font-light font-lato m-5">Tracks in {region}</h1>
       <ul>
         {tracks.map((track) => (
