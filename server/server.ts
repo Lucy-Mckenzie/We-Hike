@@ -9,9 +9,7 @@ import reviews from './routes/reviews'
 const server = express()
 
 server.use(express.json())
-server.use(cors())
 server.use(cors({ origin: 'https://wehikenewzealand.com/' }))
-
 
 server.use('/api/v1/tracks', docHikes)
 server.use('/api/v2/huts', docHuts)
