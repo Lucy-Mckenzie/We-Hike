@@ -15,5 +15,6 @@ services:
       - ./server/db:/app/server/db
     ports:
       - "3000:3000"
-    command: sh -c "npm run knex migrate:latest && npm start"
+    command: ["sh", "-c", "npm run knex migrate:latest && npm start"]
+
 
