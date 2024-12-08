@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import greatWalks from "../data/greatWalks"
 
 export default function Greatwalks() {
@@ -5,7 +6,7 @@ export default function Greatwalks() {
 
  return (
   <div className="flex flex-col items-start px-5 py-10 text-left mx-auto max-w-[900px]">
-  <p className="pb-2 text-lg">Find out more about New Zealand&apos;s Great Walks below</p>
+  <h1 className="pb-2 text-lg">Find out more about New Zealand&apos;s Great Walks below</h1>
   <table className="table-auto border-collapse border border-slate-500 w-full text-left">
     <thead className="bg-slate-200">
     <tr>
@@ -26,16 +27,22 @@ export default function Greatwalks() {
     ))}
   </tbody>
   </table>
-  <div className="flex flex-col items-center">
+  <div className="flex flex-col items-center py-10">
+    <h1 className="pb-2 text-xl font-lato">Looking for even more about the Great walks?</h1>
     <ul>
         {greatWalks.map((walk) => (
           <li className="bd-grey-100 border border-grey-300 rounded-lg p-4 mb-4 shadow-md text-center transition-transform duration-200 hover:scale-105 max-w-[800px]" 
           key={walk.name} >
-              <h2 className="text-2xl text-center mb-5 font-normal font-lato">{walk.name}</h2>
-              <img src={`/images/greatWalks/${walk.image}`} 
-                alt={`${walk.name} hiking trail`}
-                className="max-w-full h-full rounded-md object-cover"
-              />
+             <Link to={`/walks/${walk.name}`} className="block">
+        <h2 className="text-2xl text-center mb-5 font-normal font-lato">
+          {walk.name}
+        </h2>
+        <img
+          src={`/images/greatWalks/${walk.image}`}
+          alt={`${walk.name} hiking trail`}
+          className="max-w-full h-full rounded-md object-cover"
+        />
+      </Link>
           </li>
         ))}
       </ul>

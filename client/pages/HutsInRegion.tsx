@@ -7,13 +7,9 @@ export default function HutsInRegion() {
 
   const hutsInRegion = data.huts.filter((huts) => huts.region === region) 
 
-  if (!region) {
-    return 'Sorry region does not exist'
-  }
-
-  if (hutsInRegion.length === 0) {
-    return 'sorry could not find huts'
-  }
+  if (!region) return 'Sorry region does not exist'
+  if (hutsInRegion.length === 0) return 'sorry could not find huts'
+  
 
   return (
     <div className="flex flex-col items-start px-5 py-10 text-left mx-auto max-w-[900px]">

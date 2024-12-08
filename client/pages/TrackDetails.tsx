@@ -11,21 +11,8 @@ const { data: tracks, error, isPending } = useQuery({
   queryFn: () => getTrackById(assetId as string)
 })
 
-console.log('tracks:', tracks)
-
-if (!assetId) {
-  return <p>Hike or region is undefined</p>
-}
-
-if (error) {
-  console.error('Error fetching data:', error)
-  return <p>Sorry couldnt find this hike</p>
-}
-
-if (isPending) {
-  return <p>Loading...</p>
-}
-
+if (error) return <p>Sorry couldnt find this hike</p>
+if (isPending) return <p>Loading...</p>
 
 return (
     <div className="flex flex-col items-center max-w-[900px] m-auto">
