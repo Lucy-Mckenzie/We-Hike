@@ -16,12 +16,10 @@ export default function GreatWalksDetails() {
       <div className="">
           <img src={`/images/greatWalks/${hike.image}`} alt={`${hike.name} hiking trail`}
           className="max-w-full h-full rounded-md object-cover"></img>
-          <p className="">{hike.region}</p>
-          <p>{hike.descriptionS}</p>
-          <p>{hike.distance}</p>
+          <p className="">Located in: {hike.region}</p>
+          <p>{hike.distance} Kms</p>
           <p>{hike.dogaccess}</p>
           <p>{hike.descriptionL}</p>
-
       </div>
       </div>
   )
