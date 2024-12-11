@@ -18,7 +18,7 @@ const markerIcon = new L.Icon({
 export default function MapHuts() {
 
    const nztm = '+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +datum=WGS84 +units=m +no_defs'  // NZTM definition
-   const wgs84 = 'EPSG:4326' // WGS84 (Latitude and Longitude)
+   const wgs84 = 'EPSG:4326'
 
  return (
   <MapContainer
@@ -33,7 +33,7 @@ export default function MapHuts() {
   />
   {data.huts.map((hut: Huts) => {
     const { name, status, region, y, x } = hut
-   // Performes the conversion of coordinates from one spatial reference system (NZTM in this case) to another (WGS84, which uses latitude and longitude).
+  
   const [longitude, latitude] = proj4(nztm, wgs84, [x, y])
 
   return (

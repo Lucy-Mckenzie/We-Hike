@@ -11,7 +11,7 @@ const { data: huts, error, isPending } = useQuery({
   queryFn: () => getHutDetails(assetId as string)
 })
 
-if (error) return <p>Sorry couldnt find this hike</p>
+if (error) return <p>Sorry couldnt find this hut</p>
 if (isPending) return <p>Loading...</p>
 
 return (
