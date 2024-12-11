@@ -13,4 +13,5 @@ export interface GreatWalk {
   region: string;
   distance: number;
   description: string;
+  dogaccess: string;
 }

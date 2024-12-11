@@ -21,7 +21,7 @@ export default function Greatwalks() {
     <tr key={walk.name} className="hover:bg-slate-100">
       <td className="border border-slate-400 px-4 py-2"><strong>{walk.name}</strong></td>
       <td className="border border-slate-400 px-4 py-2">{walk.region}</td>
-      <td className="border border-slate-400 px-4 py-2">{walk.description}</td>
+      <td className="border border-slate-400 px-4 py-2">{walk.descriptionS}</td>
       <td className="border border-slate-400 px-4 py-2">{walk.distance} km</td>
     </tr>
     ))}

@@ -13,12 +13,15 @@ export default function GreatWalksDetails() {
   return (
     <div className="flex flex-col items-center max-w-[900px] m-auto pb-6">
       <h1 className="text-2xl text-left mb-5 font-light font-lato m-5">Details about {name} Great walk</h1>
-      <div>
+      <div className="">
           <img src={`/images/greatWalks/${hike.image}`} alt={`${hike.name} hiking trail`}
           className="max-w-full h-full rounded-md object-cover"></img>
           <p className="">{hike.region}</p>
-          <p>{hike.description}</p>
+          <p>{hike.descriptionS}</p>
           <p>{hike.distance}</p>
+          <p>{hike.dogaccess}</p>
+          <p>{hike.descriptionL}</p>
+
       </div>
       </div>
   )
