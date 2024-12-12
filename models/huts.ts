@@ -8,6 +8,8 @@ export interface Huts {
 }
 
 export interface Alerts {
+  assetId: number;
+  name:    string;
   displayDate: string;
   heading:     string;
   detail:      string;
