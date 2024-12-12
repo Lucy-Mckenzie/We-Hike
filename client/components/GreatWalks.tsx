@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom"
 import greatWalks from "../data/greatWalks"
 
+const scrollToTop = () => {
+  window.scrollTo(0, 0)
+}
+
 export default function Greatwalks() {
 
 
@@ -33,7 +37,7 @@ export default function Greatwalks() {
         {greatWalks.map((walk) => (
           <li className="bd-grey-100 border border-grey-300 rounded-lg p-4 mb-4 shadow-md text-center transition-transform duration-200 hover:scale-105 max-w-[800px]" 
           key={walk.name} >
-             <Link to={`/walks/${walk.name}`} className="block">
+             <Link to={`/walks/${walk.name}`} className="block" onClick={scrollToTop}>
         <h2 className="text-2xl text-center mb-5 font-normal font-lato">
           {walk.name}
         </h2>
