@@ -1,6 +1,6 @@
 import { TrackDetails } from '../../models/trackDetails'
 import useAllHikes from '../hooks/use-allHikes.tsx'
-import proj4 from 'proj4' // needed for translation from NZTM to lat & lon, package https://www.npmjs.com/package/proj4
+import proj4 from 'proj4' 
 import {
   MapContainer,
   TileLayer,
@@ -20,22 +20,14 @@ export default function MapHikes() {
 
   const { data: tracks, error, isPending } = useAllHikes()
 
-  const nztm = '+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +datum=WGS84 +units=m +no_defs' // NZTM definition
-  const wgs84 = 'EPSG:4326' // WGS84 (Latitude and Longitude)
+  const nztm = '+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +datum=WGS84 +units=m +no_defs' 
+  const wgs84 = 'EPSG:4326' 
 
 
-  if (isPending) {
-    return <>Loading...</>
-  }
-
-  if (error) {
-    return <>Sorry, cannot find tracks..</>
-  }
-
-  if (!tracks) {
-    return <p>Sorry, tracks cannott be displayed at the moment.</p>
-  }
-
+  if (isPending)  return <>Loading...</>
+  if (error) return <>Sorry, cannot find tracks..</>
+  if (!tracks) return <p>Sorry, tracks cannott be displayed at the moment.</p>
+  
   return (
     <MapContainer
     className="flex flex-col rounded-md overflow-hidden h-[550px] w-full"
@@ -50,7 +42,6 @@ export default function MapHikes() {
     {tracks.map((track: TrackDetails) => {
       const { name, region, x, y } = track
 
-      // Convert NZTM coordinates to WGS84 (latitude, longitude)
       const [longitude, latitude] = proj4(nztm, wgs84, [x, y])
 
       return (
