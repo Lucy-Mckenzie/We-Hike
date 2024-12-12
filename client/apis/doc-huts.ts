@@ -6,7 +6,6 @@ export async function getHuts(): Promise<Huts[]> {
   if (!response) {
   console.error('The huts data could not be accessed at this time')
   }
-  console.log('API response:', response.body)
   return response.body 
   }
   
@@ -15,7 +14,6 @@ export async function getHutsAlerts(): Promise<Alerts[]> {
   if (!response) {
   console.error('The huts data could not be accessed at this time')
   }
-  console.log('API response:', response.body)
   return response.body 
 }
 
@@ -24,7 +22,6 @@ const response = await request.get(`/api/v2/huts/${assetId}/alerts`)
 if (!response) {
 console.error('The huts data could not be accessed at this time')
 }
-console.log('API response:', response.body)
 return response.body 
 }
 
@@ -33,7 +30,6 @@ export async function getHutDetails(assetId: string): Promise<HutsDetail> {
   if (!response) {
   console.error('The huts data could not be accessed at this time')
   }
-  console.log('API response:', response.body)
   return response.body 
   }
 

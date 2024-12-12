@@ -1,11 +1,8 @@
 import MapHuts from '../components/MapHuts'
 import data from '../data/data.json'
 import { Link } from 'react-router-dom'
-import { Huts } from '../../models/huts'
+import HutAlerts from '../components/HutAlerts'
 
-type data = {
-  huts: Huts[]
-}
 
 export default function DisplayRegions() {
   
@@ -16,12 +13,13 @@ export default function DisplayRegions() {
       <h1 className="text-4xl text-left mb-5 font-light">Hiking Huts</h1>
       <MapHuts />
       <div className="flex flex-col items-center max-w-[900px] m-auto pb-6">
+        <HutAlerts />
       <h1 className="text-4xl text-left mb-5 font-light font-lato m-5">Find by Regions below</h1>
       <ul>
-     {filteredRegions.map((region, index) => {
+     {filteredRegions.map((region) => {
       return (
-        <li key={index} className="bg-grey-300 border border-grey transition-transform duration-200 hover:scale-105 px-4 m-1">
-          <Link to={`/huts/${region}`}>
+        <li key={region} className="bg-grey-300 border border-grey transition-transform duration-200 hover:scale-105 px-4 m-1">
+          <Link to={`/huts/${encodeURIComponent(region as string)}`}>
             {region}
           </Link>
         </li>
