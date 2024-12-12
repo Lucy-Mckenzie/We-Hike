@@ -21,7 +21,7 @@ export default function DisplayRegions() {
      {filteredRegions.map((region, index) => {
       return (
         <li key={index} className="bg-grey-300 border border-grey transition-transform duration-200 hover:scale-105 px-4 m-1">
-          <Link to={`/huts/${region}`}>
+          <Link to={`/huts/${encodeURIComponent(region as string)}`}>
             {region}
           </Link>
         </li>

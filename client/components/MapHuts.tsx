@@ -1,5 +1,4 @@
 import data from '../data/data.json'
-import { Huts } from '../../models/huts'
 import proj4 from 'proj4'
 import {
   MapContainer,
@@ -31,7 +30,7 @@ export default function MapHuts() {
     url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
     attribution='Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
   />
-  {data.huts.map((hut: Huts) => {
+  {data.huts.map((hut) => {
     const { name, status, region, y, x } = hut
   
   const [longitude, latitude] = proj4(nztm, wgs84, [x, y])
