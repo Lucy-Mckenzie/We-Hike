@@ -6,5 +6,4 @@ export default function useAllHutAlerts() {
   queryKey: ['hutalerts'],
   queryFn: () => getHutsAlerts()
 })
-} 
-
+}

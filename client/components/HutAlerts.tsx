@@ -1,3 +1,4 @@
+
 import { Alert } from "../../models/huts"
 import useAllHutAlerts from "../hooks/use-hutAlerts"
 import DOMPurify from "dompurify"
@@ -8,6 +9,7 @@ const { data: huts, error, isPending } = useAllHutAlerts()
 
 if (isPending)  return <>Loading...</>
 if (error) return <>Sorry, cannot find hut alerts..</>
+
 
 const latestHut = huts.slice(-10)
 
@@ -36,3 +38,4 @@ const latestHut = huts.slice(-10)
     </div>
   )
 }
+
