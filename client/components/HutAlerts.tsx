@@ -1,5 +1,6 @@
 import { Alert } from "../../models/huts"
 import useAllHutAlerts from "../hooks/use-hutAlerts"
+import DOMPurify from "dompurify"
 
 export default function HutAlerts() {
  
@@ -17,11 +18,15 @@ const latestHut = huts.slice(-10)
   {latestHut.map((hut) => (
     <li key={hut.assetId} className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg">
       <p className="text-xl font-bold text-gray-800"><strong>Hut Name:</strong> {hut.name}</p>
+
       {hut.alerts.map((alert: Alert, index: number) => (
         <div key={index} className="mt-2 pl-4 border-l-4 border-blue-500 rounded-md bg-gray-50 p-2">
-          <li className="text-gray-700"><strong>Heading:</strong> {alert.heading}</li>
-          <li className="text-gray-600"><strong>Detail:</strong> {alert.detail}</li>
-          <li className="text-sm text-gray-500"><strong>Display Date:</strong> {alert.displayDate}</li>
+          <p className="text-gray-700 text-xl">{alert.heading}</p>
+          <div
+          className="mt-2 text-sm"
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(alert.detail) }}
+        ></div>
+          <p className="text-sm text-gray-500"><strong>Display Date:</strong> {alert.displayDate}</p>
         </div>
       ))}
     </li>
