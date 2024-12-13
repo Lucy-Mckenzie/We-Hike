@@ -1,7 +1,7 @@
 import useHutDetails from '../hooks/use-hutDetails'
 import { useParams } from 'react-router-dom'
 
-export default function HutsByDetail() {
+export default function HutDetail() {
 
 const { assetId } = useParams()
 const { data: huts, error, isPending } = useHutDetails(assetId as string)

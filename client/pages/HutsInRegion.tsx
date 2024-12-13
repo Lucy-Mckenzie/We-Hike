@@ -1,22 +1,25 @@
 import { useParams } from 'react-router'
+import data from '../data/data.json'
+import { Link } from 'react-router-dom'
 
 export default function HutsInRegion() {
 
   const { region } = useParams()
 
+  const hutsInRegion = data.huts.filter((huts) => huts.region === region) 
   
   if (!region) return 'Sorry region does not exist'
-  if (isPending)  return <>Loading...</>
-  if (error) return <>Sorry, cannot find hut details.</>
+  if (hutsInRegion.length === 0) return 'sorry could not find huts'
+  
 
   return (
     <div className="flex flex-col items-start px-5 py-10 text-left mx-auto max-w-[900px]">
       <h1 className="text-4xl text-left mb-5 font-light">Huts in the {region} Region</h1>
       <ul>
-        {huts.map((hut) => (
-          <li key={hut.assetId}>
+        {hutsInRegion.map((hut) => (
+          <Link to={`/huts/${hut.assetId}/detail`} key={hut.assetId}>
             {hut.name} - {hut.status}
-          </li>
+          </Link>
         ))}
       </ul>
     </div>

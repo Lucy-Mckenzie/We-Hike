@@ -31,10 +31,10 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const response = await request
-      .get(`${DOC_API_URL}/:id/details`)
+      .get(`${DOC_API_URL}/:id/detail`)
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
 
@@ -88,6 +88,27 @@ router.get('/:id/alerts', async (req, res) => {
     console.error("Failed to fetch hut alerts from DOC API:", error.message)
     }
     res.status(500).json({ error: 'Failed to fetch hut alerts from DOC API'})
+  }
+})
+
+router.get('/:assetId/detail', async (req, res) => {
+  try {
+    const { assetId } = req.params
+    const response = await request
+      .get(`${DOC_API_URL}/${assetId}/detail`)
+      .set('accept', 'application/json')
+      .set('x-api-key', apiKey)
+
+      if (response.body) {
+        res.json(response.body)
+      } else {
+        res.status(404).json({ error: 'Hut details not found' });
+      }
+  } catch (error) {
+    if (error instanceof Error) {
+    console.error("Failed to fetch hut details from DOC API:", error.message)
+    }
+    res.status(500).json({ error: 'Failed to fetch hut details from DOC API'})
   }
 })
 

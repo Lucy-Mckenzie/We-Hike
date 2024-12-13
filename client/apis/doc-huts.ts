@@ -26,7 +26,7 @@ return response.body
 }
 
 export async function getHutDetails(assetId: string): Promise<HutsDetail> {
-  const response = await request.get(`/api/v2/huts/${assetId}/details`) 
+  const response = await request.get(`/api/v2/huts/${assetId}/detail`) 
   if (!response) {
   console.error('The huts data could not be accessed at this time')
   }
