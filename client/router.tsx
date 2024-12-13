@@ -14,6 +14,7 @@ import Home from './pages/Home'
 import ReviewForm from './pages/ReviewForm'
 import About from './pages/About'
 import GreatWalksDetails from './pages/GreatWalksDetails'
+import HutAlerts from './components/HutAlerts'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<Layout />}>
@@ -28,6 +29,7 @@ export const routes = createRoutesFromElements(
     />
     <Route path="/walks/:name" element={<GreatWalksDetails />} />
     <Route path="/huts" element={<HutsByRegion />} />
+    <Route path="/huts/alerts" element={<HutAlerts />} />
     <Route path="/huts/:region" element={<HutsInRegion />} />
   </Route>,
 )

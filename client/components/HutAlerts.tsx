@@ -1,3 +1,4 @@
+import { Alert } from "../../models/huts"
 import useAllHutAlerts from "../hooks/use-hutAlerts"
 
 export default function HutAlerts() {
@@ -7,22 +8,26 @@ const { data: huts, error, isPending } = useAllHutAlerts()
 if (isPending)  return <>Loading...</>
 if (error) return <>Sorry, cannot find hut alerts..</>
 
+const latestHut = huts.slice(-10)
+
   return (
     <div className="flex flex-col items-start px-5 py-10 text-left mx-auto max-w-[900px]">
-      <h1 className="text-4xl text-left mb-5 font-light">Recent alerts for huts in New Zealand</h1>
-      <ul>
-        {huts.map((hut) => (
-          <li key={hut.assetId}> 
-          <p><strong>Hut name: </strong>{hut.name}</p>
-          <p><strong>Heading:</strong> {hut.heading}</p>
-          <p><strong>Hut detail: </strong>{hut.detail}</p>
-          <p><strong>Hut display date: </strong>{hut.displayDate}</p>
-          </li>
-        ))}
-      </ul>
+      <h1 className="text-4xl text-left mb-5 font-light border-b-[1px] border-gray-500">Recent alerts for huts in New Zealand</h1>
+      <ul className="space-y-6">
+  {latestHut.map((hut) => (
+    <li key={hut.assetId} className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg">
+      <p className="text-xl font-bold text-gray-800"><strong>Hut Name:</strong> {hut.name}</p>
+      {hut.alerts.map((alert: Alert, index: number) => (
+        <div key={index} className="mt-2 pl-4 border-l-4 border-blue-500 rounded-md bg-gray-50 p-2">
+          <li className="text-gray-700"><strong>Heading:</strong> {alert.heading}</li>
+          <li className="text-gray-600"><strong>Detail:</strong> {alert.detail}</li>
+          <li className="text-sm text-gray-500"><strong>Display Date:</strong> {alert.displayDate}</li>
+        </div>
+      ))}
+    </li>
+  ))}
+</ul>
+
     </div>
   )
 }
-
-// todo - only displays name currently, adjust to only display only the top 10 hikes
-// focus on this page 
