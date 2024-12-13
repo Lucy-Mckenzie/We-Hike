@@ -1,5 +1,6 @@
 import { useParams } from 'react-router'
 import data from '../data/data.json'
+import { Link } from 'react-router-dom'
 
 export default function HutsInRegion() {
 
@@ -16,9 +17,9 @@ export default function HutsInRegion() {
       <h1 className="text-4xl text-left mb-5 font-light">Huts in the {region} Region</h1>
       <ul>
         {hutsInRegion.map((hut) => (
-          <li key={hut.assetId}>
+          <Link to={`/huts/${hut.assetId}/detail`} key={hut.assetId}>
             {hut.name} - {hut.status}
-          </li>
+          </Link>
         ))}
       </ul>
     </div>

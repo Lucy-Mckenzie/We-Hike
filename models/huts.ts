@@ -10,9 +10,13 @@ export interface Huts {
 export interface Alerts {
   assetId: number;
   name:    string;
+  alerts: Alert[]; 
+}
+
+export interface Alert {
   displayDate: string;
-  heading:     string;
-  detail:      string;
+  heading: string;
+  detail: string;
 }
 
 export interface HutsDetail {

@@ -1,15 +1,10 @@
-import { getHutDetails } from '../apis/doc-huts.ts'
+import useHutDetails from '../hooks/use-hutDetails'
 import { useParams } from 'react-router-dom'
-import { useQuery } from '@tanstack/react-query'
 
-export default function HutsByDetail() {
+export default function HutDetail() {
 
 const { assetId } = useParams()
-
-const { data: huts, error, isPending } = useQuery({
-  queryKey: ['hutDetails', assetId],
-  queryFn: () => getHutDetails(assetId as string)
-})
+const { data: huts, error, isPending } = useHutDetails(assetId as string)
 
 if (error) return <p>Sorry couldnt find this hut</p>
 if (isPending) return <p>Loading...</p>

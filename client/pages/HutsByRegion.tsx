@@ -14,7 +14,7 @@ export default function DisplayRegions() {
       <MapHuts />
       <div className="flex flex-col items-center max-w-[900px] m-auto pb-6">
         <HutAlerts />
-      <h1 className="text-4xl text-left mb-5 font-light font-lato m-5">Find by Regions below</h1>
+      <h1 className="text-4xl text-left mb-5 font-light font-lato m-5">Check out the huts in your Region</h1>
       <ul>
      {filteredRegions.map((region) => {
       return (
