@@ -14,8 +14,8 @@ export default function DisplayRegions() {
   return (
     <>
      <Link to="/" className="pl-4 underline">Back to home</Link>
-    <div className="flex flex-col items-start px-5 py-10 text-left mx-auto max-w-[900px]">
-      <h1 className="text-4xl text-left mb-5 font-light">Hiking Huts</h1>
+    <div className="flex flex-col items-center px-5 py-10 text-left mx-auto max-w-[900px]">
+      <h1 className="text-4xl text-center mb-5 font-normal">All Doc huts in New Zealand</h1>
       <MapHuts />
       <div className="flex flex-col items-center max-w-[900px] m-auto pb-6">
         <HutAlerts />
