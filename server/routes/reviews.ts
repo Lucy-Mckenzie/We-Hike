@@ -8,7 +8,6 @@ import { Review } from '../../models/review'
 const router = express.Router()
 export default router
 
-// GET api/v1/reviews/
 router.get('/', async (req, res) => {
   try {
     const reviews = await db.getAllReviews()
@@ -21,8 +20,6 @@ router.get('/', async (req, res) => {
   }
 })
 
-
-// GET api/v1/reviews/:id
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params
@@ -36,11 +33,10 @@ router.get('/:id', async (req, res) => {
   }
 })
 
-// POST api/v1/reviews/
 router.post('/', checkJwt, async (req: JwtRequest, res) => {
  
     const review = req.body as Review
-    const auth0Id = req.auth?.sub  // Auth0 user ID from the JWT
+    const auth0Id = req.auth?.sub 
 
   if (!review) {
     console.error('Bad Request - no review or id')
@@ -66,7 +62,7 @@ router.post('/', checkJwt, async (req: JwtRequest, res) => {
   }
 })
 
-// PATCH api/v1/reviews/:id
+
 router.patch('/:id', checkJwt, async (req: JwtRequest, res) => {
   
     const id = Number(req.params.id)
@@ -95,7 +91,6 @@ router.patch('/:id', checkJwt, async (req: JwtRequest, res) => {
   }
 })
 
-// DELETE api/v1/reviews/:id
 router.delete('/:id', checkJwt, async (req: JwtRequest, res) => {
   try {  
     const { id } = req.params 
