@@ -78,9 +78,10 @@ describe("<ReviewForm />", () => {
   it.todo('Should render an error message when there is an error')
 })
 
-// describe('When the log in button is clicked', () => {
-//   it('redirects the user to the Auth0 Universal Login page', async () => {
+describe('When the log in button is clicked', () => {
+  it('redirects the user to the Auth0 Universal Login page', async () => {
+    
  
-//   })
-//   })
+  })
+  })
 

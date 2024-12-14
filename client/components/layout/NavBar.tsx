@@ -14,7 +14,7 @@ export default function Nav() {
       <NavLink to="/">
       <img src="/images/logo.png" alt="Logo of we hike" className="h-[50px] ml-20 mr-auto z-1"/>
       </NavLink>
-      <div className="px-9 text-white flex items-center no-underline">
+      <div className="px-9 text-black flex items-center no-underline">
       <NavLink className="ml-auto mr-11 flex text-black" to="/">Home</NavLink>
       <NavLink className="ml-auto mr-11 flex text-black" to="/huts">Huts</NavLink>
       <NavLink className="ml-auto mr-11 flex text-black" to="/tracks/region">Hikes</NavLink>
@@ -22,8 +22,8 @@ export default function Nav() {
       <NavLink className="ml-auto mr-11 flex text-black" to="/reviews">Reviews</NavLink>
           <IfAuthenticated>
           <div className="flex flex-col items-center space-y-2">
-            <button className=" text-white text-sm mr-2 hover:sm-black-500" onClick={handleSignOut}>Sign out</button>
-            {user && <p className="text-sm text-white">User: {user?.nickname}</p>}
+            <button className=" text-black text-sm mr-2 hover:sm-black-500" onClick={handleSignOut}>Sign out</button>
+            {user && <p className="text-sm text-black">User: {user?.nickname}</p>}
           </div>
           </IfAuthenticated>
           <IfNotAuthenticated>
