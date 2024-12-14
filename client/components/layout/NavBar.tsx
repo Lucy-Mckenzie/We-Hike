@@ -12,7 +12,7 @@ export default function Nav() {
     <nav>
       <div className="border-t-8 border-[#ffc51d]"></div>
       <div className="bg-[#194036] flex items-center shadow-[3px_6px_10px_rgba(0,_0,_0,_0.4)] px-3 justify-between z-2">
-      <NavLink to="/tracks">
+      <NavLink to="/">
       <img src="/images/logo.png" alt="Logo of we hike" className="h-[60px] ml-20 mr-auto"/>
       </NavLink>
       <div className="px-9 text-white flex items-center no-underline">
