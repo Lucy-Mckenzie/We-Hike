@@ -14,16 +14,16 @@ return (
       <h1 className="text-4xl text-center my-5 font-normal font-lato">{huts.name}</h1>
       <div>
     <img src={huts.introductionThumbnail} className="flex items-center justify h-auto" alt={`${huts.name} thumbnail`} />
-    <p>Region: {huts.region}</p>
-    <p>Location: {huts.locationString}</p>
-    <p>Introduction: {huts.introduction}</p>
-    <p>Status: {huts.status}</p>
+    <p className="pt-2"><strong>Region: </strong>{huts.region}</p>
+    <p><strong>Location: </strong>{huts.locationString}</p>
+    <p><strong>Introduction: </strong>{huts.introduction}</p>
+    <p><strong>Status: </strong>{huts.status}</p>
 
-    <p>Number of bunks: {huts.numberOfBunks}</p>
-    <p>facilities: {huts.facilities}</p>
-    <p>Bookable: {huts.bookable}</p>
-    <p>Hut Category: {huts.hutCategory}</p>
-    <p>Proximity To road end: {huts.proximityToRoadEnd}</p>
+    <p><strong>Number of bunks: </strong>{huts.numberOfBunks}</p>
+    <p><strong>facilities: </strong>{huts.facilities}</p>
+    <p><strong>Bookable: </strong>{huts.bookable ? "Yes" : "No"}</p>
+    <p><strong>Hut Category: </strong>{huts.hutCategory}</p>
+    <p><strong>Proximity To road end: </strong>{huts.proximityToRoadEnd}</p>
     </div>
   </div>
 )
