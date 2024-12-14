@@ -15,7 +15,7 @@ if (error) return <p>Sorry couldnt find this hike</p>
 if (isPending) return <p>Loading...</p>
 
 return (
-    <div className="flex flex-col items-center max-w-[900px] m-auto">
+    <div className="flex flex-col items-center max-w-[900px] m-auto min-h-screen">
       <h1 className="text-4xl text-center my-5 font-normal font-lato">{tracks.name}</h1>
       <div>
     <img src={tracks.introductionThumbnail} className="flex items-center justify h-auto" alt={`${tracks.name} thumbnail`} />

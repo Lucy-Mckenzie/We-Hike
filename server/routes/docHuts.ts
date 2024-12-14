@@ -33,8 +33,9 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
+    const { id } = req.params
     const response = await request
-      .get(`${DOC_API_URL}/:id/detail`)
+      .get(`${DOC_API_URL}/${id}/detail`)
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
 
@@ -73,8 +74,9 @@ router.get('/alerts', async (req, res) => {
 
 router.get('/:id/alerts', async (req, res) => {
   try {
+    const { id } = req.params
     const response = await request
-      .get(`${DOC_API_URL}/:id/alerts`)
+      .get(`${DOC_API_URL}/${id}/alerts`)
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
 
