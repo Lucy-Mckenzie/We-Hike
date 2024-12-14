@@ -1,5 +1,5 @@
 import useHutDetails from '../hooks/use-hutDetails'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 export default function HutDetail() {
 
@@ -10,6 +10,8 @@ if (error) return <p>Sorry couldnt find this hut</p>
 if (isPending) return <p>Loading...</p>
 
 return (
+  <>
+    <Link to="/huts" className="pl-4 underline">Back to huts</Link>
     <div className="flex flex-col items-center max-w-[900px] m-auto min-h-screen">
       <h1 className="text-4xl text-center my-5 font-normal font-lato">{huts.name}</h1>
       <div>
@@ -26,5 +28,6 @@ return (
     <p><strong>Proximity To road end: </strong>{huts.proximityToRoadEnd}</p>
     </div>
   </div>
+  </>
 )
 }
