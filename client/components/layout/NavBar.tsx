@@ -10,7 +10,7 @@ export default function Nav() {
 
   return (
     <nav className="relative">
-      <div className="bg-[##1C1C1C] flex items-center shadow-[3px_6px_10px_rgba(0,_0,_0,_0.2)] px-6 py-2 justify-between z-2">
+      <div className="bg-[##1C1C1C] flex items-center shadow-[3px_6px_10px_rgba(0,_0,_0,_0.04)] px-6 py-2 justify-between z-2">
       <NavLink to="/">
       <img src="/images/logo.png" alt="Logo of we hike" className="h-[50px] ml-20 mr-auto z-1"/>
       </NavLink>
