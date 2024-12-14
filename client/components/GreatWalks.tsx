@@ -32,7 +32,7 @@ export default function Greatwalks() {
   </tbody>
   </table>
   <div className="flex flex-col items-center py-10">
-    <h1 className="pb-2 text-xl font-lato">Looking for even more about the Great walks?</h1>
+    <h1 className="pb-2 text-2xl font-lato">Looking for even more about the Great walks?</h1>
     <ul>
         {greatWalks.map((walk) => (
           <li className="bd-grey-100 border border-grey-300 rounded-lg p-4 mb-4 shadow-md text-center transition-transform duration-200 hover:scale-105 max-w-[800px]" 
