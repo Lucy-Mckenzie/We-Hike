@@ -8,7 +8,7 @@ const DOC_API_URL = 'https://api.doc.govt.nz/v2/huts'
 const apiKey = process.env.DOC_API_KEY
 
 if (!apiKey) {
-  throw new Error('API key is missing. Please set the DOC_API_KEY environment variable.');
+  throw new Error('API key is missing. Please set the DOC_API_KEY environment variable.')
 }
 
 router.get('/', async (req, res) => {
@@ -58,7 +58,7 @@ router.get('/alerts', async (req, res) => {
       .get(`${DOC_API_URL}/alerts`)
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
-
+      console.log(response.body);
       if (response.body) {
         res.json(response.body)
       } else {

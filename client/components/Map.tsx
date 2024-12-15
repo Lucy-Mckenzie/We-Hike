@@ -34,7 +34,7 @@ export default function Map() {
         <Popup>
           <b>{walk.name}</b><br />
           Region: {walk.region}<br />
-          Description: {walk.description}<br />
+          Description: {walk.descriptionS}<br />
           Distance: {walk.distance} km
         </Popup>
       </Marker>
