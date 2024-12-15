@@ -11,6 +11,7 @@ export async function getHuts(): Promise<Huts[]> {
   
 export async function getHutsAlerts(): Promise<Alerts[]> {
   const response = await request.get(`/api/v2/huts/alerts`) 
+  console.log(response)
   if (!response) {
   console.error('The huts data could not be accessed at this time')
   }
