@@ -5,7 +5,6 @@ interface Props {
 }
 
 const useIsAuthenticated = () => {
-  // call the useAuth0 hook, destructure and return isAuthenticated
   const { isAuthenticated } = useAuth0()
   return isAuthenticated
 }

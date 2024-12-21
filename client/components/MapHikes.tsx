@@ -7,12 +7,12 @@ import {
   Marker,
   Popup,
 } from 'react-leaflet'
-import "leaflet/dist/leaflet.css"
+import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 
 const markerIcon = new L.Icon({
-  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
+  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
 })
 
 export default function MapHikes() {
@@ -30,14 +30,14 @@ export default function MapHikes() {
   
   return (
     <MapContainer
-    className="flex flex-col rounded-md  h-[550px] w-[900px]"
+    className='flex flex-col rounded-md  h-[550px] w-[900px]'
     center={[-39.2806, 176.9120]}
     zoom={8}
-    aria-label="Map displaying hikes in New Zealand"
+    aria-label='Map displaying hikes in New Zealand'
   >
     <TileLayer
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      attribution="&copy; OpenStreetMap contributors"
+      url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+      attribution='&copy; OpenStreetMap contributors'
     />
     {tracks.map((track: TrackDetails) => {
       const { name, region, x, y } = track

@@ -18,21 +18,21 @@ import HutAlerts from './components/HutAlerts'
 import HutsDetail from './pages/HutDetails'
 
 export const routes = createRoutesFromElements(
-  <Route path="/" element={<Layout />}>
+  <Route path='/' element={<Layout />}>
     <Route index element={<Home />} />
-    <Route path="/about" element={<About />} />
-    <Route path="/reviews" element={<ReviewForm />} />
-    <Route path="/tracks/region" element={<AllRegions />} />
-    <Route path="/tracks/region/:region" element={<Tracks />} />
+    <Route path='/about' element={<About />} />
+    <Route path='/reviews' element={<ReviewForm />} />
+    <Route path='/tracks/region' element={<AllRegions />} />
+    <Route path='/tracks/region/:region' element={<Tracks />} />
     <Route
-      path="/tracks/region/:region/:assetId/detail"
+      path='/tracks/region/:region/:assetId/detail'
       element={<TrackDetails />}
     />
-    <Route path="/walks/:name" element={<GreatWalksDetails />} />
-    <Route path="/huts" element={<HutsByRegion />} />
-    <Route path="/huts/alerts" element={<HutAlerts />} />
-    <Route path="/huts/:region" element={<HutsInRegion />} />
-    <Route path="/huts/:assetId/detail" element={<HutsDetail />} />
+    <Route path='/walks/:name' element={<GreatWalksDetails />} />
+    <Route path='/huts' element={<HutsByRegion />} />
+    <Route path='/huts/alerts' element={<HutAlerts />} />
+    <Route path='/huts/:region' element={<HutsInRegion />} />
+    <Route path='/huts/:assetId/detail' element={<HutsDetail />} />
   </Route>,
 )
 export const router = createBrowserRouter(routes)

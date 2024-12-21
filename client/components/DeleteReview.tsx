@@ -17,12 +17,12 @@ export default function DeleteReview({ id}: Props) {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['review']})
-      console.log("deleted review")
+      console.log('deleted review')
     }
   })
 
 
   return (
-    <button className="bg-red-500 flex text-black w-auto px-1 rounded-md text-sm" onClick={() => mutation.mutate()}>Delete Review</button>
+    <button className='bg-red-500 flex text-black w-auto px-1 rounded-md text-sm' onClick={() => mutation.mutate()}>Delete Review</button>
   )
 }
