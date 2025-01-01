@@ -1,15 +1,15 @@
 import { Outlet } from 'react-router-dom'
-import ClientThemeWrapper from './context/ClientThemeWrapper'
-import ThemeProvider from './context/ThemeContext'
-import './globals.css'
+import ClientThemeWrapper from '../context/ClientThemeWrapper.tsx'
+import ThemeProvider from '../context/ThemeContext'
+import '../../styles/index.scss'
 import Footer from './Footer.tsx'
 import Nav from './NavBar.tsx'
 
 export default function Layout() {
   return (
+    <ThemeProvider>
+    <ClientThemeWrapper>
       <div>
-      <ThemeProvider>
-      <ClientThemeWrapper>
         <Nav />
         <div>
           <Outlet />
