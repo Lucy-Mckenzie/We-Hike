@@ -19,7 +19,7 @@ export default function Map() {
 
  return (
   <MapContainer
-    className='flex flex-col rounded-md overflow-hidden h-[550px] w-full'
+    className='w-full h-[50vh] md:h-[70vh] lg:h-[500px]'
     center={[-39.2806, 176.9120]}
     zoom={8}
     aria-label='Map displaying the Great Walks of New Zealand'
