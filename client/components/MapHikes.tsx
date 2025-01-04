@@ -30,7 +30,7 @@ export default function MapHikes() {
   
   return (
     <MapContainer
-    className='flex flex-col rounded-md  h-[550px] w-[900px]'
+    className='flex flex-col w-full h-[50vh] md:h-[70vh] lg:h-[500px] rounded-md overflow-hidden'
     center={[-39.2806, 176.9120]}
     zoom={8}
     aria-label='Map displaying hikes in New Zealand'
