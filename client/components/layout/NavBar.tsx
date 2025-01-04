@@ -131,7 +131,10 @@ export default function Nav() {
         </li>
       </ul>
     </div>
-      <label className='swap swap-rotate'>
+      <label
+       className='swap swap-rotate'
+       aria-label='theme changer'
+       >
         <input
           type='checkbox'
           className='theme-controller'
