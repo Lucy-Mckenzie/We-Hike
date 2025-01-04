@@ -21,7 +21,7 @@ export default function MapHuts() {
 
  return (
   <MapContainer
-  className='flex flex-col rounded-md overflow-hidden h-[550px] w-full'
+  className='flex flex-col w-full h-[50vh] md:h-[70vh] lg:h-[500px] rounded-md overflow-hidden z-0'
   center={[-39.2806, 176.9120]}
   zoom={8}
   aria-label='Map displaying the huts of New Zealand'
