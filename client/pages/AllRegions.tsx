@@ -6,7 +6,7 @@ export default function DisplayAllRegions() {
   return (
     <>
     <Link to='/' className='pl-4 underline'>Back to home</Link>
-    <div className=' m-auto text-center flex flex-col items-center'>
+    <div className='m-auto text-center flex flex-col items-center'>
         <h1 className='text-xl sm:text-2xl lg:text-4xl text-center mb-5 font-normal'>All Doc hikes in New Zealand</h1>
       <MapHikes />
       <h1 className='text-xl sm:text-2xl lg:text-4xl text-center my-5 font-light font-lato'>Where do you want to go?</h1>
