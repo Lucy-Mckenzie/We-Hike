@@ -17,7 +17,7 @@ const markerIcon = new L.Icon({
 export default function Map() {
 
  return (
-  <div className='w-full h-[50vh] md:h-[70vh] lg:h-[500px] rounded-md overflow-hidden z-0'>
+  <div className='w-full h-[50vh] md:h-[70vh] lg:h-[500px] max-w-7xl rounded-md overflow-hidden z-0'>
       <MapContainer
         className='w-full h-full'
         center={[-39.2806, 176.9120]}

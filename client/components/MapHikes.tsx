@@ -30,15 +30,15 @@ export default function MapHikes() {
   
   return (
     <MapContainer
-    className='flex flex-col w-full h-[50vh] md:h-[70vh] lg:h-[500px] rounded-md overflow-hidden'
+    className='flex flex-col w-full h-[50vh] md:h-[70vh] lg:h-[600px] max-w-7xl rounded-md overflow-hidden z-0'
     center={[-39.2806, 176.9120]}
     zoom={8}
     aria-label='Map displaying hikes in New Zealand'
   >
     <TileLayer
-      url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-      attribution='&copy; OpenStreetMap contributors'
-    />
+    url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+    attribution='Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+  />
     {tracks.map((track: TrackDetails) => {
       const { name, region, x, y } = track
 
