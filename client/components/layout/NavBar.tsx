@@ -118,7 +118,7 @@ export default function Nav() {
         Reviews
       </NavLink>
       </li>
-      <li>
+      <li className='pl-2'>
         <IfAuthenticated>
           <div className='flex flex-col items-center space-y-2'>
             <button className=' text-black text-sm mr-2 hover:text-gray-400 hover:scale-105 transition-transform duration-200 hover:cursor-pointer' onClick={handleSignOut}>Sign out</button>
@@ -126,7 +126,7 @@ export default function Nav() {
           </div>
           </IfAuthenticated>
           <IfNotAuthenticated>
-            <button  className='border-lg rounded-lg bg-[#4A5D5E] text-sm px-2 py-1 text-white hover:scale-105 transition-transform duration-200 hover:cursor-pointer' onClick={handleSignIn}>Sign in</button>
+            <button  className='border-lg rounded-lg bg-[#4A5D5E] hover:bg-[#586b6c] text-sm px-2 py-1 text-white hover:scale-105 transition-transform duration-200 hover:cursor-pointer' onClick={handleSignIn}>Sign in</button>
           </IfNotAuthenticated>
         </li>
       </ul>
