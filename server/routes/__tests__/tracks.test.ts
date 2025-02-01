@@ -19,7 +19,7 @@ afterAll(async () => {
 describe('It gets the tracks data', () => {
   it.skip('Responds with all the data from tracks', async () => {
     const res = await request(server)
-    .get('/api/v1/tracks')
+      .get('/api/v1/tracks')
 
     expect(res.status).toBe(200)
     expect(Array.isArray(res.body)).toBe(true) 
@@ -29,7 +29,7 @@ describe('It gets the tracks data', () => {
 
   it('Responds with the tracks by id data', async () => {
     const res = await request(server)
-    .get('/api/v1/tracks/b213ff1c-a694-46c6-9727-789520c97359/detail')
+      .get('/api/v1/tracks/b213ff1c-a694-46c6-9727-789520c97359/detail')
 
     expect(res.body).toMatchInlineSnapshot(`
       {

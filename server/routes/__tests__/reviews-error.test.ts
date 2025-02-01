@@ -11,9 +11,9 @@ vi.mock('../../auth0.ts')
 
 const mockUser = {
   id: 'auth0|123',
- }
+}
 
- beforeAll(() => {
+beforeAll(() => {
   vi.mocked(checkJwt).mockImplementation(
     async (req: JwtRequest, res: Response, next: NextFunction) => {
       console.log(req.body)

@@ -19,14 +19,14 @@ router.get('/', async (req, res) => {
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
 
-      if (response.body) {
-        res.json(response.body)
-      } else {
-        res.status(404).json({ error: 'Region not found' });
-      }
+    if (response.body) {
+      res.json(response.body)
+    } else {
+      res.status(404).json({ error: 'Region not found' });
+    }
   } catch (error) {
     if (error instanceof Error) {
-    console.error("Failed to fetch hikes from DOC API:", error.message)
+      console.error("Failed to fetch hikes from DOC API:", error.message)
     }
     res.status(500).json({ error: 'Failed to fetch hikes from DOC API'})
   }
@@ -41,11 +41,11 @@ router.get('/region/:region', async (req, res) => {
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
 
-      if (response.body) {
-        res.json(response.body)
-      } else {
-        res.status(404).json({ error: 'Region not found' });
-      }
+    if (response.body) {
+      res.json(response.body)
+    } else {
+      res.status(404).json({ error: 'Region not found' });
+    }
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch hikes from DOC API' })
   }
@@ -60,11 +60,11 @@ router.get('/:assetId/detail', async (req, res) => {
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
 
-      if (response.body) {
-        res.json(response.body)
-      } else {
-        res.status(404).json({ error: 'Track detail not found' });
-      }
+    if (response.body) {
+      res.json(response.body)
+    } else {
+      res.status(404).json({ error: 'Track detail not found' });
+    }
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch hikes from DOC API' })
   }

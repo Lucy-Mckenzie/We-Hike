@@ -3,7 +3,7 @@ import {useQuery} from '@tanstack/react-query'
 
 export default function useHutDetails(assetId: string) {
   return useQuery({
-  queryKey: ['huts', assetId],
-  queryFn: () => getHutDetails(assetId)
-})
+    queryKey: ['huts', assetId],
+    queryFn: () => getHutDetails(assetId)
+  })
 } 

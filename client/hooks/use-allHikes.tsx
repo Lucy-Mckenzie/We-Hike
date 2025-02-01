@@ -3,7 +3,7 @@ import {useQuery} from '@tanstack/react-query'
 
 export default function useAllHikes() {
   return useQuery({
-  queryKey: ['tracks'],
-  queryFn: () => getTracks()
-})
+    queryKey: ['tracks'],
+    queryFn: () => getTracks()
+  })
 } 

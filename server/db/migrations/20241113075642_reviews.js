@@ -4,15 +4,15 @@
  */
 export function up(knex) {
   return knex.schema
-  .createTable('reviews', function(table) {
-    table.increments('id').primary()
-    table.string('userId')
-    table.string('assetId')
-    table.string('hikeName').notNullable()
-    table.integer('rating')
-    table.string('comment')
-    table.string('author')
-  })
+    .createTable('reviews', function(table) {
+      table.increments('id').primary()
+      table.string('userId')
+      table.string('assetId')
+      table.string('hikeName').notNullable()
+      table.integer('rating')
+      table.string('comment')
+      table.string('author')
+    })
 
 };
 

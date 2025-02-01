@@ -30,34 +30,34 @@ export default function MapHikes() {
   
   return (
     <MapContainer
-    className='flex flex-col w-full h-[50vh] md:h-[70vh] lg:h-[600px] max-w-7xl rounded-md overflow-hidden z-0'
-    center={[-39.2806, 176.9120]}
-    zoom={8}
-    aria-label='Map displaying hikes in New Zealand'
-  >
-    <TileLayer
-    url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
-    attribution='Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-  />
-    {tracks.map((track: TrackDetails) => {
-      const { name, region, x, y } = track
+      className='flex flex-col w-full h-[50vh] md:h-[70vh] lg:h-[600px] max-w-7xl rounded-md overflow-hidden z-0'
+      center={[-39.2806, 176.9120]}
+      zoom={8}
+      aria-label='Map displaying hikes in New Zealand'
+    >
+      <TileLayer
+        url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+        attribution='Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+      />
+      {tracks.map((track: TrackDetails) => {
+        const { name, region, x, y } = track
 
-      const [longitude, latitude] = proj4(nztm, wgs84, [x, y])
+        const [longitude, latitude] = proj4(nztm, wgs84, [x, y])
 
-      return (
-        <Marker
-          key={name}
-          position={[latitude, longitude] as [number, number]}
-          title={`marker for ${name}`}
-          icon={markerIcon}
-        >
-          <Popup>
-           <p>{name}</p><br />
-           <p>Region: {region}</p>
-          </Popup>
-        </Marker>
-      )
-    })}
-  </MapContainer>
-)
+        return (
+          <Marker
+            key={name}
+            position={[latitude, longitude] as [number, number]}
+            title={`marker for ${name}`}
+            icon={markerIcon}
+          >
+            <Popup>
+              <p>{name}</p><br />
+              <p>Region: {region}</p>
+            </Popup>
+          </Marker>
+        )
+      })}
+    </MapContainer>
+  )
 }

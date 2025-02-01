@@ -19,7 +19,7 @@ afterAll(async () => {
 describe('It responds with all the data', async () => {
   it('Gets region by region ID', async () => {
     const res = await request(server)
-    .get('/api/v1/tracks/region/DOC-CNI')
+      .get('/api/v1/tracks/region/DOC-CNI')
 
     expect(res.status).toBe(200)
     expect(Array.isArray(res.body)).toBe(true) 

@@ -2,9 +2,9 @@ import express from 'express'
 import * as Path from 'node:path'
 import cors from 'cors'
 
-import docHikes from './routes/docHikes'
-import docHuts from './routes/docHuts'
-import reviews from './routes/reviews'
+import docHikes from './routes/docHikes.ts'
+import docHuts from './routes/docHuts.ts'
+import reviews from './routes/reviews.ts'
 
 const server = express()
 

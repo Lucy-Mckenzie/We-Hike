@@ -13,7 +13,7 @@ export default function DeleteReview({ id}: Props) {
   const mutation = useMutation({
     mutationFn: async () => {
       const token = await getAccessTokenSilently() 
-     await deleteReviewById(id, token)
+      await deleteReviewById(id, token)
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['review']})

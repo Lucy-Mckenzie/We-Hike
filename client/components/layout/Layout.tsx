@@ -8,15 +8,15 @@ import Nav from './NavBar.tsx'
 export default function Layout() {
   return (
     <ThemeProvider>
-    <ClientThemeWrapper>
-      <div>
-        <Nav />
+      <ClientThemeWrapper>
         <div>
-          <Outlet />
+          <Nav />
+          <div>
+            <Outlet />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
       </ClientThemeWrapper>
-      </ThemeProvider>
+    </ThemeProvider>
   )
 }

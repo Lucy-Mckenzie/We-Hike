@@ -3,7 +3,7 @@ import type { Config } from 'tailwindcss';
 import daisyui from 'daisyui'
 export default {
   content: [
-   './index.html', './client/**/*.tsx'
+    './index.html', './client/**/*.tsx'
   ],
   theme: {
     daisyui: [
@@ -13,7 +13,7 @@ export default {
   fontFamily: {
     sans: ['Lato', 'sans-serif'],
     manrope: ['Manrope', 'sans-serif'],
-},
+  },
   plugins: [
     daisyui,
   ],

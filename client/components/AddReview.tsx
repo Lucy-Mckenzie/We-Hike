@@ -55,7 +55,7 @@ export default function AddReviewForm({ onAdd, onClose }: Props) {
       <form onSubmit={handleSubmit}>
         <label htmlFor='hikeName' className='block font-bold mb-1 text-[#555]'>Hike:</label>
         <input 
-         name='hikeName'
+          name='hikeName'
           id='hikeName'
           className='w-full p-2 mb-4 border border-grey-300 rounded text-sm'
           required
@@ -71,7 +71,7 @@ export default function AddReviewForm({ onAdd, onClose }: Props) {
           value={newReview.comment}
           onChange={handleChange}
         />
-         <label htmlFor='author' className='block font-bold mb-1 text-[#555]'>Your Name:</label>
+        <label htmlFor='author' className='block font-bold mb-1 text-[#555]'>Your Name:</label>
         <input
           type='text'
           name='author'
@@ -89,7 +89,7 @@ export default function AddReviewForm({ onAdd, onClose }: Props) {
         <button type='button' className='bg-[#4caf50] rounded-md text-black bold border-2 px-2 ml-2 cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#45a049]' onClick={onClose}>
           Close
         </button>
-        </form>
-      </div>
+      </form>
+    </div>
   )
 }

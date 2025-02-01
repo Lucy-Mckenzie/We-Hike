@@ -41,6 +41,7 @@ beforeEach(() => {
     getAccessTokenSilently: vi.fn().mockReturnValue(ACCESS_TOKEN),
     loginWithRedirect: vi.fn(),
     logout: vi.fn(),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } as any)
 })
 
@@ -52,21 +53,21 @@ afterEach(() => {
 describe("<ReviewForm />", () => {
   it('should render a loading indicator', async () => {
     const scope = nock('http://localhost')
-    .get('/api/v1/reviews/')
-    .reply(200)
+      .get('/api/v1/reviews/')
+      .reply(200)
 
-  renderRoute('/reviews')
+    renderRoute('/reviews')
 
-  const loading = await waitFor(() => screen.getByText(/loading/i))
+    const loading = await waitFor(() => screen.getByText(/loading/i))
 
-  expect(loading).toBeVisible()
-  expect(scope.isDone()).toBe(true)
+    expect(loading).toBeVisible()
+    expect(scope.isDone()).toBe(true)
   })
 
   it('Should render some reviews', async () => {
     const scope = nock('http://localhost')
-    .get('/api/v1/reviews/')
-    .reply(200, reviews)
+      .get('/api/v1/reviews/')
+      .reply(200, reviews)
 
     renderRoute('/reviews')
 
@@ -83,5 +84,5 @@ describe('When the log in button is clicked', () => {
     
  
   })
-  })
+})
 

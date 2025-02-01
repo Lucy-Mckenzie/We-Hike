@@ -25,15 +25,15 @@ describe('gets all the reviews', () => {
 
     expect(res.body).toHaveLength(8)
     expect(res.body[0]).toStrictEqual({
-          "id": 1,
-          "userId": null,
-          "assetId": "b213ff1c-a694-46c6-9727-789520c97359",
-          "hikeName": "Akeake Historic Reserve Track",
-          "rating": 5,
-          "comment": "Spectacular views along the coast, perfect for an easy day out!",
-          "author": "Sarah"
-        },
-      )
+      "id": 1,
+      "userId": null,
+      "assetId": "b213ff1c-a694-46c6-9727-789520c97359",
+      "hikeName": "Akeake Historic Reserve Track",
+      "rating": 5,
+      "comment": "Spectacular views along the coast, perfect for an easy day out!",
+      "author": "Sarah"
+    },
+    )
 
     expect(res.body[1]).toStrictEqual({
       "id": 2,

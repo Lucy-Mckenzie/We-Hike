@@ -10,17 +10,17 @@ const queryClient = new QueryClient()
 document.addEventListener('DOMContentLoaded', () => {
   createRoot(document.getElementById('app') as HTMLElement).render(
     <Auth0Provider
-    domain='manaia2024-lucy.au.auth0.com'
-    clientId='pgiYPucNSTPpNMGZXqgbaDvs7vLXqOGL'
-    authorizationParams={{
-      redirect_uri: window.location.origin,
-      audience: 'https://tracks/api',
-    }}
+      domain='manaia2024-lucy.au.auth0.com'
+      clientId='pgiYPucNSTPpNMGZXqgbaDvs7vLXqOGL'
+      authorizationParams={{
+        redirect_uri: window.location.origin,
+        audience: 'https://tracks/api',
+      }}
     >
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-      <ReactQueryDevtools />
-    </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <ReactQueryDevtools />
+      </QueryClientProvider>
     </Auth0Provider>,
   )
 })

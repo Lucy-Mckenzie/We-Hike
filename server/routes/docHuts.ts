@@ -18,14 +18,14 @@ router.get('/', async (req, res) => {
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
 
-      if (response.body) {
-        res.json(response.body)
-      } else {
-        res.status(404).json({ error: 'Huts not found' });
-      }
+    if (response.body) {
+      res.json(response.body)
+    } else {
+      res.status(404).json({ error: 'Huts not found' });
+    }
   } catch (error) {
     if (error instanceof Error) {
-    console.error("Failed to fetch huts from DOC API:", error.message)
+      console.error("Failed to fetch huts from DOC API:", error.message)
     }
     res.status(500).json({ error: 'Failed to fetch huts from DOC API'})
   }
@@ -39,14 +39,14 @@ router.get('/:id', async (req, res) => {
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
 
-      if (response.body) {
-        res.json(response.body)
-      } else {
-        res.status(404).json({ error: 'Huts not found' });
-      }
+    if (response.body) {
+      res.json(response.body)
+    } else {
+      res.status(404).json({ error: 'Huts not found' });
+    }
   } catch (error) {
     if (error instanceof Error) {
-    console.error("Failed to fetch huts from DOC API:", error.message)
+      console.error("Failed to fetch huts from DOC API:", error.message)
     }
     res.status(500).json({ error: 'Failed to fetch huts from DOC API'})
   }
@@ -58,15 +58,15 @@ router.get('/alerts', async (req, res) => {
       .get(`${DOC_API_URL}/alerts`)
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
-      console.log(response.body);
-      if (response.body) {
-        res.json(response.body)
-      } else {
-        res.status(404).json({ error: 'Hut alerts not found' });
-      }
+    console.log(response.body);
+    if (response.body) {
+      res.json(response.body)
+    } else {
+      res.status(404).json({ error: 'Hut alerts not found' });
+    }
   } catch (error) {
     if (error instanceof Error) {
-    console.error("Failed to fetch hut alerts from DOC API:", error.message)
+      console.error("Failed to fetch hut alerts from DOC API:", error.message)
     }
     res.status(500).json({ error: 'Failed to fetch hut alerts from DOC API'})
   }
@@ -80,14 +80,14 @@ router.get('/:id/alerts', async (req, res) => {
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
 
-      if (response.body) {
-        res.json(response.body)
-      } else {
-        res.status(404).json({ error: 'Hut alerts not found' });
-      }
+    if (response.body) {
+      res.json(response.body)
+    } else {
+      res.status(404).json({ error: 'Hut alerts not found' });
+    }
   } catch (error) {
     if (error instanceof Error) {
-    console.error("Failed to fetch hut alerts from DOC API:", error.message)
+      console.error("Failed to fetch hut alerts from DOC API:", error.message)
     }
     res.status(500).json({ error: 'Failed to fetch hut alerts from DOC API'})
   }
@@ -101,14 +101,14 @@ router.get('/:assetId/detail', async (req, res) => {
       .set('accept', 'application/json')
       .set('x-api-key', apiKey)
 
-      if (response.body) {
-        res.json(response.body)
-      } else {
-        res.status(404).json({ error: 'Hut details not found' });
-      }
+    if (response.body) {
+      res.json(response.body)
+    } else {
+      res.status(404).json({ error: 'Hut details not found' });
+    }
   } catch (error) {
     if (error instanceof Error) {
-    console.error("Failed to fetch hut details from DOC API:", error.message)
+      console.error("Failed to fetch hut details from DOC API:", error.message)
     }
     res.status(500).json({ error: 'Failed to fetch hut details from DOC API'})
   }
