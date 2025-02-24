@@ -39,28 +39,35 @@ export default function Nav() {
               <NavLink
                 className='transition'
                 to='/about'>
-            About
+                  About
               </NavLink>
             </li>
             <li>
               <NavLink 
                 className='transition' 
                 to='/huts'>
-            Huts
+                  Huts
               </NavLink>
             </li>
             <li>
               <NavLink 
                 className='transition'
                 to='/tracks/region'>
-            Hikes
+                  Hikes
               </NavLink>
             </li>
             <li>
               <NavLink
                 to='/reviews' 
                 className='transition'>
-          Reviews
+                  Reviews
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to='/alerts' 
+                className='transition'>
+                  Alerts
               </NavLink>
             </li>
             <li>
@@ -87,35 +94,42 @@ export default function Nav() {
         </div>
       </div>
   
-      <div className='navbar-end flex items-center lg:space-x-4 space-x-2 z-50'>
+      <div className='navbar-center flex items-center lg:space-x-4 space-x-2 z-50'>
         <div className='hidden lg:flex'>
           <ul className='menu menu-horizontal px-1'>
             <li>
               <NavLink
                 className='transition text-md'
                 to='/about'>
-        About
+                  About
               </NavLink>
             </li>
             <li>
               <NavLink 
                 className='transition' 
                 to='/huts'>
-        Huts
+                  Huts
               </NavLink>
             </li>
             <li>
               <NavLink 
                 className='transition'
                 to='/tracks/region'>
-        Hikes
+                  Hikes
               </NavLink>
             </li>
             <li>
               <NavLink
                 to='/reviews' 
                 className='transition'>
-        Reviews
+                  Reviews
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to='/alerts' 
+                className='transition'>
+                  Alerts
               </NavLink>
             </li>
             <li className='pl-2'>

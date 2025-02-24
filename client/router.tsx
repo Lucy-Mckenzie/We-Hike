@@ -7,14 +7,14 @@ import {
 import HutsByRegion from './pages/HutsByRegion'
 import HutsInRegion from './pages/HutsInRegion'
 import Layout from './components/layout/Layout'
-import Tracks from './pages/Tracks'
+import Tracks from './pages/TracksInRegion'
 import TrackDetails from './pages/TrackDetails'
-import AllRegions from './pages/AllRegions'
+import AllRegions from './pages/TracksByRegion'
 import Home from './pages/Home'
 import ReviewForm from './pages/ReviewForm'
 import About from './pages/About'
 import GreatWalksDetails from './pages/GreatWalksDetails'
-import HutAlerts from './components/HutAlerts'
+import Alerts from './pages/Alerts'
 import HutsDetail from './pages/HutDetails'
 
 export const routes = createRoutesFromElements(
@@ -30,9 +30,9 @@ export const routes = createRoutesFromElements(
     />
     <Route path='/walks/:name' element={<GreatWalksDetails />} />
     <Route path='/huts' element={<HutsByRegion />} />
-    <Route path='/huts/alerts' element={<HutAlerts />} />
     <Route path='/huts/:region' element={<HutsInRegion />} />
     <Route path='/huts/:assetId/detail' element={<HutsDetail />} />
+    <Route path='/alerts' element={<Alerts />} />
   </Route>,
 )
 export const router = createBrowserRouter(routes)

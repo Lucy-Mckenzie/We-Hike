@@ -1,4 +1,4 @@
-import { getHutsAlerts } from '../apis/doc-huts'
+import { getHutsAlerts } from '../apis/doc-alerts'
 import {useQuery} from '@tanstack/react-query'
 
 export default function useAllHutAlerts() {
