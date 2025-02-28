@@ -35,6 +35,18 @@ cd we-hike
 npm run dev
 ```
 
+5. Create an API account with OpenWeatherMap:
+@https://openweathermap.org/current
+
+* Find your API Key.
+* Create a .env file to store your key in.
+
+6. Create an API account with Department of Conservation:
+@https://api.doc.govt.nz/
+
+* Find your API Key.
+* Create a .env file to store your key in.
+
 # Problems and thought processes 
 <ul>
 <li>
@@ -79,9 +91,14 @@ And WGS84:
 # Whats next?
 While We Hike still has a lot of work, I am very proud of the organisation in the code base, and how far the application has gone so far. There are tests for components, Auth0, database, React Query, Mutations, React forms, Restful Apis, CRUD and accessibility friendly. 
 <br><br>
-* I am currently having issues displaying the alerts, I created a function that could retrieve the data with the top 10 results. Which was working for the first week and then I started receiving HTML status code 500. I assume that it's a problem with the paths in my backend when calling it.<br><br>
+* I am currently having issues displaying the alerts, I created a function that could retrieve the data with the top 10 results. Which was working for the first week and then I started receiving HTML status code 500. I assume that it's a problem with the paths in my backend when calling it.
+<br><br>
+** The Alerts API is all fixed, the main issue was the backend calls - the paths were wrong. As I went back into the code base and spent time organsing the routes I caught the issue. 
+<br><br>
 * Implementing functionality to save places on the map, during boot camp we did create an app that could save the user's pinpoint to a location but it was created by a colleague who jumped through hoops to get it going. This is next on the cards.<br><br>
-* And finally, I would like to add weather to the locations, this was my idea at the beginning which I think will be fairly uncomplicated but we will see.<br><br>
+* And finally, I would like to add weather to the locations, this was my idea at the beginning which I think will be fairly uncomplicated but we will see.
+<br><br>
+** While playing with OpenWeatherApi and QGIS, I've started implementing different mapping systems that will show the clouds, rain, wind, and temperature. I'm storing my progress in the Weather page. 
 
   
 ## License
