@@ -1,4 +1,4 @@
-import useHutDetails from '../hooks/use-hutDetails'
+import useHutDetails from '../hooks/use-allHutDetails'
 import { Link, useParams } from 'react-router-dom'
 
 export default function HutDetail() {

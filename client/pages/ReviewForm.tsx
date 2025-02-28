@@ -1,15 +1,12 @@
 import { useState } from 'react'
-import { useQuery, useQueryClient } from '@tanstack/react-query'
-import { fetchAllReviews } from '../apis/reviews'
+import { useQueryClient } from '@tanstack/react-query'
 import AddReviewForm from '../components/AddReview'
+import useAllReviews from '../hooks/use-allReviews'
 
 export default function ReviewForm() {
   const [formVisible, setFormVisible ] = useState(false)
 
-  const { data: review, isPending, isError, error } = useQuery({ 
-    queryKey: ['review'],
-    queryFn: () => fetchAllReviews(),
-  })
+  const { data: review, isPending, isError, error } = useAllReviews()
 
   const queryClient = useQueryClient()
   const handleAddReview = () => {
@@ -24,10 +21,10 @@ export default function ReviewForm() {
   return (
     <div className='flex justify-center items-center flex-col mb-20 px-44'>
       <h1 className='text-4xl text-center my-2'>
-          REVIEWS
+        REVIEWS
       </h1>
       <h2 className='text-4xl font-bold text-black pb-16'>
-          Read what others have to say
+        Read what others have to say
       </h2>
       <div className='grid grid-cols-3 grid-rows-1 gap-6'>
         {review.map((review, index) => (

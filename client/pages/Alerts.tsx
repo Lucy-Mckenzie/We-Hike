@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
-import useAllHutAlerts from '../hooks/use-hutAlerts'
+import useAllAlerts from '../hooks/use-allAlerts'
 import { Alerts } from '../../models/huts'
 
 export default function DisplayRegions() {
   
-  const { data: alerts, error, isPending } = useAllHutAlerts()
+  const { data: alerts, error, isPending } = useAllAlerts()
 
   if (error) return <p>Sorry couldnt find alerts</p>
   if (isPending) return <p>Loading...</p>
