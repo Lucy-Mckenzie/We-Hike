@@ -1,3 +1,4 @@
+import LoadingSpinner from '../components/LoadingSpinner'
 import useHutDetails from '../hooks/use-allHutDetails'
 import { Link, useParams } from 'react-router-dom'
 
@@ -7,7 +8,7 @@ export default function HutDetail() {
   const { data: huts, error, isPending } = useHutDetails(assetId as string)
 
   if (error) return <p>Sorry couldnt find this hut</p>
-  if (isPending) return <p>Loading...</p>
+  if (isPending) return <LoadingSpinner />
 
   return (
     <>

@@ -1,6 +1,7 @@
 import { getTrackById } from '../apis/doc-hikes.ts'
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
+import LoadingSpinner from '../components/LoadingSpinner.tsx'
 
 export default function TracksByName() {
 
@@ -12,7 +13,7 @@ export default function TracksByName() {
   })
 
   if (error) return <p>Sorry couldnt find this hike</p>
-  if (isPending) return <p>Loading...</p>
+  if (isPending) return <LoadingSpinner />
 
   return (
     <div className='flex flex-col items-center max-w-[900px] m-auto min-h-screen'>

@@ -1,6 +1,7 @@
 import { getTracksByRegion } from '../apis/doc-hikes.ts'
 import { useParams, Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
+import LoadingSpinner from '../components/LoadingSpinner.tsx'
 
 export default function DisplayTracks() {
   const { region } = useParams()
@@ -11,7 +12,7 @@ export default function DisplayTracks() {
   })
 
   if (error) return <p>Sorry couldnt find this hike</p>
-  if (isPending) return <p>The hikes are loading!...</p>
+  if (isPending) return <LoadingSpinner />
  
   return (
     <>

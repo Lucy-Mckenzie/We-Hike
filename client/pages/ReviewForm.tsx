@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import AddReviewForm from '../components/AddReview'
 import useAllReviews from '../hooks/use-allReviews'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 export default function ReviewForm() {
   const [formVisible, setFormVisible ] = useState(false)
@@ -14,7 +15,7 @@ export default function ReviewForm() {
     setFormVisible(false)
   }
 
-  if (isPending) return <>Loading...</>
+  if (isPending) return <p><LoadingSpinner /></p>
   if (isError) return <>Sorry cannot find reviews.. {error.message}</>
   if (!review) return <>Reviews cant be found</>
 

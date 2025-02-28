@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
 import useAllAlerts from '../hooks/use-allAlerts'
 import { Alerts } from '../../models/huts'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 export default function DisplayRegions() {
   
   const { data: alerts, error, isPending } = useAllAlerts()
 
   if (error) return <p>Sorry couldnt find alerts</p>
-  if (isPending) return <p>Loading...</p>
+  if (isPending) return <LoadingSpinner />
 
   let alertList = []
   try {
@@ -24,7 +25,7 @@ export default function DisplayRegions() {
       <div className='flex flex-col items-center px-5 py-10 text-left mx-auto'>
         <h1 className='text-xl sm:text-2xl lg:text-4xl text-center mb-5 font-normal'>Recent Alerts</h1>
         <div className='flex flex-col items-center max-w-[900px] m-auto pb-6'>
-          <p className='pb-5 text-lg text-neutral-600'>
+          <p className='text-lg text-neutral-600 border-b-2 mb-4'>
         These alerts rank from the most recent to the least, and are constantly being updated by the Departement of Conservation 
           </p>
           {recentAlerts.map((alert: Alerts, index: number) => (

@@ -9,6 +9,7 @@ import {
 } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
+import LoadingSpinner from './LoadingSpinner.tsx'
 
 const markerIcon = new L.Icon({
   iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
@@ -24,7 +25,7 @@ export default function MapHikes() {
   const wgs84 = 'EPSG:4326' 
 
 
-  if (isPending)  return <>Loading...</>
+  if (isPending) return <LoadingSpinner />
   if (error) return <>Sorry, cannot find tracks..</>
   if (!tracks) return <p>Sorry, tracks cannott be displayed at the moment.</p>
   
