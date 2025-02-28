@@ -16,7 +16,7 @@ export default function Nav() {
   const handleSignIn = () => loginWithRedirect()
 
   return (
-    <div className='navbar bg-base-100 shadow-sm'>
+    <div className='navbar bg-base-100 shadow-sm z-50'>
       <div className='navbar flex items-end'>
         <div className='dropdown'>
           <div tabIndex={0} role='button' className='btn btn-ghost lg:hidden'>
@@ -38,8 +38,8 @@ export default function Nav() {
             <li>
               <NavLink
                 className='transition'
-                to='/about'>
-                  About
+                to='/weather'>
+                  Weather
               </NavLink>
             </li>
             <li>
@@ -100,8 +100,8 @@ export default function Nav() {
             <li>
               <NavLink
                 className='transition text-md'
-                to='/about'>
-                  About
+                to='/weather'>
+                  Weather
               </NavLink>
             </li>
             <li>

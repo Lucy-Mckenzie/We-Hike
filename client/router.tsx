@@ -12,7 +12,7 @@ import TrackDetails from './pages/TrackDetails'
 import AllRegions from './pages/TracksByRegion'
 import Home from './pages/Home'
 import ReviewForm from './pages/ReviewForm'
-import About from './pages/About'
+import Weather from './pages/Weather'
 import GreatWalksDetails from './pages/GreatWalksDetails'
 import Alerts from './pages/Alerts'
 import HutsDetail from './pages/HutDetails'
@@ -20,7 +20,7 @@ import HutsDetail from './pages/HutDetails'
 export const routes = createRoutesFromElements(
   <Route path='/' element={<Layout />}>
     <Route index element={<Home />} />
-    <Route path='/about' element={<About />} />
+    <Route path='/Weather' element={<Weather />} />
     <Route path='/reviews' element={<ReviewForm />} />
     <Route path='/tracks/region' element={<AllRegions />} />
     <Route path='/tracks/region/:region' element={<Tracks />} />
