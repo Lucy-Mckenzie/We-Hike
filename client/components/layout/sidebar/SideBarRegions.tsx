@@ -64,7 +64,7 @@ const SideBarRegions = () => {
             </li>
             <li>
               <a href='/tracks/region/NZ-WGN'>
-                Wellington + Kapiti
+                Wellington/Kapiti
               </a>
             </li>
             <li>
@@ -86,7 +86,7 @@ const SideBarRegions = () => {
             </li>
             <li>
               <a href='/tracks/region/NZ-NSN'>
-                Nelson + Tasman
+                Nelson/Tasman
               </a>
             </li>
             <li>
@@ -106,7 +106,7 @@ const SideBarRegions = () => {
             </li>
             <li>
               <a href='/tracks/region/NZ-STL'>
-                Southland + Fiordland
+                Southland/Fiordland
               </a>
             </li>
             <li>

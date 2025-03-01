@@ -3,7 +3,7 @@ import useAllAlerts from '../hooks/use-allAlerts'
 import { Alerts } from '../../models/huts'
 import LoadingSpinner from '../components/LoadingSpinner'
 
-export default function DisplayRegions() {
+export default function DOCAlerts() {
   
   const { data: alerts, error, isPending } = useAllAlerts()
 
@@ -21,12 +21,16 @@ export default function DisplayRegions() {
 
   return (
     <>
-      <Link to='/' className='pl-4 underline'>Back to home</Link>
+      <Link to='/' className='pl-4 underline'>
+      Back to home
+      </Link>
       <div className='flex flex-col items-center px-5 py-10 text-left mx-auto'>
-        <h1 className='text-xl sm:text-2xl lg:text-4xl text-center mb-5 font-normal'>Recent Alerts</h1>
+        <h1 className='text-xl sm:text-2xl lg:text-4xl text-center mb-5 font-normal'>
+          Recent Alerts
+        </h1>
         <div className='flex flex-col items-center max-w-[900px] m-auto pb-6'>
           <p className='text-lg text-neutral-600 border-b-2 mb-4'>
-        These alerts rank from the most recent to the least, and are constantly being updated by the Departement of Conservation 
+            These alerts rank from the most recent to the least, and are constantly being updated by the Departement of Conservation 
           </p>
           {recentAlerts.map((alert: Alerts, index: number) => (
             <ul key={index} className='space-y-2'>

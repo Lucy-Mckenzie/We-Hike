@@ -1,16 +1,10 @@
-import { getTrackById } from '../apis/doc-hikes.ts'
-import { useParams } from 'react-router-dom'
-import { useQuery } from '@tanstack/react-query'
 import LoadingSpinner from '../components/LoadingSpinner.tsx'
+import useAllTrackDetails from '../hooks/use-allTrackDetails.tsx'
 
 export default function TracksByName() {
 
-  const { assetId } = useParams()
+  const { data: tracks, error, isPending } = useAllTrackDetails()
 
-  const { data: tracks, error, isPending } = useQuery({
-    queryKey: ['trackDetails', assetId],
-    queryFn: () => getTrackById(assetId as string)
-  })
 
   if (error) return <p>Sorry couldnt find this hike</p>
   if (isPending) return <LoadingSpinner />
