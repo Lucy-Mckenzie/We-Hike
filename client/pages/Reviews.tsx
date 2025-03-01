@@ -4,7 +4,7 @@ import AddReviewForm from '../components/AddReview'
 import useAllReviews from '../hooks/use-allReviews'
 import LoadingSpinner from '../components/LoadingSpinner'
 
-export default function ReviewForm() {
+export default function Reviews() {
   const [formVisible, setFormVisible ] = useState(false)
 
   const { data: review, isPending, isError, error } = useAllReviews()
@@ -24,12 +24,12 @@ export default function ReviewForm() {
       <h1 className='text-4xl text-center my-2'>
         REVIEWS
       </h1>
-      <h2 className='text-4xl font-bold text-black pb-16'>
+      <h2 className='text-4xl font-bold pb-16'>
         Read what others have to say
       </h2>
       <div className='grid grid-cols-3 grid-rows-1 gap-6'>
         {review.map((review, index) => (
-          <div key={index} className='relative flex items-center bg-[#727e5a]/30 rounded-lg shadow-md text-black flex-col py-5 px-12 text-center'>
+          <div key={index} className='relative flex items-center bg-[#727e5a]/30 rounded-lg shadow-md flex-col py-5 px-12 text-center'>
             <h1 className='text-2xl pt-5'>
               {review.author}
             </h1>
