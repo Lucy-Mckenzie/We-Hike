@@ -1,6 +1,4 @@
-
-
-const SideBarRegions = () => {
+const SIdeBarRegions = () => {
   return (
     <div>
       <li>
@@ -121,4 +119,4 @@ const SideBarRegions = () => {
   )
 }
 
-export default SideBarRegions
+export default SIdeBarRegions
