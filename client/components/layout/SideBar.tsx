@@ -1,4 +1,4 @@
-import SIdeBarRegions from './sidebar/SIdeBarRegions'
+import SideBarRegions from './sidebar/SideBarRegions'
 
 const SideBar = () => {
   return (
@@ -12,7 +12,7 @@ const SideBar = () => {
             className='drawer-overlay'
           ></label>
           <ul className='menu min-h-full w-60 rounded-md bg-base-200 p-4 text-base-content'>
-            <SIdeBarRegions />
+            <SideBarRegions />
             <li>
               <a href='/weather'>Weather</a>
             </li>
