@@ -16,11 +16,6 @@ const SideBar = () => {
             <li>
               <a href='/weather'>Weather</a>
             </li>
-            <li>
-              <a href='/statistics' className='strikethrough'>
-                Statistics
-              </a>
-            </li>
           </ul>
         </div>
       </div>
