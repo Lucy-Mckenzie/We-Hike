@@ -8,7 +8,7 @@ const SideBarRegions = () => {
       </li>
       <li>
         <details>
-          <summary>Northland</summary>
+          <summary>North Island</summary>
           <ul className='rounded-t-none p-2'>
             <li>
               <a href='/tracks/region/NZ-NTL'>
@@ -75,7 +75,7 @@ const SideBarRegions = () => {
       </li>
       <li>
         <details>
-          <summary>Southland</summary>
+          <summary>South Island</summary>
           <ul className='rounded-t-none p-2'>
             <li>
               <a href='/tracks/region/NZ-CIT'>
