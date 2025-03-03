@@ -1,6 +1,6 @@
 const SideBarRegions = () => {
   return (
-    <div>
+    <div className='border border-gray-300'>
       <li>
         <a href='/tracks/region' className='font-semibold text-lg'>
           Hikes
