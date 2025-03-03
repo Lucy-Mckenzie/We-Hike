@@ -15,3 +15,13 @@ body {
   padding: 0;
 }
 
+.leaflet-control-layers label {
+  font-weight: bold;
+  display: block;
+  padding: 5px 10px;
+  text-align: left;
+}
+
+.leaflet-control-layers label:hover {
+  background: #d1d1d1;
+}
