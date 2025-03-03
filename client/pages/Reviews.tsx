@@ -37,7 +37,7 @@ export default function Reviews() {
               <span id='rating-label' className='sr-only'>
                   Rating: 5 out of 5 stars
               </span>
-              {[...Array(Math.floor(Math.random() * 4) + 2)].map((_, index) => (
+              {[...Array(Math.floor(Math.random() * 3) + 3)].map((_, index) => (
                 <input 
                   key={index}
                   type='radio' 
