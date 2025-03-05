@@ -1,4 +1,5 @@
 import EarthQuakes from "../components/q-gis/EarthQuakes"
+import PopulationDensity from "../components/q-gis/PopulationDensity"
 
 const QGIS = () => {
   return (
@@ -8,6 +9,7 @@ const QGIS = () => {
           A documentation of my QGIS studies
         </h1>
         <EarthQuakes />
+        <PopulationDensity />
       </div>
     </div>
   )
