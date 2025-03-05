@@ -13,9 +13,13 @@ export default function DisplayTracks() {
   const sortedTracks = [...tracks].sort((a, b) => a.name.localeCompare(b.name))
   return (
     <>
-      <Link to='/tracks/region' className='pl-4 underline'>
-      Back to Hikes
-      </Link>
+      <div className='breadcrumbs text-sm'>
+        <ul>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/tracks/region'>Hikes</Link></li>
+          <li>Hikes  in {region}</li>
+        </ul>
+      </div>
       <div className='flex flex-col items-center max-w-[900px] m-auto pb-6'>
         <h1 className='text-4xl text-left mb-5 m-5'>
           Hikes in {region}

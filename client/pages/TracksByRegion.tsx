@@ -5,9 +5,12 @@ import  MapHikes  from '../components/MapHikes'
 export default function DisplayAllRegions() {
   return (
     <>
-      <Link to='/' className='pl-4 underline'>
-      Back to home
-      </Link>
+      <div className='breadcrumbs text-sm'>
+        <ul>
+          <li><Link to='/'>Home</Link></li>
+          <li>Hikes</li>
+        </ul>
+      </div>
       <div className='m-auto text-center flex flex-col items-center'>
         <h1 className='text-xl sm:text-2xl lg:text-4xl text-center mb-5 font-normal'>
           All Doc hikes in New Zealand

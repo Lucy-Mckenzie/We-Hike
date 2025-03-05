@@ -12,9 +12,12 @@ export default function DisplayRegions() {
 
   return (
     <>
-      <Link to='/' className='pl-4 underline'>
-        Back to home
-      </Link>
+      <div className='breadcrumbs text-sm'>
+        <ul>
+          <li><Link to='/'>Home</Link></li>
+          <li>Huts</li>
+        </ul>
+      </div>
       <div className='flex flex-col items-center px-5 py-10 text-left mx-auto'>
         <h1 className='text-xl sm:text-2xl lg:text-4xl text-center mb-5 font-normal'>
           All Doc huts in New Zealand

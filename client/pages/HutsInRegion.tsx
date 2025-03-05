@@ -13,10 +13,16 @@ export default function HutsInRegion() {
   
   return (
     <>
-      <Link to='/huts' className='pl-4 underline'>Back to Regions</Link>
+      <div className='breadcrumbs text-sm'>
+        <ul>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/huts'>Huts</Link></li>
+          <li>{region}</li>
+        </ul>
+      </div>
       <div className='flex flex-col items-center justify-center px-5 py-10 text-left mx-auto max-w-[900px]'>
-        <h1 className='text-4xl text-left mb-5 font-light'>
-          Huts in the {region} Region
+        <h1 className='text-4xl text-left mb-5'>
+          Huts in the {region} 
         </h1>
         <ul>
           {hutsInRegion.map((hut) => (

@@ -3,6 +3,7 @@ import { useQueryClient } from '@tanstack/react-query'
 import AddReviewForm from '../components/AddReview'
 import useAllReviews from '../hooks/use-allReviews'
 import LoadingSpinner from '../components/LoadingSpinner'
+import { Link } from 'react-router-dom'
 
 export default function Reviews() {
   const [formVisible, setFormVisible ] = useState(false)
@@ -20,12 +21,17 @@ export default function Reviews() {
   if (!review) return <>Reviews cant be found</>
 
   return (
-    <div className='flex justify-center items-center flex-col mb-20 px-44'>
+    <><div className='breadcrumbs text-sm'>
+      <ul>
+        <li><Link to='/'>Home</Link></li>
+        <li>Reviews</li>
+      </ul>
+    </div><div className='flex justify-center items-center flex-col mb-20 px-44'>
       <h1 className='text-4xl text-center my-2'>
-        REVIEWS
+          REVIEWS
       </h1>
       <h2 className='text-4xl font-bold pb-16'>
-        Read what others have to say
+          Read what others have to say
       </h2>
       <div className='grid grid-cols-3 grid-rows-1 gap-6'>
         {review.map((review, index) => (
@@ -38,15 +44,14 @@ export default function Reviews() {
                   Rating: 5 out of 5 stars
               </span>
               {[...Array(Math.floor(Math.random() * 3) + 3)].map((_, index) => (
-                <input 
+                <input
                   key={index}
-                  type='radio' 
+                  type='radio'
                   name='rating-2'
                   id={`Star ${index + 1}`}
                   className='mask mask-star-2 bg-orange-400 px-2.5 py-4'
                   checked readOnly
-                  aria-label={`Star ${index + 1}`}
-                />
+                  aria-label={`Star ${index + 1}`} />
               ))}
             </div>
             <h2 className='text-md font-semibold'>
@@ -58,7 +63,7 @@ export default function Reviews() {
           </div>
         ))}
       </div>
-      <div className='w-full flex justify-start'> 
+      <div className='w-full flex justify-start'>
         <button className='m-5 p-2 rounded-full bg-[#6b9dca] text-white transition-colors duration-300 ease-in-out hover:bg-[#486a88]'
           onClick={() => setFormVisible(true)}>Leave a Review
         </button>
@@ -66,7 +71,7 @@ export default function Reviews() {
       {formVisible && (
         <AddReviewForm onAdd={handleAddReview} onClose={() => setFormVisible(false)} />
       )}
-    </div>
+    </div></>
   )
 }
 

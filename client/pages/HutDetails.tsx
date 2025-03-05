@@ -12,7 +12,13 @@ export default function HutDetail() {
 
   return (
     <>
-      <Link to='/huts' className='pl-4 underline'>Back to huts</Link>
+      <div className='breadcrumbs text-sm'>
+        <ul>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/huts'>Huts</Link></li>
+          <li>{huts.name}</li>
+        </ul>
+      </div>
       <div className='flex flex-col items-center max-w-[900px] m-auto min-h-screen'>
         <h1 className='text-4xl text-center my-5 font-normal font-lato'>{huts.name}</h1>
         <div>

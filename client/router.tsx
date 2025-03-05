@@ -12,12 +12,12 @@ import TrackDetails from './pages/TrackDetails'
 import AllRegions from './pages/TracksByRegion'
 import Home from './pages/Home'
 import Weather from './pages/Weather'
-import GreatWalksDetails from './pages/GreatWalksDetails'
+import GreatWalksDetails from './components/GreatWalksDetails'
 import Alerts from './pages/Alerts'
 import HutsDetail from './pages/HutDetails'
 import Reviews from './pages/Reviews'
 import QGIS from './pages/QGIS'
-import Greatwalks from './components/GreatWalks'
+import Greatwalks from './pages/GreatWalks'
 
 export const routes = createRoutesFromElements(
   <Route path='/' element={<Layout />}>
