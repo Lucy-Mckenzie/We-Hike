@@ -1,4 +1,3 @@
-import React from 'react'
 import Greatwalks from './grid/Greatwalks'
 import Qgis from './grid/Qgis'
 import Weather from './grid/Weather'

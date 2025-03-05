@@ -73,12 +73,18 @@ export default function Nav() {
             <li>
               <IfAuthenticated>
                 <div className='flex flex-col items-center space-y-2'>
-                  <button className=' text-sm mr-2 hover:text-gray-400 hover:scale-105 transition-transform duration-200 hover:cursor-pointer' onClick={handleSignOut}>Sign out</button>
+                  <button className=' text-sm mr-2 hover:text-gray-400 hover:scale-105 transition-transform duration-200 hover:cursor-pointer' 
+                    onClick={handleSignOut}>
+                      Sign out
+                  </button>
                   {user && <p className='text-s'>User: {user?.nickname}</p>}
                 </div>
               </IfAuthenticated>
               <IfNotAuthenticated>
-                <button  className='border-lg rounded-lg text-sm px-2 py-1 hover:scale-105 transition-transform duration-200 hover:cursor-pointer' onClick={handleSignIn}>Sign in</button>
+                <button className='border-lg rounded-lg text-sm px-2 py-1 hover:scale-105 transition-transform duration-200 hover:cursor-pointer' 
+                  onClick={handleSignIn}>
+                    Sign in
+                </button>
               </IfNotAuthenticated>
             </li>
           </ul>
@@ -88,7 +94,7 @@ export default function Nav() {
             <img 
               src='/images/logo.png' 
               alt='Logo of we hike' 
-              className='lg:h-[40px] mr-auto z-1 hover:scale-105 transition-transform duration-200 hover:cursor-pointer lg:pb-2'
+              className='lg:h-[40px] ml-4 z-1 hover:scale-105 transition-transform duration-200 hover:cursor-pointer lg:pb-2'
             />
           </NavLink>
         </div>
@@ -135,12 +141,25 @@ export default function Nav() {
             <li className='pl-2'>
               <IfAuthenticated>
                 <div className='flex flex-col items-center space-y-2'>
-                  <button className=' text-black text-sm mr-2 hover:text-gray-400 hover:scale-105 transition-transform duration-200 hover:cursor-pointer' onClick={handleSignOut}>Sign out</button>
-                  {user && <p className='text-sm text-black'>User: {user?.nickname}</p>}
+                  <button className=' text-black text-sm mr-2 hover:text-gray-400 hover:scale-105 transition-transform duration-200 hover:cursor-pointer' 
+                    onClick={handleSignOut}>
+                      Sign out
+                  </button>
+                  {user && <p className='text-sm text-black'>
+                    User: {user?.nickname}
+                  </p>}
                 </div>
               </IfAuthenticated>
               <IfNotAuthenticated>
-                <button  className='border-lg rounded-lg bg-[#4A5D5E] hover:bg-[#586b6c] text-sm px-2 py-1 text-white hover:scale-105 transition-transform duration-200 hover:cursor-pointer' onClick={handleSignIn}>Sign in</button>
+                <button className='border rounded-lg border-[#727e5a] hover:bg-[#727e5a]/70 hover:text-white text-sm px-2 hover:scale-105 transition-transform duration-200 hover:cursor-pointer flex items-center justify-between space-x-2' 
+                  onClick={handleSignIn}>
+                    Sign in
+                  <img 
+                    src='images/login.svg'
+                    alt='login logo'
+                    className='w-5 h-5'
+                  />
+                </button>
               </IfNotAuthenticated>
             </li>
           </ul>
