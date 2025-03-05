@@ -155,7 +155,7 @@ export default function Nav() {
                   onClick={handleSignIn}>
                     Sign in
                   <img 
-                    src='images/login.svg'
+                    src='/images/login.svg'
                     alt='login logo'
                     className='w-5 h-5'
                   />
