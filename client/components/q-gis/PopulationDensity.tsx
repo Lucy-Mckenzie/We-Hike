@@ -6,7 +6,7 @@ const PopulationDensity = () => {
         <img 
           src='/images/qgis/population-density.png'
           alt='New York Population Density 2010'
-          className='w-6/12 rounded-md shadow-md border border-gray-500'
+          className='w-6/12 rounded-md shadow-md border border-gray-500 z-10'
         />
         <div className='text-left'>
           <h1 className='text-lg font-semibold'>

@@ -1,16 +1,20 @@
-import Map from '../components/Map'
-import Greatwalks from '../components/GreatWalks'
+import Grid from '../components/Grid'
 
 export default function Home() {
   return (
-    <div className='flex flex-col justify-center items-center mx-auto px-4 sm:px-6 md:px-8 lg:px-10'>
+    <div className='relative min-h-screen flex flex-col justify-center items-center'>
+      <div className="absolute top-0 left-0 w-full h-full grid grid-cols-[repeat(auto-fit,minmax(10px,1fr))] grid-rows-[repeat(auto-fit,minmax(10px,1fr))] gap-0 opacity-10">
+        {Array.from({ length: 10000 }).map((_, i) => (
+          <div key={i} className="border border-gray-300"></div>
+        ))}
+      </div>
       <div className='lg:px-5 lg:py-10 py-5 text-center w-full lg:max-w-7xl'>
-        <h1 className='font-lato lg:mb-5 mb-2 text-center text-xl sm:text-2xl lg:text-4xl pr-8'>
-        The great walks of New Zealand, mapped
+        <h1 className='text-center font-manrope leading-tight lg:text-6xl text-5xl pb-5 lg:pt-0 pt-10'>
+          Explore the rugged landscapes of New Zealand
         </h1>
-        <Map />
-        <Greatwalks />
+        <Grid />
       </div>
     </div>
   )
 }
+

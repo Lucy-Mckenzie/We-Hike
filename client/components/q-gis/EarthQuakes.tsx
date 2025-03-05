@@ -14,7 +14,7 @@ const EarthQuakes = () => {
       <img 
         src='/images/qgis/earthquakes.png'
         alt='earthquakes data displayed'
-        className='w-12/12 rounded-md shadow-md border border-gray-500'
+        className='w-12/12 rounded-md shadow-md border border-gray-500 z-10'
       />
     </div>
   )
