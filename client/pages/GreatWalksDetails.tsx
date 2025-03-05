@@ -4,7 +4,7 @@ import data from '../data/greatWalks'
 export default function GreatWalksDetails() {
   const { name } = useParams()
  
-  if (!name) return <p>Sorry couldnt find the hike.</p>
+  if (!name) return <p>Sorry couldn&apos;t find the hike.</p>
 
   const hike = data.find((h) => h.name === decodeURIComponent(name))
 

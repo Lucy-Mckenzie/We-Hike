@@ -1,8 +1,8 @@
 /**
- * @file Accesses the weather sytems from openweathermap and displays them on the React Leaflet map.
+ * @file Accesses the weather systems from Open Weather Map and displays them on the React Leaflet map.
  * 
- * Being absolutely facinated by hiking and weather, adding weather to the maps was my next progression. 
- * It ended up being a lot simplier than I envisioned mostly because of all the free libraies and apis out there. 
+ * Being absolutely fascinated by hiking and weather, adding weather to the maps was my next progression. 
+ * It ended up being a lot simpler than I envisioned mostly because of all the free libraries and apis out there. 
  */
 import {
   MapContainer,

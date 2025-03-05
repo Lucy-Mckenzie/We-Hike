@@ -7,7 +7,7 @@ export default function HutDetail() {
   const { assetId } = useParams()
   const { data: huts, error, isPending } = useHutDetails(assetId as string)
 
-  if (error) return <p>Sorry couldnt find this hut</p>
+  if (error) return <p>Sorry couldn&apos;t find this hut</p>
   if (isPending) return <LoadingSpinner />
 
   return (

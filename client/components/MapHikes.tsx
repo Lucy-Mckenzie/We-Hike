@@ -27,7 +27,7 @@ export default function MapHikes() {
 
   if (isPending) return <LoadingSpinner />
   if (error) return <>Sorry, cannot find tracks..</>
-  if (!tracks) return <p>Sorry, tracks cannott be displayed at the moment.</p>
+  if (!tracks) return <p>Sorry, tracks cannot be displayed at the moment.</p>
   
   return (
     <MapContainer

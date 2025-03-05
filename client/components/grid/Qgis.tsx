@@ -15,7 +15,7 @@ const Qgis = () => {
           QGIS (Geographic Information Services)
         </h2>
         <p>
-          A documentaion of my QGIS studies.
+          A documentation of my QGIS studies.
         </p>
         <div className='card-actions'>
           <a

@@ -16,7 +16,7 @@ const Weather = () => {
         Weather Conditions
         </h2>
         <p>
-        Open sourced data on current weather conditons, worldwide.
+        Open sourced data on current weather conditions, worldwide.
         </p>
         <div className='card-actions'>
           <a

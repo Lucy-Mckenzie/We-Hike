@@ -13,7 +13,7 @@ const PopulationDensity = () => {
             A study of the Largest Earthquakes from 2000-2025
           </h1>
           <h2 className='mb-5 text-sm'>
-            This is part 2 of the QGIS Development course, learning basic data processing and visualsation techniques. 
+            This is part 2 of the QGIS Development course, learning basic data processing and visualisation techniques. 
             Creating a table join and using a graduated symbology to create a choropleth map.
           </h2>
           <ul className='list-disc p-4 space-y-2'>

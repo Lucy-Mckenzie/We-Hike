@@ -6,7 +6,7 @@ export default function TracksByName() {
   const { data: tracks, error, isPending } = useAllTrackDetails()
 
 
-  if (error) return <p>Sorry couldnt find this hike</p>
+  if (error) return <p>Sorry couldn&apos;t find this hike</p>
   if (isPending) return <LoadingSpinner />
 
   return (

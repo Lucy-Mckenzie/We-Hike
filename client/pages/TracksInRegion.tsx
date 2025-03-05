@@ -7,7 +7,7 @@ export default function DisplayTracks() {
 
   const {data: tracks, error, isPending } = useAllTracksInRegion()
 
-  if (error) return <p>Sorry couldnt find this hike</p>
+  if (error) return <p>Sorry couldn&apos;t find this hike</p>
   if (isPending) return <LoadingSpinner />
  
   const sortedTracks = [...tracks].sort((a, b) => a.name.localeCompare(b.name))

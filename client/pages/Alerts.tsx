@@ -7,7 +7,7 @@ export default function DOCAlerts() {
   
   const { data: alerts, error, isPending } = useAllAlerts()
 
-  if (error) return <p>Sorry couldnt find alerts</p>
+  if (error) return <p>Sorry couldn&apos;t find alerts</p>
   if (isPending) return <LoadingSpinner />
 
   let alertList = []
@@ -30,7 +30,7 @@ export default function DOCAlerts() {
         </h1>
         <div className='flex flex-col items-center max-w-[900px] m-auto pb-6'>
           <p className='text-lg text-neutral-600 border-b-2 mb-4'>
-            These alerts rank from the most recent to the least, and are constantly being updated by the Departement of Conservation 
+            These alerts rank from the most recent to the least, and are constantly being updated by the Department of Conservation 
           </p>
           {recentAlerts.map((alert: Alerts, index: number) => (
             <ul key={index} className='space-y-2'>
