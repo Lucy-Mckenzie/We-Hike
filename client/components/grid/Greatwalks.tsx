@@ -1,10 +1,10 @@
-import React from 'react'
 import Button from './Button'
+import { Link } from 'react-router-dom'
 
 const Greatwalks = () => {
   return (
     <div className='card bg-base-100 max-h-[400px] w-80 shadow-md rounded-md space-y-2 transition-transform hover:scale-105 duration-300 flex flex-col'>
-      <figure className='p-2 h-40'>
+      <figure className='p-2'>
         <img
           src='/images/home.jpg'
           alt='Routeburn Trail'
@@ -19,10 +19,10 @@ const Greatwalks = () => {
         New Zealand has 11 Great Walks, which are multi-day hiking trails. 
         </p>
         <div className='card-actions'>
-          <a
-            href='/greatwalks'>
+          <Link
+            to='/greatwalks'>
             <Button />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

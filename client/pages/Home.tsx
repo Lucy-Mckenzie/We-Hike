@@ -1,3 +1,4 @@
+import Favorites from '../components/Favorites'
 import Grid from '../components/Grid'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
           Explore the rugged landscapes of New Zealand
         </h1>
         <Grid />
+        <Favorites />
       </div>
     </div>
   )

@@ -1,5 +1,5 @@
-import React from 'react'
 import Button from './Button'
+import { Link } from 'react-router-dom'
 
 const Weather = () => {
   return (
@@ -19,10 +19,10 @@ const Weather = () => {
         Open sourced data on current weather conditions, worldwide.
         </p>
         <div className='card-actions'>
-          <a
-            href='/weather'>
+          <Link
+            to='/weather'>
             <Button />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

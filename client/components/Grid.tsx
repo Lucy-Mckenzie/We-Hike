@@ -11,6 +11,9 @@ const Grid = () => {
         <Qgis />
         <Weather />
       </div>
+      <h1 className='text-left mt-10 text-3xl'>
+        Browse 
+      </h1>
       <Map />
     </div>
   )

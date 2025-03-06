@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Button from './Button'
 
 const Qgis = () => {
@@ -18,10 +19,10 @@ const Qgis = () => {
           A documentation of my QGIS studies.
         </p>
         <div className='card-actions'>
-          <a
-            href='/qgis'>
+          <Link
+            to='/qgis'>
             <Button />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
