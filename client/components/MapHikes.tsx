@@ -6,6 +6,10 @@ import {
   TileLayer,
   Marker,
   Popup,
+  Polyline,
+  FeatureGroup,
+  Tooltip,
+  LayersControl,
 } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
@@ -24,7 +28,6 @@ export default function MapHikes() {
   const nztm = '+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +datum=WGS84 +units=m +no_defs' 
   const wgs84 = 'EPSG:4326' 
 
-
   if (isPending) return <LoadingSpinner />
   if (error) return <>Sorry, cannot find tracks..</>
   if (!tracks) return <p>Sorry, tracks cannot be displayed at the moment.</p>
@@ -40,25 +43,47 @@ export default function MapHikes() {
         url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
         attribution='Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
       />
-      {tracks.map((track: TrackDetails) => {
-        const { name, region, x, y } = track
+      <LayersControl position='topright'>
+        <LayersControl.Overlay checked name='Hiking Tracks'>
+          <FeatureGroup>
+            {tracks.map((track: TrackDetails) => {
+              const { name, line } = track;
+              const convertedPos = line.flat().map(([X, Y]) => proj4(nztm, wgs84, [X, Y]));
 
-        const [longitude, latitude] = proj4(nztm, wgs84, [x, y])
+              return (
+                <div key={name}>
+                  <Polyline positions={convertedPos.map(([lon, lat]) => [lat, lon])} color='#f1642e'>
+                    <Tooltip sticky>{name}</Tooltip>
+                  </Polyline>
+                </div>
+              );
+            })}
+          </FeatureGroup>
+        </LayersControl.Overlay>
 
-        return (
-          <Marker
-            key={name}
-            position={[latitude, longitude] as [number, number]}
-            title={`marker for ${name}`}
-            icon={markerIcon}
-          >
-            <Popup>
-              <p>{name}</p><br />
-              <p>Region: {region}</p>
-            </Popup>
-          </Marker>
-        )
-      })}
+        <LayersControl.Overlay checked name='Track Markers'>
+          <FeatureGroup>
+            {tracks.map((track: TrackDetails) => {
+              const { name, region, x, y } = track;
+              const [longitude, latitude] = proj4(nztm, wgs84, [x, y]);
+
+              return (
+                <Marker
+                  key={name}
+                  position={[latitude, longitude] as [number, number]}
+                  title={`Marker for ${name}`}
+                  icon={markerIcon}
+                >
+                  <Popup>
+                    <p>{name}</p>
+                    <p>Region: {region}</p>
+                  </Popup>
+                </Marker>
+              );
+            })}
+          </FeatureGroup>
+        </LayersControl.Overlay>
+      </LayersControl>
     </MapContainer>
   )
 }

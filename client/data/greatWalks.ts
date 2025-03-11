@@ -1,7 +1,7 @@
 const greatWalks = [
   {
     name: 'Abel Tasman Coast Track',
-    location: [-40.9676, 173.0320],
+    location: [-40.8486, 173.0124],
     region: 'Nelson',
     descriptionS: 'A stunning coastal walk through native bush, golden beaches, and crystal-clear waters.',
     descriptionL: `The Abel Tasman Coast Track in New Zealand offers one of the most scenic hiking experiences in the country. 
@@ -19,7 +19,7 @@ const greatWalks = [
   },
   {
     name: 'Tongariro Northern Circuit',
-    location: [-39.2822, 175.5968],
+    location: [-39.1458, 175.6246],
     region: 'Central Plateau',
     descriptionS: 'A challenging alpine trek that passes through volcanic terrain, including the famous Mount Ngauruhoe.',
     descriptionL:`The Tongariro Northern Circuit in New Zealand offers an extraordinary hiking experience, showcasing the stunning landscapes of volcanic terrain, alpine scenery, and breathtaking views. This multi-day trek offers hikers the chance to explore an iconic part of the Tongariro National Park, renowned for its dramatic landscapes and unique geological features.
@@ -32,7 +32,7 @@ const greatWalks = [
   },
   {
     name: 'Routeburn Track',
-    location: [-45.5192, 167.1197],
+    location: [-44.7284, 168.2182],
     region: 'Fiordland & Mt Aspiring',
     descriptionS: 'One of New Zealand\'s Great Walks, traversing alpine meadows and ancient forests with views of the Southern Alps.',
     descriptionL: `The Routeburn Track is a breathtaking 32-kilometer trail that showcases the stunning alpine landscapes of New Zealand. Renowned for its dramatic mountain scenery, lush forests, and sparkling waterfalls, this iconic track offers an unforgettable hiking experience.
@@ -45,7 +45,7 @@ const greatWalks = [
   },
   {
     name: 'Heaphy Track',
-    location: [-40.9678, 173.0410],
+    location: [-40.8864, 172.3028],
     region: 'Kahurangi National Park',
     descriptionS: 'A diverse track that traverses coastal, forest, and mountain landscapes in the top of the South Island.',
     descriptionL: `The Heaphy Track is a scenic 78-kilometer trail located in the stunning Kahurangi National Park in New Zealand. Known for its diverse landscapes and rich natural beauty, this track offers an unforgettable experience, blending coastal scenery, lush forests, and highland vistas.
@@ -58,7 +58,7 @@ const greatWalks = [
   },
   {
     name: 'Kepler Track',
-    location: [-45.4427, 167.7364],
+    location: [-45.4041, 167.6408],
     region: 'Fiordland',
     descriptionS: 'A stunning circuit track that offers panoramic views of Lake Te Anau and the surrounding mountains.',
     descriptionL: `The Kepler Track is a spectacular 60-kilometer hike located in the breathtaking Fiordland National Park on New Zealand's South Island. Known for its awe-inspiring landscapes, this multi-day trek offers panoramic mountain views, alpine meadows, and crystal-clear rivers.
@@ -71,7 +71,7 @@ const greatWalks = [
   },
   {
     name: 'Rakiura Track',
-    location: [-46.9276, 167.8049],
+    location: [-46.8756, 168.0599],
     region: 'Stewart Island',
     descriptionS: 'A beautiful coastal walk that explores the southernmost part of New Zealand, offering wildlife encounters and coastal scenery.',
     descriptionL: `The Rakiura Track on Stewart Island offers a unique and scenic 3-day hiking experience in New Zealand’s remote wilderness. Known for its stunning coastal views, lush forests, and rich wildlife, this track allows hikers to immerse themselves in the serene beauty of Stewart Island’s landscapes.
@@ -84,7 +84,7 @@ const greatWalks = [
   },
   {
     name: 'Paparoa Track',
-    location: [-42.6272, 171.7863],
+    location: [-42.1769, 171.4297],
     region: 'Paparoa National Park',
     descriptionS: 'A spectacular track that takes in dramatic limestone formations, native bush, and coastal cliffs on the West Coast.',
     descriptionL: `The Paparoa Track offers a spectacular and diverse hiking adventure on New Zealand’s South Island. Known for its dramatic landscapes, stunning limestone formations, and breathtaking coastal views, this track showcases the natural beauty of New Zealand’s rugged West Coast.
@@ -97,7 +97,7 @@ const greatWalks = [
   },
   {
     name: 'Hump Ridge Track',
-    location: [-46.5312, 167.6497],
+    location: [-46.1865, 167.3559],
     region: 'Southland',
     descriptionS: 'A unique, remote track that passes through both native forest and alpine tussock country with views of the Southern Ocean.',
     descriptionL: `The Hump Ridge Track offers an epic and challenging multi-day hike on New Zealand’s South Island, renowned for its stunning panoramic views and diverse landscapes. Spanning approximately 60 kilometers, this track combines rugged terrain, lush forests, alpine ridges, and breathtaking coastal vistas.
@@ -110,7 +110,7 @@ const greatWalks = [
   },
   {
     name: 'Lake Waikaremoana Track',
-    location: [-38.6509, 177.1994],
+    location: [-38.7755, 177.0033],
     region: 'Te Urewera',
     descriptionS: 'A stunning loop track that follows the edge of Lake Waikaremoana with lush forests and panoramic lake views.',
     descriptionL: `The Lake Waikaremoana Track offers a scenic and immersive experience for hikers, showcasing New Zealand's stunning backcountry beauty. Spanning 46 kilometers, this multi-day track takes you through lush native forests, breathtaking landscapes, and along the tranquil shores of Lake Waikaremoana.
@@ -123,7 +123,7 @@ const greatWalks = [
   },
   {
     name: 'Whanganui Journey',
-    location: [-39.7355, 175.3011],
+    location: [-39.1071, 175.0204],
     region: 'Whanganui National Park',
     descriptionS: 'A unique canoeing experience along the Whanganui River, with stunning river gorges and remote landscapes.',
     descriptionL: `The Whanganui Journey offers a unique and immersive adventure through New Zealand’s stunning wilderness, best experienced by kayaking or jet boating. This iconic multi-day journey takes you along the majestic Whanganui River, showcasing breathtaking landscapes, rich Maori culture, and incredible natural beauty.
@@ -136,7 +136,7 @@ const greatWalks = [
   },
   {
     name: 'Tongariro Alpine Crossing',
-    location: [-39.1639, 175.1541],
+    location: [-39.1389, 175.6273],
     region: 'Central Plateau',
     descriptionS: 'One of the world\'s most famous one-day hikes, featuring active volcanoes, crater lakes, and alpine terrain.',
     descriptionL: `The Tongariro Alpine Crossing is one of New Zealand’s most iconic and breathtaking day hikes, known for its stunning landscapes and volcanic terrain. Stretching around 19.4 kilometers, it offers a challenging but incredibly rewarding experience through the heart of the Tongariro National Park.
