@@ -5,6 +5,8 @@ import {
   TileLayer,
   Marker,
   Popup,
+  FeatureGroup,
+  LayersControl,
 } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
@@ -13,6 +15,12 @@ const markerIcon = new L.Icon({
   iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
   shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
 })
+
+const mapLayers = {
+  'Street Map': `https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}`,
+  'Topographic Map': `https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}`,
+  'National Geographic Style': `https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}`
+}
 
 export default function MapHuts() {
 
@@ -30,26 +38,39 @@ export default function MapHuts() {
         url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
         attribution='Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
       />
-      {data.huts.map((hut) => {
-        const { assetId, name, status, region, y, x } = hut
+      <LayersControl position='topright'>
+        <LayersControl.Overlay checked name='Huts'>
+          <FeatureGroup>
+            {data.huts.map((hut) => {
+              const { assetId, name, status, region, y, x } = hut
   
-        const [longitude, latitude] = proj4(nztm, wgs84, [x, y])
+              const [longitude, latitude] = proj4(nztm, wgs84, [x, y])
 
-        return (
-          <Marker 
-            key={assetId}
-            position={[latitude, longitude] as [number, number]}
-            title={`marker for ${name}`}
-            icon={markerIcon}
-          >
-            <Popup>
-              <p>{name}</p><br />
-              <p>{region}</p><br />
-              <p>{status}</p>
-            </Popup>
-          </Marker>
-        )
-      })}
+              return (
+                <Marker 
+                  key={assetId}
+                  position={[latitude, longitude] as [number, number]}
+                  title={`marker for ${name}`}
+                  icon={markerIcon}
+                >
+                  <Popup>
+                    <p>{name}</p><br />
+                    <p>{region}</p><br />
+                    <p>{status}</p>
+                  </Popup>
+                </Marker>
+              )
+            })}
+          </FeatureGroup>
+        </LayersControl.Overlay>
+        <FeatureGroup>
+          {Object.entries(mapLayers).map(([name, url]) => (
+            <LayersControl.Overlay key={name} name={name}>
+              <TileLayer url={url} attribution='&copy; ArcGisLine' />
+            </LayersControl.Overlay>
+          ))}
+        </FeatureGroup>
+      </LayersControl>
     </MapContainer>
   )
 }

@@ -32,15 +32,11 @@ const WeatherMap = () => {
         zoom={6}
         className='w-full h-full'
       >
-        {/* Base Map Layer */}
         <TileLayer 
           url="https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}"
           attribution='Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC'
         />
-
-        {/* Weather Layer */}
         <LayersControl position='topright'>
-          {/* Weather Layers */}
           {Object.entries(weatherLayers).map(([name, url]) => (
             <LayersControl.Overlay key={name} name={name}>
               <TileLayer url={url} attribution='&copy; OpenWeatherMap' />

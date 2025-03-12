@@ -20,6 +20,12 @@ const markerIcon = new L.Icon({
   shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
 })
 
+const mapLayers = {
+  'Street Map': `https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}`,
+  'Topographic Map': `https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}`,
+  'National Geographic Style': `https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}`
+}
+
 export default function Map() {
 
   const nztm = '+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +datum=WGS84 +units=m +no_defs' 
@@ -44,6 +50,13 @@ export default function Map() {
         />
         <LayersControl position='topright'>
           <LayersControl.Overlay checked name='Hiking Tracks'>
+            <FeatureGroup>
+              {Object.entries(mapLayers).map(([name, url]) => (
+                <LayersControl.Overlay key={name} name={name}>
+                  <TileLayer url={url} attribution='&copy; ArcGisLine' />
+                </LayersControl.Overlay>
+              ))}
+            </FeatureGroup>
             <FeatureGroup>
               {convertedPos.map((track, index) => (
                 <Polyline key={index} positions={track.polyline.map(([lon, lat]) => [lat, lon])} color='#f1642e'>
