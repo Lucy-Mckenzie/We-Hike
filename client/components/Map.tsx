@@ -49,14 +49,14 @@ export default function Map() {
           attribution='Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
         />
         <LayersControl position='topright'>
+          <FeatureGroup>
+            {Object.entries(mapLayers).map(([name, url]) => (
+              <LayersControl.Overlay key={name} name={name}>
+                <TileLayer url={url} attribution='&copy; ArcGisLine' />
+              </LayersControl.Overlay>
+            ))}
+          </FeatureGroup>
           <LayersControl.Overlay checked name='Hiking Tracks'>
-            <FeatureGroup>
-              {Object.entries(mapLayers).map(([name, url]) => (
-                <LayersControl.Overlay key={name} name={name}>
-                  <TileLayer url={url} attribution='&copy; ArcGisLine' />
-                </LayersControl.Overlay>
-              ))}
-            </FeatureGroup>
             <FeatureGroup>
               {convertedPos.map((track, index) => (
                 <Polyline key={index} positions={track.polyline.map(([lon, lat]) => [lat, lon])} color='#f1642e'>
