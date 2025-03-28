@@ -1,16 +1,18 @@
 import { useParams, Link } from 'react-router-dom'
 import LoadingSpinner from '../components/LoadingSpinner.tsx'
 import useAllTracksInRegion from '../hooks/use-allTracksInRegion.tsx'
+import { useState } from 'react'
 
 export default function DisplayTracks() {
   const { region } = useParams()
-
+  const [loadTracks, setLoadTracks] = useState(6)
   const {data: tracks, error, isPending } = useAllTracksInRegion()
 
   if (error) return <p>Sorry couldn&apos;t find this hike</p>
   if (isPending) return <LoadingSpinner />
  
   const sortedTracks = [...tracks].sort((a, b) => a.name.localeCompare(b.name))
+  const displayTracks = sortedTracks.slice(0, loadTracks)
   return (
     <>
       <div className='breadcrumbs text-sm'>
@@ -25,7 +27,7 @@ export default function DisplayTracks() {
           Hikes in {region}
         </h1>
         <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full'>
-          {sortedTracks.map((track) => (
+          {displayTracks.map((track) => (
             <li
               key={track.assetId}
             >
@@ -38,6 +40,14 @@ export default function DisplayTracks() {
             </li>
           ))}
         </ul>
+        {loadTracks < sortedTracks.length && (
+          <button
+            onClick={() => setLoadTracks((prev) => prev + 6)}
+            className='mt-4 px-4 py-2 bg-[#727e5a] text-white rounded-lg shadow-md hover:bg-[#5c6a4c] transition duration-300'
+          >
+            Load More
+          </button>
+        )}
       </div>
     </>
   )
