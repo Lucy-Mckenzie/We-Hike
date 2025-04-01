@@ -9,7 +9,6 @@ const SearchAlertList = () => {
   const alerts = data ? JSON.parse(data.text) : [];
 
   const [search, setSearch ] = useState('')
-  console.log(alerts, isError, isLoading)
 
   if (isLoading) return <LoadingSpinner />
   if (isError) return <p>Error loading alerts.</p>
