@@ -19,10 +19,13 @@ const SearchAlertList = () => {
     ) : []
 
   return (
-    <div className='my-5'>
-      <div className='flex items-center gap-2 bg-content border rounded-lg p-2 shadow max-w-sm mx-auto w-full justify-center'>
+    <div className='my-5 w-full'>
+      <h1 className='text-xl sm:text-2xl lg:text-4xl text-center font-normal'>
+        Recent Alerts
+      </h1>
+      <div className='flex items-center gap-2 bg-content rounded-lg p-2 mx-auto w-full justify-center'>
         <label htmlFor='search-alerts' className='sr-only'>
-        Search Alerts
+          Search Alerts
         </label>
         <input
           type='text'

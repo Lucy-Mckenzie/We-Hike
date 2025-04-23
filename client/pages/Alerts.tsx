@@ -29,9 +29,6 @@ export default function DOCAlerts() {
         </ul>
       </div>
       <div className='flex flex-col items-center px-5 py-10 text-left mx-auto'>
-        <h1 className='text-xl sm:text-2xl lg:text-4xl text-center font-normal'>
-          Recent Alerts
-        </h1>
         <SearchAlertList />
         <div className='flex flex-col items-center max-w-[900px] m-auto pb-6'>
           <p className='text-lg text-neutral-600 border-b-2 mb-4'>
