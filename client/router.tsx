@@ -18,6 +18,7 @@ import HutsDetail from './pages/HutDetails'
 import Reviews from './pages/Reviews'
 import QGIS from './pages/QGIS'
 import Greatwalks from './pages/GreatWalks'
+import ArcGIS from './pages/ArcGIS'
 
 export const routes = createRoutesFromElements(
   <Route path='/' element={<Layout />}>
@@ -36,6 +37,7 @@ export const routes = createRoutesFromElements(
     <Route path='/huts/:assetId/detail' element={<HutsDetail />} />
     <Route path='/alerts' element={<Alerts />} />
     <Route path='/qgis' element={<QGIS />} />
+    <Route path='/arcgis' element={<ArcGIS />} />
     <Route path='/greatwalks' element={<Greatwalks />} />
   </Route>,
 )
