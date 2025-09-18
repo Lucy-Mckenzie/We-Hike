@@ -10,30 +10,42 @@ const CampsitesMalbourgh = () => {
         />
         <div className='text-left'>
           <h1 className='text-lg font-semibold'>
-            A study of the introducted Nasella Tussock and its proximity to campsites in the Malbourgh region of the South island of New Zealand. 
+            Mapping the invasive Nassella Tussock and its proximity to campsites in the Marlborough region, South Island, New Zealand
           </h1>
           <h2 className='mb-5 text-sm'>
-            This is workshop 1, semester 2 at Flinders University - Vector analysis in conservation management. Using vector overlay, we layer the camp sites, and weed presence of the Nassella Tussock
-            of top of each other to see how large an area of weeds are in a radius of 10km to the camp grounds. 
+            This project was completed as part of Workshop 1, Semester 2 at Flinders University: <em>Vector Analysis in Conservation Management</em>. Using vector overlay in ArcGIS, campgrounds and Nassella Tussock weed presence were mapped to assess areas of overlap. A 6 km buffer radius was applied around each campground to estimate potential exposure to the invasive weed. 
           </h2>
           <h2 className='mb-5 text-sm'>
-            The goal is to prevent the spread of the invasive weed, and by understanding which campgrounds make the most impacts in the spread. 
+            The aim of this study was to better understand the role of campgrounds in the spread of Nassella Tussock and identify which locations pose the greatest risk for further invasion. 
           </h2>
           <ul className='list-disc p-4 space-y-2'>
             <li>
-              Using the NZGD 2000 New Zealand Transverse Mectator which allows us to get the most accurate coordinates.
+              The NZGD 2000 New Zealand Transverse Mercator projection was used to ensure coordinate accuracy. 
             </li>
             <li>
-              The sole focus of this project was to understand the basics of ArcGIS, symobology, buffer layers to create the 10km radius around the campgrounds
+              The focus of this exercise was to develop foundational skills in ArcGIS, including symbology, buffer creation, and layer management. 
             </li>
             <li>
-              A problem that occured when creating the final map was understanding which layers took trump in priority. Is it more important to have the main city names, the buffer layer, or the tussock on the top layer. 
-              I worked out through this process that the most important feature was to be able to see the names of the campgrounds, then tussock, then the campground buffer.  
+              A key challenge involved deciding which map layers to prioritise for clarity. Through experimentation, it was determined that campground names were most important, followed by the tussock distribution, and then the campground buffer zones.  
+            </li>
+            <li>
+              The chart below illustrates the total area of Nassella Tussock within 6 km of each campground in Marlborough. 
             </li>
           </ul>
         </div>
       </div>
+      <div className='pt-5'>
+        <h1 className='text-left'>
+          Figure 1. Total area (hectares) of Nassella Tussock within 10 km of each campground. 
+        </h1>
+        <img 
+          src='/images/arcgis/NassellaTChart.jpg'
+          alt='Bar chart of the Campsites in the Malbourough region of New Zealand'
+          className='w-full rounded-md shadow-md border border-gray-500 z-10'
+        />
+      </div>
     </div>
+    
   )
 }
 

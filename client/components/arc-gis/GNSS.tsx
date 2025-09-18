@@ -1,5 +1,5 @@
 
-const CampsitesMalbourgh = () => {
+const GNSS = () => {
   return (
     <div className='flex flex-col justify-center my-20'>
       <div className='flex space-x-4'>
@@ -37,4 +37,4 @@ const CampsitesMalbourgh = () => {
   )
 }
 
-export default CampsitesMalbourgh
+export default GNSS

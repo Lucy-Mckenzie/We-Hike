@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
-import CampsitesMalbourgh from '../components/arc-gis/CampsitesMalbourgh'
+import CampsitesMalbourghGrid from '../components/arcgis-grid/CampsitesMalbourghGrid'
+import GNSSGrid from '../components/arcgis-grid/GNSSGrid'
+import MCAGrid from '../components/arcgis-grid/MCAGrid'
 
 const ArcGIS = () => {
   return (
@@ -20,10 +22,23 @@ const ArcGIS = () => {
           <h1 className='font-lato text-center text-xl sm:text-2xl lg:text-4xl pr-8 mb-10'>
             A documentation of my ArcGIS studies 
           </h1>
-          <CampsitesMalbourgh />
+          <div className='flex flex-col overflow-hidden'>
+            <div className='flex flex-row flex-wrap lg:gap-x-8 justify-center py-10'>
+              <CampsitesMalbourghGrid />
+              <MCAGrid />
+              <GNSSGrid />
+            </div>
+          </div>
         </div>
       </div>
     </>
+    // <div className='flex flex-col overflow-hidden'>
+    //   <div className='flex flex-row flex-wrap lg:gap-x-8 justify-center py-10'>
+    //     <CampsitesMalbourghGrid />
+    //     <MCAGrid />
+    //     <GNSSGrid />
+    //   </div>
+    // </div>
   )
 }
 

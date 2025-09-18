@@ -19,6 +19,9 @@ import Reviews from './pages/Reviews'
 import QGIS from './pages/QGIS'
 import Greatwalks from './pages/GreatWalks'
 import ArcGIS from './pages/ArcGIS'
+import CampsitesMalbourgh from './components/arc-gis/CampsitesMalbourgh'
+import GNSS from './components/arc-gis/GNSS'
+import MCA from './components/arc-gis/MulticriteriaDA'
 
 export const routes = createRoutesFromElements(
   <Route path='/' element={<Layout />}>
@@ -38,6 +41,9 @@ export const routes = createRoutesFromElements(
     <Route path='/alerts' element={<Alerts />} />
     <Route path='/qgis' element={<QGIS />} />
     <Route path='/arcgis' element={<ArcGIS />} />
+    <Route path='/campsitesMalbourgh' element={<CampsitesMalbourgh />} />
+    <Route path='/GNSS' element={<GNSS />} />
+    <Route path='/MCA' element={<MCA />} />
     <Route path='/greatwalks' element={<Greatwalks />} />
   </Route>,
 )
