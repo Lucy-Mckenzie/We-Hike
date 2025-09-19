@@ -4,7 +4,7 @@ const MCA = () => {
     <div className='flex flex-col justify-center my-20'>
       <div className='flex space-x-4'>
         <img 
-          src='/images/arcgis/MCA_suit1.jpg'
+          src='/images/arcgis/mca_suit1.jpg'
           alt='Multicriteria analysis 1'
           className='w-6/12 rounded-md shadow-md border border-gray-500 z-10'
         />

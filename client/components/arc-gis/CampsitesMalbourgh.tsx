@@ -4,7 +4,7 @@ const CampsitesMalbourgh = () => {
     <div className='flex flex-col justify-center my-20'>
       <div className='flex space-x-4'>
         <img 
-          src='/images/arcgis/Layout.jpg'
+          src='/images/arcgis/campsitestussock.jpg'
           alt='Campsites in the Malbourough region of New Zealand'
           className='w-6/12 rounded-md shadow-md border border-gray-500 z-10'
         />
