@@ -20,7 +20,7 @@ const ArcGIS = () => {
         </div>
         <div className='lg:px-5 lg:py-10 py-5 text-center w-full lg:max-w-7xl'>
           <h1 className='font-lato text-center text-xl sm:text-2xl lg:text-4xl pr-8 mb-10'>
-            A documentation of my ArcGIS studies 
+            A documentation of ArcGIS studies 
           </h1>
           <div className='flex flex-col overflow-hidden'>
             <div className='flex flex-row flex-wrap lg:gap-x-8 justify-center py-10'>
@@ -32,13 +32,6 @@ const ArcGIS = () => {
         </div>
       </div>
     </>
-    // <div className='flex flex-col overflow-hidden'>
-    //   <div className='flex flex-row flex-wrap lg:gap-x-8 justify-center py-10'>
-    //     <CampsitesMalbourghGrid />
-    //     <MCAGrid />
-    //     <GNSSGrid />
-    //   </div>
-    // </div>
   )
 }
 

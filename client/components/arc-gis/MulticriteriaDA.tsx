@@ -2,41 +2,45 @@
 const MCA = () => {
   return (
     <div className='flex flex-col justify-center my-20'>
-      <div className='flex space-x-4'>
+      <div className='flex flex-col text-left items-center'>
+        <h1 className='text-lg font-semibold justify-center w-4/6'>
+          Multi criteria analysis for potential hospital in the Fleurieu Peninsula, Australia
+        </h1>
+        <h2 className='mb-5 text-sm w-4/6'>
+        This project focused on performing an analysis based on a predetermined set of criteria, of where the most suitable location for a new hopital in the Fleurieu Peninsula, South Australia. 
+        </h2>
+        <h2 className='mb-5 text-sm w-4/6'>
+          
+        </h2>
+      </div>
+      <figure className='flex justify-center pb-4'>
         <img 
           src='/images/arcgis/mca_suit1.jpg'
           alt='Multicriteria analysis 1'
-          className='w-6/12 rounded-md shadow-md border border-gray-500 z-10'
+          className='w-10/12 rounded-md shadow-md border border-gray-500 z-10'
         />
-        <img 
-          src='/images/arcgis/MCA_suit2.jpg'
-          alt='Multicriteria analysis 1'
-          className='w-6/12 rounded-md shadow-md border border-gray-500 z-10'
-        />
-        <div className='text-left'>
-          <h1 className='text-lg font-semibold'>
-            {/* A study of the introducted Nasella Tussock and its proximity to campsites in the Malbourgh region of the South island of New Zealand.  */}
-          </h1>
-          <h2 className='mb-5 text-sm'>
-            {/* This is workshop 1, semester 2 at Flinders University - Vector analysis in conservation management. Using vector overlay, we layer the camp sites, and weed presence of the Nassella Tussock */}
-            {/* of top of each other to see how large an area of weeds are in a radius of 10km to the camp grounds.  */}
-          </h2>
-          <h2 className='mb-5 text-sm'>
-            {/* The goal is to prevent the spread of the invasive weed, and by understanding which campgrounds make the most impacts in the spread.  */}
-          </h2>
-          <ul className='list-disc p-4 space-y-2'>
-            <li>
-              {/* Using the NZGD 2000 New Zealand Transverse Mectator which allows us to get the most accurate coordinates. */}
-            </li>
-            <li>
-              {/* The sole focus of this project was to understand the basics of ArcGIS, symobology, buffer layers to create the 10km radius around the campgrounds */}
-            </li>
-            <li>
-              {/* A problem that occured when creating the final map was understanding which layers took trump in priority. Is it more important to have the main city names, the buffer layer, or the tussock on the top layer.  */}
-              {/* I worked out through this process that the most important feature was to be able to see the names of the campgrounds, then tussock, then the campground buffer.   */}
-            </li>
-          </ul>
-        </div>
+      </figure>
+      <div className='flex flex-col text-left items-center'>
+        <h1 className='text-lg font-semibold justify-center w-4/6'>
+          Flow chart of the process
+        </h1>
+        <h2 className='mb-2 text-sm w-4/6'>
+          With constrained criteria and preferential layers, we can make an accurate analysis based on these factors. 
+        </h2>
+        <ul>
+          <li>
+
+          </li>
+        </ul>
+      </div>
+      <div className=''>
+        <figure className='flex justify-center'>
+          <img 
+            src='/images/arcgis/flow_chart.png'
+            alt='flow chart'
+            className='w-10/12 rounded-md shadow-md border border-gray-500 z-10'
+          />
+        </figure>
       </div>
     </div>
   )

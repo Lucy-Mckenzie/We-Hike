@@ -9,13 +9,13 @@ const CampsitesMalbourgh = () => {
           className='w-6/12 rounded-md shadow-md border border-gray-500 z-10'
         />
         <div className='text-left'>
-          <h1 className='text-lg font-semibold'>
-            Mapping the invasive Nassella Tussock and its proximity to campsites in the Marlborough region, South Island, New Zealand
+          <h1 className='text-lg font-semibold mb-5'>
+            Vector analysis in conservation management 
           </h1>
           <h2 className='mb-5 text-sm'>
             This project was completed as part of Workshop 1, Semester 2 at Flinders University: <em>Vector Analysis in Conservation Management</em>. Using vector overlay in ArcGIS, campgrounds and Nassella Tussock weed presence were mapped to assess areas of overlap. A 6 km buffer radius was applied around each campground to estimate potential exposure to the invasive weed. 
           </h2>
-          <h2 className='mb-5 text-sm'>
+          <h2 className='text-sm'>
             The aim of this study was to better understand the role of campgrounds in the spread of Nassella Tussock and identify which locations pose the greatest risk for further invasion. 
           </h2>
           <ul className='list-disc p-4 space-y-2'>
@@ -39,7 +39,7 @@ const CampsitesMalbourgh = () => {
           Figure 1. Total area (hectares) of Nassella Tussock within 10 km of each campground. 
         </h1>
         <img 
-          src='/images/arcgis/NassellaTChart.jpg'
+          src='/images/arcgis/nassellaTChart.jpg'
           alt='Bar chart of the Campsites in the Malbourough region of New Zealand'
           className='w-full rounded-md shadow-md border border-gray-500 z-10'
         />
