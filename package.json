@@ -1,6 +1,5 @@
 {
-  "name": "boilerplate-fullstack-routing",
-  "homepage": "https://wehikenewzealand.com/",
+  "name": "we-hike-new-zealand",
   "type": "module",
   "version": "2.0.0",
   "main": "server/index.js",
