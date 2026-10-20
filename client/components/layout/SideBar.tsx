@@ -16,12 +16,6 @@ const SideBar = () => {
             <li>
               <a href='/weather'>Weather</a>
             </li>
-            <li>
-              <a href='/qgis'>QGIS</a>
-            </li>
-            <li>
-              <a href='/arcgis'>ArcGIS</a>
-            </li>
           </ul>
         </div>
       </div>
